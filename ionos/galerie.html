@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<title>Galerie – Lohnunternehmen Heiligmann</title>
+<meta name="description" content="Fotos von unseren Erdarbeiten, Maschinen, der Landwirtschaft und der Angus-Herde.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="fonts/site.css">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  a { color: #2E7D32; }
+  a:hover { color: #256b29; }
+  ::selection { background: #388E3C; color: #fff; }
+  .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+  .gal-cell { position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; border:1px solid #e6e8e4; background:#f3f4f6; transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease; }
+  .gal-cell image-slot { transition: transform .6s cubic-bezier(.16,1,.3,1), filter .4s ease; }
+  @media (hover:hover) { .gal-cell:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(26,30,37,.14); } .gal-cell:hover image-slot { transform: scale(1.07); filter: saturate(1.12); } }
+  @media (prefers-reduced-motion: no-preference) { .gal-cell { animation: gal-in .7s cubic-bezier(.16,1,.3,1) both; animation-timeline: view(); animation-range: entry 0% entry 60%; } }
+  @keyframes gal-in { from { opacity: 0; transform: translateY(28px) scale(.96); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="background:#F6F4EE;color:#55606b;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
+  <dc-import name="SiteNav" style="position:sticky;top:0;z-index:60;" active="galerie" hint-size="100%,72px"></dc-import>
+
+  <section style="max-width:1200px;margin:0 auto;padding:60px 22px 30px;">
+    <span style="display:inline-block;font-family:'Barlow';font-weight:600;color:#2E7D32;letter-spacing:.16em;text-transform:uppercase;font-size:14px;margin-bottom:16px;">Einblicke</span>
+    <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(36px,5.5vw,60px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0 0 16px;">Galerie</h1>
+    <p style="font-size:clamp(17px,2vw,20px);color:#6b7480;margin:0;max-width:640px;">Ein Blick auf unsere Arbeit. Ziehen Sie Ihre Fotos auf die Felder, belegte Felder können Sie jederzeit überschreiben.</p>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:24px 22px 20px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><h2 style="font-family:'Barlow';font-weight:700;font-size:24px;color:#1a1e25;margin:0;">Erd- &amp; Baggerarbeiten</h2><span style="flex:1;height:1px;background:#e6e8e4;"></span></div>
+    <div class="gal-grid">
+      <div class="gal-cell"><img src="assets/web/g10.jpg" alt="Bagger belädt Anhänger an einem Neubau" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g11.jpg" alt="Bagger beim Aushub für einen Pool im Garten" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g13.jpg" alt="Erd- und Baggerarbeiten, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g17.jpg" alt="Erd- und Baggerarbeiten, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g18.jpg" alt="Bagger bei Gartenarbeiten" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g08.jpg" alt="Erd- und Baggerarbeiten, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g09.jpg" alt="Erd- und Baggerarbeiten, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g16.jpg" alt="Erd- und Baggerarbeiten, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g25.jpg" alt="Erd- und Baggerarbeiten, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:24px 22px 20px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><h2 style="font-family:'Barlow';font-weight:700;font-size:24px;color:#1a1e25;margin:0;">Landwirtschaft &amp; Maschinen</h2><span style="flex:1;height:1px;background:#e6e8e4;"></span></div>
+    <div class="gal-grid">
+      <div class="gal-cell"><img src="assets/web/g02.jpg" alt="Schlepper mit grünem Kippanhänger im Morgennebel" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g03.jpg" alt="Ballenpresse auf dem Feld" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g21.jpg" alt="Silageballen auf der Wiese" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g22.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g24.jpg" alt="Schlepper mit Strohballen bei Sonnenuntergang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g14.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g20.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g23.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g01.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g04.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g12.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g15.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g19.jpg" alt="Landwirtschaft und Maschinen, Foto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:24px 22px 20px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;"><h2 style="font-family:'Barlow';font-weight:700;font-size:24px;color:#1a1e25;margin:0;">Angus-Herde &amp; Hof</h2><span style="flex:1;height:1px;background:#e6e8e4;"></span></div>
+    <div class="gal-grid">
+      <div class="gal-cell"><img src="assets/web/g05.jpg" alt="Angusrinder fressen aus der Hand" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g06.jpg" alt="Angus-Herde auf der Weide" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/web/g07.jpg" alt="Angusrind auf der Weide am Hang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gal-cell"><img src="assets/angus-weide.jpg" alt="Angusrinder auf der Weide" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+  </section>
+
+  <section style="margin-top:40px;background:#EDEAE2;border-top:1px solid #e7e9e5;">
+    <div style="max-width:1000px;margin:0 auto;padding:64px 22px;text-align:center;">
+      <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3.4vw,34px);color:#1a1e25;margin:0 0 14px;letter-spacing:-.02em;">Gefällt Ihnen, was Sie sehen?</h2>
+      <p style="color:#6b7480;margin:0 auto 28px;max-width:500px;">Dann lassen Sie uns über Ihr Projekt sprechen.</p>
+      <a href="kontakt.html" style="display:inline-flex;align-items:center;gap:10px;background:#2E7D32;color:#fff;font-weight:700;font-size:17px;padding:17px 30px;border-radius:4px;text-decoration:none;">Kontakt aufnehmen</a>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>

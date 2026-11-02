@@ -1,0 +1,51 @@
+# Lohnunternehmen Heiligmann – IONOS Webhosting (Apache)
+Options -Indexes
+DirectoryIndex index.html
+
+# Nur HTTPS, ohne www
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://lohnunternehmen-heiligmann.de%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# Alte Wix-Adressen auf neue Seiten umleiten
+Redirect 301 /dienste /
+Redirect 301 /landwirtschaftliche-lesitungen /landwirtschaft.html
+Redirect 301 /erdarbeiten /erdarbeiten.html
+Redirect 301 /angusrinder /angusrinder.html
+Redirect 301 /galerie /galerie.html
+Redirect 301 /kontakt /kontakt.html
+Redirect 301 /impressum /impressum.html
+Redirect 301 /datenschutzerkl%C3%A4rung /datenschutz.html
+Redirect 301 /%C3%BCber-uns /
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header always set Content-Security-Policy "upgrade-insecure-requests"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+AddType font/woff2 .woff2
+AddDefaultCharset utf-8
