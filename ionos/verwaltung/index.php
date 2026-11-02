@@ -3,8 +3,8 @@
  * Galerie-Verwaltung – Lohnunternehmen Heiligmann
  *
  * Einfache Verwaltung für die Galerie-Seite. Läuft auf jedem IONOS-Webhosting mit PHP (GD-Erweiterung).
- * - Beim ersten Aufruf wird ein Passwort festgelegt (gespeichert als Hash in passwort.php).
- * - Passwort vergessen? passwort.php per FTP löschen und neu festlegen.
+ * - Passwort steht als Hash in passwort.php (kein Klartext, keine Datenbank).
+ * - Neues Passwort: im Ordner ionos/ "php verwaltung/passwort-setzen.php" ausführen und passwort.php hochladen.
  * - Daten: ../data/galerie.json  ·  Hochgeladene Fotos: ../uploads/galerie/
  */
 
@@ -112,17 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         weiter('Sitzung abgelaufen, bitte noch einmal versuchen.', 'fehler');
     }
 
-    if ($aktion === 'setup' && !$hatPasswort) {
-        $p1 = (string)($_POST['pw1'] ?? ''); $p2 = (string)($_POST['pw2'] ?? '');
-        if (mb_strlen($p1) < 8) weiter('Das Passwort muss mindestens 8 Zeichen haben.', 'fehler');
-        if ($p1 !== $p2) weiter('Die beiden Passwörter stimmen nicht überein.', 'fehler');
-        $code = "<?php\n// Passwort-Hash für die Galerie-Verwaltung. Löschen = Passwort zurücksetzen.\nreturn " . var_export(password_hash($p1, PASSWORD_DEFAULT), true) . ";\n";
-        if (file_put_contents($PW_DATEI, $code, LOCK_EX) === false) weiter('Konnte passwort.php nicht anlegen (Schreibrechte prüfen).', 'fehler');
-        session_regenerate_id(true);
-        $_SESSION['ok'] = true;
-        weiter('Passwort gespeichert. Willkommen!');
-    }
-
     if ($aktion === 'login' && $hatPasswort) {
         $hash = require $PW_DATEI;
         if (is_string($hash) && password_verify((string)($_POST['pw'] ?? ''), $hash)) {
@@ -157,13 +146,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($files['error'][$i] === UPLOAD_ERR_NO_FILE) continue;
                 if (in_array($files['error'][$i], [UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE], true)) { $probleme[] = $name . ' (größer als ' . ini_get('upload_max_filesize') . ')'; continue; }
                 if ($files['error'][$i] !== UPLOAD_ERR_OK) { $probleme[] = $name . ' (Übertragung abgebrochen)'; continue; }
-                $im = bild_laden($files['tmp_name'][$i]);
-                if (!$im) { $probleme[] = $name . ' (kein JPG/PNG/WebP)'; continue; }
                 $id = date('Ymd-His') . '-' . bin2hex(random_bytes(3));
-                $ok = bild_speichern($im, "$UPLOAD/$id.jpg", MAX_KANTE) && bild_speichern($im, "$UPLOAD/$id-klein.jpg", VORSCHAU_KANTE);
-                imagedestroy($im);
+                if (function_exists('imagecreatetruecolor')) {
+                    $im = bild_laden($files['tmp_name'][$i]);
+                    if (!$im) { $probleme[] = $name . ' (kein JPG/PNG/WebP)'; continue; }
+                    $ok = bild_speichern($im, "$UPLOAD/$id.jpg", MAX_KANTE) && bild_speichern($im, "$UPLOAD/$id-klein.jpg", VORSCHAU_KANTE);
+                    imagedestroy($im);
+                    $gross = "$id.jpg"; $klein = "$id-klein.jpg";
+                } else {
+                    // Ohne GD (z. B. lokales PHP unter Windows): bereits im Browser verkleinertes Bild unverändert übernehmen.
+                    $typ = @getimagesize($files['tmp_name'][$i])[2] ?? 0;
+                    $ext = [IMAGETYPE_JPEG => 'jpg', IMAGETYPE_PNG => 'png', IMAGETYPE_WEBP => 'webp'][$typ] ?? null;
+                    if (!$ext) { $probleme[] = $name . ' (kein JPG/PNG/WebP)'; continue; }
+                    $ok = move_uploaded_file($files['tmp_name'][$i], "$UPLOAD/$id.$ext");
+                    $gross = $klein = "$id.$ext";
+                }
                 if (!$ok) { $probleme[] = $name . ' (Speichern fehlgeschlagen)'; continue; }
-                $neu[] = ['id' => $id, 'bild' => "uploads/galerie/$id.jpg", 'vorschau' => "uploads/galerie/$id-klein.jpg",
+                $neu[] = ['id' => $id, 'bild' => "uploads/galerie/$gross", 'vorschau' => "uploads/galerie/$klein",
                           'alt' => $text !== '' ? $text : 'Foto aus der Galerie', 'kategorie' => $kat];
                 $anzahl++;
             }
@@ -279,14 +278,8 @@ $maxUpload = ini_get('upload_max_filesize');
 
 <?php if (!$hatPasswort): ?>
   <div class="karte schmal">
-    <h1>Passwort festlegen</h1>
-    <p class="hinweis">Einmalig: Mit diesem Passwort melden Sie sich künftig an, um Fotos zur Galerie hinzuzufügen.</p>
-    <form method="post" style="display:grid;gap:14px;margin-top:18px;">
-      <input type="hidden" name="csrf" value="<?= h(csrf()) ?>">
-      <div><label for="pw1">Neues Passwort (mind. 8 Zeichen)</label><input id="pw1" type="password" name="pw1" minlength="8" required autocomplete="new-password"></div>
-      <div><label for="pw2">Passwort wiederholen</label><input id="pw2" type="password" name="pw2" minlength="8" required autocomplete="new-password"></div>
-      <button name="aktion" value="setup">Passwort speichern</button>
-    </form>
+    <h1>Kein Passwort eingerichtet</h1>
+    <p class="hinweis">Die Datei <code>verwaltung/passwort.php</code> fehlt. Neues Passwort setzen mit:<br><code>php verwaltung/passwort-setzen.php</code></p>
   </div>
 
 <?php elseif (!$istAngemeldet): ?>

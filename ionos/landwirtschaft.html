@@ -20,6 +20,16 @@
   a { color: #2E7D32; }
   a:hover { color: #256b29; }
   ::selection { background: #388E3C; color: #fff; }
+  .lw-ballen { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:48px 32px; }
+  .lw-buehne { position:relative; height:200px; display:flex; align-items:flex-end; justify-content:center; margin-bottom:26px; border-bottom:3px solid #d9d2bf; }
+  .lw-buehne::after { content:''; position:absolute; left:0; right:0; bottom:-12px; height:9px; background:repeating-linear-gradient(90deg,#c9b98e 0 2px,transparent 2px 9px); opacity:.7; }
+  .lw-ballen-form { position:relative; z-index:1; will-change:transform; }
+  .lw-ballen-form svg { display:block; width:100%; height:100%; }
+  .lw-rund, .lw-silage { width:170px; height:170px; }
+  .lw-quader { width:220px; height:138px; }
+  .lw-schatten { position:absolute; bottom:-6px; left:50%; width:150px; height:14px; margin-left:-75px; background:radial-gradient(closest-side,rgba(60,50,20,.28),transparent); }
+  .lw-ballen-item h3 { font-family:'Barlow'; font-weight:800; font-size:26px; line-height:1.15; color:#1a1e25; margin:0 0 8px; }
+  .lw-ballen-item p { color:#55606b; margin:0; font-size:17px; max-width:24em; }
 </style>
 </helmet>
 <div style="background:#F6F4EE;color:#55606b;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
@@ -47,13 +57,32 @@
   <section style="max-width:1200px;margin:0 auto;padding:56px 22px 88px;">
     <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.8vw,44px);line-height:1.05;color:#1a1e25;margin:0 0 12px;letter-spacing:-.02em;">Unsere Leistungen im Überblick</h2>
     <p data-reveal style="color:#55606b;margin:0 0 40px;max-width:620px;">Von der Feldarbeit bis zum fertigen Ballen, mit Freude und Leidenschaft.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
-      <sc-for list="{{ items }}" as="s" hint-placeholder-count="3">
-        <article data-reveal style="background:#ffffff;border:1px solid #e6e8e4;border-radius:4px;padding:30px 26px;">
-          <h3 style="font-family:'Barlow';font-weight:700;font-size:22px;line-height:1.2;color:#1a1e25;margin:0 0 10px;">{{ s.title }}</h3>
-          <p style="color:#55606b;margin:0;font-size:16px;">{{ s.text }}</p>
-        </article>
-      </sc-for>
+    <div class="lw-ballen">
+      <article class="lw-ballen-item">
+        <div class="lw-buehne"><div class="lw-ballen-form lw-rund" data-ballen="rund"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><radialGradient id="bs" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#F0D98A"/><stop offset="1" stop-color="#CFA94A"/></radialGradient></defs>
+<circle cx="100" cy="100" r="96" fill="#B98F36"/><circle cx="100" cy="100" r="90" fill="url(#bs)"/>
+<g fill="none" stroke="#B48A33" stroke-linecap="round" opacity=".75"><circle cx="100" cy="100" r="76" stroke-width="2.4" stroke-dasharray="40 10 22 8"/><circle cx="100" cy="100" r="60" stroke-width="2.2" stroke-dasharray="30 9 18 7"/><circle cx="100" cy="100" r="44" stroke-width="2" stroke-dasharray="22 8 14 6"/><circle cx="100" cy="100" r="28" stroke-width="1.8" stroke-dasharray="14 6"/><circle cx="100" cy="100" r="13" stroke-width="1.6"/></g>
+<g stroke="#FFF1B8" stroke-width="1.6" stroke-linecap="round" opacity=".7"><path d="M60 50l14 6M128 40l10 9M150 110l9-4M70 150l-8 7M118 160l12 2M40 104l-9 2"/></g></svg></div><span class="lw-schatten"></span></div>
+        <h3>Ballenpressen</h3>
+        <p>Pressen von Stroh, Heu und Silage, zuverlässig und in guter Qualität.</p>
+      </article>
+      <article class="lw-ballen-item">
+        <div class="lw-buehne"><div class="lw-ballen-form lw-silage" data-ballen="silage"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><radialGradient id="bf" cx=".38" cy=".34" r=".75"><stop offset="0" stop-color="#4E7A4A"/><stop offset="1" stop-color="#1F3A22"/></radialGradient></defs>
+<circle cx="100" cy="100" r="95" fill="url(#bf)"/>
+<g fill="none" stroke="#6F9A66" stroke-width="3" opacity=".5"><path d="M18 74 C70 60 130 60 182 74"/><path d="M8 104 C70 90 130 90 192 104"/><path d="M18 134 C70 120 130 120 182 134"/></g>
+<path d="M44 46 C70 26 108 22 136 34" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".28"/>
+<circle cx="100" cy="100" r="95" fill="none" stroke="#14281A" stroke-width="3"/></svg></div><span class="lw-schatten"></span></div>
+        <h3>Silage-Transport</h3>
+        <p>Transport von Silage und Erntegut mit unseren Landmaschinen.</p>
+      </article>
+      <article class="lw-ballen-item">
+        <div class="lw-buehne"><div class="lw-ballen-form lw-quader" data-ballen="quader"><svg viewBox="0 0 240 150" aria-hidden="true"><defs><linearGradient id="bq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0D98A"/><stop offset="1" stop-color="#CFA94A"/></linearGradient></defs>
+<rect x="4" y="4" width="232" height="142" rx="8" fill="#B98F36"/><rect x="9" y="9" width="222" height="132" rx="5" fill="url(#bq)"/>
+<g stroke="#B48A33" stroke-width="2" stroke-linecap="round" opacity=".6"><path d="M22 30h40M80 26h56M150 32h66M20 58h70M104 62h44M160 56h56M26 88h50M90 92h70M176 86h40M22 118h62M100 114h48M162 120h54"/></g>
+<g fill="#8A5E22"><rect x="68" y="4" width="6" height="142" rx="2"/><rect x="166" y="4" width="6" height="142" rx="2"/></g></svg></div><span class="lw-schatten"></span></div>
+        <h3>Feldbewirtschaftung</h3>
+        <p>Wir bewirtschaften eigene Felder und übernehmen verschiedenste Feldarbeiten.</p>
+      </article>
     </div>
   </section>
 
@@ -88,12 +117,34 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  renderVals() { return { items: [
-      { title: 'Ballenpressen', text: 'Pressen von Stroh, Heu und Silage, zuverlässig und in guter Qualität.' },
-      { title: 'Silage-Transport', text: 'Transport von Silage und Erntegut mit unseren Landmaschinen.' },
-      { title: 'Feldbewirtschaftung', text: 'Wir bewirtschaften eigene Felder und übernehmen verschiedenste Feldarbeiten.' },
-    ], products: ['Silageballen', 'Quaderstrohballen', 'Gemulchte Quaderstrohballen', 'Quaderheuballen, 100% Bio-Qualität'] }; }
+  renderVals() { return { products: ['Silageballen', 'Quaderstrohballen', 'Gemulchte Quaderstrohballen', 'Quaderheuballen, 100% Bio-Qualität'] }; }
+  _rollen() {
+    // Ballen rollen beim Scrollen von links ins Bild (Drehung passend zur Strecke), der Quaderballen kippt rein.
+    const vh = window.innerHeight;
+    this._ballen.forEach((el, i) => {
+      const r = el.parentElement.getBoundingClientRect();
+      const k = Math.max(0, Math.min(1, (vh - r.top - i * 40) / (vh * .55)));
+      const e = 1 - Math.pow(1 - k, 3), dx = (1 - e) * -(el.parentElement.offsetLeft + el.offsetWidth + 40);
+      if (el.dataset.ballen === 'quader') {
+        const tilt = (1 - e) * -90;
+        el.style.transformOrigin = '100% 100%';
+        el.style.transform = 'translateX(' + dx.toFixed(1) + 'px) rotate(' + tilt.toFixed(1) + 'deg)';
+      } else {
+        const rad = el.offsetWidth / 2, deg = dx / rad * 57.3;
+        el.style.transform = 'translateX(' + dx.toFixed(1) + 'px) rotate(' + deg.toFixed(1) + 'deg)';
+      }
+      const sh = el.parentElement.querySelector('.lw-schatten');
+      if (sh) { sh.style.transform = 'translateX(' + dx.toFixed(1) + 'px)'; sh.style.opacity = (.3 + e * .7).toFixed(2); }
+    });
+  }
   componentDidMount() {
+    this._ballen = Array.from(document.querySelectorAll('[data-ballen]'));
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let tick = false;
+      this._onRoll = () => { if (tick) return; tick = true; requestAnimationFrame(() => { tick = false; this._rollen(); }); };
+      window.addEventListener('scroll', this._onRoll, { passive: true }); window.addEventListener('resize', this._onRoll);
+      this._rollen();
+    }
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const EXPO = 'cubic-bezier(0.16, 1, 0.3, 1)';
     const lines = Array.from(document.querySelectorAll('[data-line]'));
@@ -106,7 +157,7 @@ class Component extends DCLogic {
     this._io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; this._io.unobserve(en.target); } }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     reveals.forEach(el => this._io.observe(el));
   }
-  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); window.removeEventListener('scroll', this._onRoll); window.removeEventListener('resize', this._onRoll); }
 }
 </script>
 </body>

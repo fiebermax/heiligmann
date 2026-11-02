@@ -20,6 +20,40 @@
   a { color: #2E7D32; }
   a:hover { color: #256b29; }
   ::selection { background: #388E3C; color: #fff; }
+  .erd-band { position:relative; }
+  .erd-sticky { padding:56px 0 72px; }
+  .erd-kopf { max-width:1200px; margin:0 auto 36px; padding:0 22px; }
+  .erd-kopf h2 { font-family:'Barlow'; font-weight:800; font-size:clamp(28px,3.8vw,44px); line-height:1.05; color:#1a1e25; margin:0 0 12px; letter-spacing:-.02em; }
+  .erd-kopf p { color:#55606b; margin:0; max-width:620px; }
+  .erd-track { display:flex; flex-direction:column; gap:56px; padding:0 22px; max-width:1200px; margin:0 auto; }
+  .erd-panel { display:grid; grid-template-columns:1fr; gap:22px; }
+  .erd-foto { position:relative; aspect-ratio:4/3; border-radius:6px; overflow:hidden; background:#E6E2D8; }
+  .erd-foto img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .erd-nr { display:block; font-family:'Barlow'; font-weight:800; font-size:clamp(64px,9vw,128px); line-height:.8; letter-spacing:-.04em; color:transparent; -webkit-text-stroke:1.5px #2E7D32; margin-bottom:18px; }
+  .erd-text h3 { font-family:'Barlow'; font-weight:800; font-size:clamp(28px,3.4vw,44px); line-height:1.02; letter-spacing:-.02em; color:#1a1e25; margin:0 0 14px; }
+  .erd-text p { color:#55606b; margin:0; font-size:18px; max-width:26em; }
+  .erd-weg { display:none; }
+  .erd-satz-wrap { background:#1F3A22; }
+  .erd-satz { max-width:1100px; margin:0 auto; padding:clamp(80px,12vw,150px) 22px; font-family:'Barlow'; font-weight:800; font-size:clamp(30px,4.6vw,60px); line-height:1.1; letter-spacing:-.02em; color:#F4EFE4; }
+  .erd-satz span { transition:color .25s linear; }
+  @media (min-width:960px) {
+    .erd-band { height:calc(100vh + 240vw); }
+    .erd-sticky { position:sticky; top:72px; height:calc(100vh - 72px); padding:40px 0 28px; display:flex; flex-direction:column; overflow:hidden; }
+    .erd-kopf { margin-bottom:28px; width:100%; }
+    .erd-track { flex-direction:row; flex:1; min-height:0; gap:6vw; max-width:none; margin:0; padding:0 calc((100vw - min(1200px,100vw)) / 2 + 22px); will-change:transform; }
+    .erd-panel { flex:none; width:min(72vw,1000px); height:100%; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:44px; align-items:center; }
+    .erd-foto { aspect-ratio:auto; height:100%; max-height:62vh; }
+    .erd-foto img { transform:scale(1.15); will-change:transform; }
+    .erd-weg { display:block; position:relative; max-width:1200px; width:calc(100% - 44px); margin:20px auto 0; height:34px; }
+    .erd-weg-linie { position:absolute; left:0; right:0; bottom:4px; height:3px; background:#e2ded3; border-radius:2px; overflow:hidden; }
+    #erd-weg-fill { height:100%; background:#2E7D32; transform-origin:left; transform:scaleX(0); }
+    .erd-bagger { position:absolute; left:0; bottom:6px; width:32px; height:32px; background:#E0661F; -webkit-mask:url(icons/excavator.svg) center/contain no-repeat; mask:url(icons/excavator.svg) center/contain no-repeat; will-change:transform; }
+  }
+  @media (max-width:959px) {
+    .erd-foto { clip-path:inset(0 0 100% 0); transition:clip-path 1s cubic-bezier(.16,1,.3,1); }
+    .erd-panel.is-in .erd-foto { clip-path:inset(0 0 0 0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .erd-foto { clip-path:none !important; } }
 </style>
 </helmet>
 <div style="background:#F6F4EE;color:#55606b;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
@@ -43,17 +77,55 @@
     </div>
   </section>
 
-  <section style="max-width:1200px;margin:0 auto;padding:56px 22px 88px;">
-    <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.8vw,44px);line-height:1.05;color:#1a1e25;margin:0 0 12px;letter-spacing:-.02em;">Das übernehmen wir für Sie</h2>
-    <p data-reveal style="color:#55606b;margin:0 0 40px;max-width:620px;">Von der Vorbereitung bis zur fertigen Fläche, alles aus einer Hand.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
-      <sc-for list="{{ items }}" as="s" hint-placeholder-count="4">
-        <article data-reveal style="background:#ffffff;border:1px solid #e6e8e4;border-radius:4px;padding:30px 26px;">
-          <h3 style="font-family:'Barlow';font-weight:700;font-size:22px;line-height:1.2;color:#1a1e25;margin:0 0 10px;">{{ s.title }}</h3>
-          <p style="color:#55606b;margin:0;font-size:16px;">{{ s.text }}</p>
+  <section id="erd-band" class="erd-band" aria-label="Das übernehmen wir für Sie">
+    <div class="erd-sticky">
+      <div class="erd-kopf">
+        <h2>Das übernehmen wir für Sie</h2>
+        <p>Von der Vorbereitung bis zur fertigen Fläche, alles aus einer Hand.</p>
+      </div>
+      <div class="erd-track" id="erd-track">
+        <article class="erd-panel">
+          <div class="erd-foto"><img src="assets/web/g16.jpg" alt="Ausgehobener Graben an einer Hauswand" loading="lazy" decoding="async"></div>
+          <div class="erd-text">
+            <span class="erd-nr" aria-hidden="true">01</span>
+            <h3>Erdarbeiten</h3>
+            <p>Aushub, Auffüllen und Geländemodellierung, sauber und termingerecht ausgeführt.</p>
+          </div>
         </article>
-      </sc-for>
+        <article class="erd-panel">
+          <div class="erd-foto"><img src="assets/pflaster2.jpg" alt="Frisch gepflasterte Hoffläche" loading="lazy" decoding="async"></div>
+          <div class="erd-text">
+            <span class="erd-nr" aria-hidden="true">02</span>
+            <h3>Pflasterarbeiten</h3>
+            <p>Einfahrten, Wege, Höfe und Terrassen, fachgerecht verlegt und dauerhaft belastbar.</p>
+          </div>
+        </article>
+        <article class="erd-panel">
+          <div class="erd-foto"><img src="assets/web/g17.jpg" alt="Bagger beim Abbruch an einem Gebäude" loading="lazy" decoding="async"></div>
+          <div class="erd-text">
+            <span class="erd-nr" aria-hidden="true">03</span>
+            <h3>Baggerarbeiten</h3>
+            <p>Vom Kompaktbagger bis zum großen Gerät, für Fundamente, Gräben und Aushub.</p>
+          </div>
+        </article>
+        <article class="erd-panel">
+          <div class="erd-foto"><img src="assets/web/g18.jpg" alt="Bagger bei Gartenarbeiten" loading="lazy" decoding="async"></div>
+          <div class="erd-text">
+            <span class="erd-nr" aria-hidden="true">04</span>
+            <h3>Gartenarbeiten</h3>
+            <p>Größere Garten- und Geländearbeiten rund um Haus und Grundstück.</p>
+          </div>
+        </article>
+      </div>
+      <div class="erd-weg" aria-hidden="true">
+        <div class="erd-weg-linie"><div id="erd-weg-fill"></div></div>
+        <span id="erd-bagger" class="erd-bagger"></span>
+      </div>
     </div>
+  </section>
+
+  <section class="erd-satz-wrap">
+    <p id="erd-satz" class="erd-satz">Über 35 Jahre im Baugeschäft. Wir kommen mit eigenem Gerät, arbeiten ordentlich und hinterlassen die Baustelle so, wie wir sie selbst vorfinden möchten.</p>
   </section>
 
   <section style="background:#EDEAE2;">
@@ -87,14 +159,26 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  renderVals() { return { items: [
-      { title: 'Erdarbeiten', text: 'Aushub, Auffüllen und Geländemodellierung, sauber und termingerecht ausgeführt.' },
-      { title: 'Pflasterarbeiten', text: 'Einfahrten, Wege, Höfe und Terrassen, fachgerecht verlegt und dauerhaft belastbar.' },
-      { title: 'Baggerarbeiten', text: 'Vom Kompaktbagger bis zum großen Gerät, für Fundamente, Gräben und Aushub.' },
-      { title: 'Gartenarbeiten', text: 'Größere Garten- und Geländearbeiten rund um Haus und Grundstück.' },
-    ], products: ['Einfahrten & Hofflächen', 'Wege & Terrassen', 'Sauberer Unterbau'] }; }
+  renderVals() { return { products: ['Einfahrten & Hofflächen', 'Wege & Terrassen', 'Sauberer Unterbau'] }; }
   componentDidMount() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    this._band = document.getElementById('erd-band'); this._track = document.getElementById('erd-track');
+    this._fill = document.getElementById('erd-weg-fill'); this._bagger = document.getElementById('erd-bagger');
+    this._imgs = Array.from(document.querySelectorAll('.erd-foto img'));
+    this._satz = document.getElementById('erd-satz');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this._satz && !reduced) {
+      this._satz.innerHTML = this._satz.textContent.split(' ').map(w => '<span>' + w + '</span>').join(' ');
+      this._satzWords = Array.from(this._satz.querySelectorAll('span'));
+    }
+    if (reduced && this._band) { this._band.style.height = 'auto'; const st = this._band.firstElementChild; st.style.position = 'static'; st.style.height = 'auto'; this._track.style.flexWrap = 'wrap'; }
+    let tick = false;
+    this._onErd = () => { if (tick) return; tick = true; requestAnimationFrame(() => { tick = false; this._erdScroll(); }); };
+    if (!reduced) { window.addEventListener('scroll', this._onErd, { passive: true }); window.addEventListener('resize', this._onErd); this._erdScroll(); }
+    if ('IntersectionObserver' in window) {
+      this._pio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); this._pio.unobserve(e.target); } }), { threshold: .25 });
+      document.querySelectorAll('.erd-panel').forEach(el => this._pio.observe(el));
+    }
+    if (reduced) return;
     const EXPO = 'cubic-bezier(0.16, 1, 0.3, 1)';
     const lines = Array.from(document.querySelectorAll('[data-line]'));
     lines.forEach(el => { el.style.transform = 'translateY(105%)'; });
@@ -106,7 +190,25 @@ class Component extends DCLogic {
     this._io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; this._io.unobserve(en.target); } }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     reveals.forEach(el => this._io.observe(el));
   }
-  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  _erdScroll() {
+    const band = this._band, track = this._track; if (!band || !track) return;
+    const vh = window.innerHeight, satz = this._satzWords;
+    if (satz && satz.length) {
+      const r = this._satz.getBoundingClientRect(), k = Math.max(0, Math.min(1, (vh * .85 - r.top) / (r.height + vh * .35)));
+      const n = Math.round(k * satz.length);
+      satz.forEach((w, i) => { w.style.color = i < n ? '#F4EFE4' : 'rgba(244,239,228,.22)'; });
+    }
+    if (window.innerWidth < 960) { track.style.transform = ''; band.style.height = ''; return; }
+    const max = track.scrollWidth - window.innerWidth;
+    const want = Math.round(max + vh); if (Math.abs(band.offsetHeight - want) > 2) band.style.height = want + 'px';
+    const r = band.getBoundingClientRect(), total = band.offsetHeight - (vh - 72);
+    const p = Math.max(0, Math.min(1, (72 - r.top) / Math.max(1, total)));
+    track.style.transform = 'translate3d(' + (-p * max).toFixed(1) + 'px,0,0)';
+    this._imgs.forEach((img, i) => { const c = img.parentElement.getBoundingClientRect(); const off = (c.left + c.width / 2 - window.innerWidth / 2) / window.innerWidth; img.style.transform = 'scale(1.15) translate3d(' + (off * -8).toFixed(2) + '%,0,0)'; });
+    if (this._fill) this._fill.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    if (this._bagger) { const w = this._bagger.parentElement.clientWidth - 32; this._bagger.style.transform = 'translateX(' + (p * w).toFixed(1) + 'px) rotate(' + (Math.sin(p * 60) * 2).toFixed(2) + 'deg)'; }
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._pio) this._pio.disconnect(); window.removeEventListener('scroll', this._onErd); window.removeEventListener('resize', this._onErd); }
 }
 </script>
 </body>
