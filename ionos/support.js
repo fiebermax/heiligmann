@@ -1149,7 +1149,8 @@
   function cdnScriptFor(url, sri) {
     const res = window.__resources;
     const v = res ? res[url] : void 0;
-    return typeof v === "string" && v ? { src: v } : { src: url, integrity: sri };
+    // Lokale Dateien: keine Integritätsprüfung (scheitert sonst an Windows-Zeilenenden).
+    return typeof v === "string" && v ? { src: v } : { src: url };
   }
 
   // src/external.ts
