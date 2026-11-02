@@ -35,6 +35,60 @@
     .hm-hero > div:last-child > div:first-child { aspect-ratio:16/10 !important; }
     #erdarbeiten [data-side], #herde [data-side], #hofladen [data-side] { aspect-ratio:16/10 !important; max-width:none !important; flex-basis:100% !important; }
   }
+  .st { background:#F1F1F0; margin-bottom:112px; }
+  .st-inner { max-width:1200px; margin:0 auto; padding:clamp(72px,9vw,112px) 22px; }
+  .st-kopf { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px; margin-bottom:40px; }
+  .st-kopf h2 { font-family:'Barlow'; font-weight:800; font-size:clamp(32px,4.6vw,52px); line-height:1.04; letter-spacing:-.02em; color:#1C1C1C; margin:0; }
+  .st-google { display:flex; align-items:center; gap:14px; background:#FFFFFF; border-radius:14px; padding:12px 18px; text-decoration:none; color:#1C1C1C; box-shadow:0 8px 24px rgba(28,28,28,.06); transition:transform .2s ease, box-shadow .2s ease; }
+  .st-google:hover { transform:translateY(-2px); box-shadow:0 14px 30px rgba(28,28,28,.10); color:#1C1C1C; }
+  .st-note { font-family:'Barlow'; font-weight:800; font-size:40px; line-height:1; }
+  .st-link { display:block; font-family:'Barlow'; font-weight:700; font-size:14px; margin-top:4px; }
+  .st-sterne { display:block; color:#C8201E; font-size:20px; letter-spacing:3px; line-height:1; }
+  .st-gross { margin:0 0 20px; display:grid; grid-template-columns:1fr; background:#FFFFFF; border-radius:18px; overflow:hidden; box-shadow:0 18px 44px rgba(28,28,28,.08); }
+  .st-gross-bild { position:relative; aspect-ratio:16/10; background:#E4E3E2; }
+  .st-gross-bild img, .st-karte-bild img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .st-gross-text { position:relative; padding:clamp(26px,4vw,52px); display:flex; flex-direction:column; justify-content:center; }
+  .st-gross blockquote { margin:18px 0 22px; font-family:'Barlow'; font-weight:600; font-size:clamp(20px,2.1vw,27px); line-height:1.4; color:#1C1C1C; letter-spacing:-.005em; }
+  .st figcaption strong { display:block; font-family:'Barlow'; font-weight:800; font-size:16px; color:#1C1C1C; }
+  .st figcaption span { display:block; font-family:'Barlow'; font-size:14px; color:#5E5C5B; margin-top:2px; }
+  .st-klein { display:grid; grid-template-columns:1fr; gap:20px; }
+  .st-karte { margin:0; display:grid; grid-template-columns:110px minmax(0,1fr); gap:20px; background:#FFFFFF; border-radius:18px; padding:18px; box-shadow:0 10px 28px rgba(28,28,28,.06); align-items:start; }
+  .st-karte-bild { position:relative; aspect-ratio:1/1; border-radius:12px; overflow:hidden; background:#E4E3E2; }
+  .st-karte blockquote { margin:10px 0 12px; font-size:16px; line-height:1.6; color:#1C1C1C; }
+  .st-hinweis { margin:22px 0 0; font-family:'Barlow'; font-size:13px; color:#6E6B6A; }
+  @media (min-width:900px) {
+    .st-gross { grid-template-columns:minmax(0,5fr) minmax(0,7fr); }
+    .st-gross-bild { aspect-ratio:auto; min-height:100%; }
+    .st-klein { grid-template-columns:1fr 1fr; }
+    .st-karte { grid-template-columns:140px minmax(0,1fr); padding:22px; }
+  }
+  @media (max-width:520px) {
+    .st-karte { grid-template-columns:1fr; }
+    .st-karte-bild { aspect-ratio:16/9; }
+  }
+  .hm-claim { display:flex; align-items:center; gap:14px; font-family:'Barlow'; font-weight:700; font-size:clamp(20px,2.2vw,26px); color:#1C1C1C; margin:0 0 28px; }
+  .hm-claim span { width:32px; height:3px; background:#C8201E; flex:none; }
+  @media (max-width: 700px) {
+    /* Handy: Foto füllt den ersten Bildschirm, Text liegt weiß darauf */
+    .hm-hero { position:relative; max-width:none !important; min-height:calc(100svh - 72px - 76px); padding:0 22px 28px !important; display:flex !important; flex-direction:column; justify-content:flex-end; overflow:hidden; gap:0 !important; }
+    .hm-hero > div:last-child { position:absolute !important; inset:0; z-index:0; opacity:1 !important; transform:none !important; }
+    .hm-hero > div:last-child > div:first-child { position:absolute !important; inset:0; aspect-ratio:auto !important; border-radius:0 !important; }
+    .hm-hero > div:last-child > div[data-drift] { display:none !important; }
+    .hm-hero::after { content:''; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(to top, rgba(18,18,18,.92) 0%, rgba(18,18,18,.72) 45%, rgba(18,18,18,.15) 75%, rgba(18,18,18,0) 100%); }
+    .hm-hero > div:first-child { position:relative; z-index:2; }
+    .hm-hero h1, .hm-hero .hm-h1-rot { color:#FFFFFF !important; }
+    .hm-hero .hm-claim { color:#FFFFFF; font-size:20px; margin-bottom:16px; }
+    .hm-hero h1 { font-size:36px !important; margin-bottom:14px !important; }
+    .hm-hero p[data-reveal]:not(.hm-claim) { display:none; }
+    .hm-hero > div:first-child > div:last-child { display:none !important; }
+    .hm-hero > div:first-child > div[data-reveal] { flex-wrap:nowrap !important; gap:10px !important; margin-bottom:0 !important; }
+    .hm-hero > div:first-child > div[data-reveal] a { flex:1; justify-content:center; padding:15px 10px !important; font-size:16px !important; white-space:nowrap; }
+    .hm-hero a[href^="tel:"] { border-color:#FFFFFF !important; color:#FFFFFF !important; }
+    .hm-hero [data-count], .hm-hero [data-count] + div { color:#FFFFFF !important; }
+    .hm-hero [data-count] + div { opacity:.8; }
+    .hm-hero > div:first-child > div:last-child { border-top-color:rgba(255,255,255,.25) !important; padding-top:16px !important; gap:14px 28px !important; }
+    .hm-hero > div:first-child > div[data-reveal]:nth-last-child(2) { margin-bottom:22px !important; }
+  }
   .hm-hero { grid-template-columns: 1fr; }
   @media (min-width: 900px) { .hm-hero { grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); } }
   .hz-scroll::-webkit-scrollbar { height: 6px; }
@@ -49,11 +103,11 @@
 
   <section id="top" class="hm-hero" style="max-width:1200px;margin:0 auto;padding:64px 22px 112px;display:grid;gap:56px;align-items:center;">
     <div>
-      <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(42px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;color:#1C1C1C;margin:0 0 32px;">
-        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;">Starke Hilfe für</span></span>
-        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#C8201E;">Haus, Hof</span></span>
-        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#C8201E;">und Garten.</span></span>
+      <h1 class="hm-h1" style="font-family:'Barlow';font-weight:800;font-size:clamp(34px,4.1vw,60px);line-height:.98;letter-spacing:-.03em;color:#1C1C1C;margin:0 0 22px;">
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;">Ihr Lohnunternehmen</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" class="hm-h1-rot" style="display:block;color:#C8201E;">im Landkreis Günzburg.</span></span>
       </h1>
+      <p class="hm-claim" data-reveal><span aria-hidden="true"></span>Für Haus, Hof und Garten.</p>
       <p data-reveal style="font-size:clamp(18px,2vw,20px);color:#5E5C5B;margin:0 0 36px;max-width:34em;">Familienbetrieb aus Freihalden bei Jettingen-Scheppach. Wir übernehmen Erd-, Bagger- und Pflasterarbeiten, größere Gartenprojekte und Transporte, mit eigenen Maschinen und über 35 Jahren Erfahrung im Baugeschäft.</p>
       <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px;">
         <a href="#kontakt" style="display:inline-flex;align-items:center;background:{{ ctaColor }};color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;padding:17px 28px;border-radius:4px;">Anfrage senden</a>
@@ -106,48 +160,35 @@
   </section>
 
 
-  <section id="stimmen" aria-labelledby="stimmen-h" style="max-width:1200px;margin:0 auto;padding:0 22px 128px;">
-    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:40px;">
-      <h2 id="stimmen-h" data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0;"><span data-slide="1" style="display:inline-block;will-change:transform;">Was unsere Kunden sagen</span></h2>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Lohnunternehmen+Helmut+Heiligmann+Freihalden" target="_blank" rel="noopener" data-reveal aria-label="5,0 von 5 Sternen auf Google, alle Bewertungen ansehen" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-family:'Barlow';color:#1C1C1C;text-decoration:none;padding:10px 16px;border:1.5px solid #DCDCDB;border-radius:4px;transition:border-color .2s,transform .2s;" style-hover="border-color:#1C1C1C;transform:translateY(-2px);">
-        <span style="font-weight:800;font-size:36px;line-height:1;">5,0</span>
-        <span aria-hidden="true" style="color:#C8201E;font-size:32px;line-height:1;letter-spacing:3px;">★★★★★</span>
-        <span style="font-size:16px;font-weight:700;border-bottom:2px solid #C8201E;padding-bottom:2px;">Alle Bewertungen auf Google</span>
-      </a>
+  <section id="stimmen" class="st" aria-labelledby="stimmen-h">
+    <div class="st-inner">
+      <div class="st-kopf">
+        <h2 id="stimmen-h" data-reveal>Was unsere Kunden sagen</h2>
+        <a class="st-google" data-reveal href="https://www.google.com/maps/search/?api=1&amp;query=Lohnunternehmen+Helmut+Heiligmann+Freihalden" target="_blank" rel="noopener" aria-label="5,0 von 5 Sternen auf Google, alle Bewertungen ansehen">
+          <span class="st-note">5,0</span>
+          <span><span class="st-sterne" aria-hidden="true">★★★★★</span><span class="st-link">Alle Bewertungen auf Google</span></span>
+        </a>
+      </div>
+      <figure class="st-gross" data-reveal>
+        <div class="st-gross-bild"><img data-no-reveal src="assets/review-wp.png" alt="Bagger belädt Anhänger am Neubau" loading="lazy" decoding="async"></div>
+        <div class="st-gross-text">
+          <span class="st-sterne" role="img" aria-label="5 von 5 Sternen">★★★★★</span>
+          <blockquote>Die Firma Helmut Heiligmann hat unseren Gartenumbau übernommen. Im abfallenden Gelände waren mit dem Bagger, Winkelsteine in mehreren Terrassen zu setzen. Alle Arbeiten wurden absolut genau, sauber und zügig ausgeführt. Eine ausgezeichnete und vor allem zuverlässige Firma, die ich guten Gewissens weiterempfehlen kann.</blockquote>
+          <figcaption><strong>W. P.</strong><span>Gartenumbau am Hang</span></figcaption>
+        </div>
+      </figure>
+      <div class="st-klein">
+        <figure class="st-karte" data-reveal>
+          <div class="st-karte-bild"><img data-no-reveal src="assets/review-ard.webp" alt="Neu gestaltete Einfahrt mit barrierefreiem Eingang" loading="lazy" decoding="async"></div>
+          <div class="st-karte-text"><span class="st-sterne" role="img" aria-label="5 von 5 Sternen">★★★★★</span><blockquote>Wir haben unsere Einfahrt und den Eingangsbereich neu machen lassen ! Alles zu unserer vollsten Zufriedenheit- in unser Haus kommt man jetzt barrierefrei, die zuvor bestehenden Ebenen sind Geschichte- und alles in Ultra- Geschwindigkeit gepflastert bzw &quot; geebnet&quot; Ein super nettes Team- mit genialen Ideen , die den Alltag leichter machen. Eine Firma ,die wir zu 100% empfehlen können!!!  Danke nochmal aufs Herzlichste!!</blockquote><figcaption><strong>A. &amp; R. D.</strong><span>Einfahrt &amp; Eingangsbereich</span></figcaption></div>
+        </figure>
+        <figure class="st-karte" data-reveal>
+          <div class="st-karte-bild"><img data-no-reveal src="assets/review-ah.png" alt="Neu angelegte Kiesfläche und Gelände am Haus" loading="lazy" decoding="async"></div>
+          <div class="st-karte-text"><span class="st-sterne" role="img" aria-label="5 von 5 Sternen">★★★★★</span><blockquote>Schnelle und saubere Arbeit.  Immer Kontakt bei irgendwelchen Veränderungen.  Gute Zusammenarbeit.  Fähre Preise.  Gerne wieder👍</blockquote><figcaption><strong>A. H.</strong><span>Google-Bewertung</span></figcaption></div>
+        </figure>
+      </div>
+      <p class="st-hinweis">Bewertungen von Google, im Originalwortlaut und in Originalschreibweise übernommen.</p>
     </div>
-    <div class="hm-swipe" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:14px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
-          <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
-            <img data-no-reveal src="assets/review-ard.webp" alt="Neu gestaltete Einfahrt mit barrierefreiem Eingang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
-            <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
-            <blockquote style="margin:0;color:#1C1C1C;font-size:17px;line-height:1.6;flex:1;">Wir haben unsere Einfahrt und den Eingangsbereich neu machen lassen ! Alles zu unserer vollsten Zufriedenheit- in unser Haus kommt man jetzt barrierefrei, die zuvor bestehenden Ebenen sind Geschichte- und alles in Ultra- Geschwindigkeit gepflastert bzw &quot; geebnet&quot; Ein super nettes Team- mit genialen Ideen , die den Alltag leichter machen. Eine Firma ,die wir zu 100% empfehlen können!!!  Danke nochmal aufs Herzlichste!!</blockquote>
-            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">A. & R. D.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Einfahrt & Eingangsbereich</span></figcaption>
-          </div>
-        </figure>
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:14px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
-          <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
-            <img data-no-reveal src="assets/review-ah.png" alt="Neu angelegte Kiesfläche und Gelände am Haus" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
-            <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
-            <blockquote style="margin:0;color:#1C1C1C;font-size:17px;line-height:1.6;flex:1;">Schnelle und saubere Arbeit.  Immer Kontakt bei irgendwelchen Veränderungen.  Gute Zusammenarbeit.  Fähre Preise.  Gerne wieder👍</blockquote>
-            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">A. H.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Google-Bewertung</span></figcaption>
-          </div>
-        </figure>
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:14px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
-          <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
-            <img data-no-reveal src="assets/review-wp.png" alt="Bagger belädt Anhänger am Neubau" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
-            <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
-            <blockquote style="margin:0;color:#1C1C1C;font-size:17px;line-height:1.6;flex:1;">Die Firma Helmut Heiligmann hat unseren Gartenumbau übernommen. Im abfallenden Gelände waren mit dem Bagger, Winkelsteine in mehreren Terrassen zu setzen. Alle Arbeiten wurden absolut genau, sauber und zügig ausgeführt. Eine ausgezeichnete und vor allem zuverlässige Firma, die ich guten Gewissens weiterempfehlen kann.</blockquote>
-            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">W. P.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Gartenumbau am Hang</span></figcaption>
-          </div>
-        </figure>
-    </div>
-    <p style="margin:20px 0 0;font-family:'Barlow';font-size:14px;color:#5E5C5B;">Bewertungen von Google, im Originalwortlaut und in Originalschreibweise übernommen.</p>
   </section>
 
 
