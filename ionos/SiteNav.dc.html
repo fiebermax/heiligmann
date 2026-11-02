@@ -27,8 +27,10 @@
     img.hm-kb { animation: hm-kb 22s ease-in-out infinite alternate; }
     @keyframes hm-kb { from { transform: scale(1); } to { transform: scale(1.08) translate3d(-1%, -1%, 0); } }
   }
-  @keyframes hm-tuck { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-1.5px) rotate(-1.5deg); } }
-  .hm-tractor.is-driving { animation: hm-tuck .32s ease-in-out infinite; }
+  .hm-facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:28px 40px; margin:0; padding:0; list-style:none; }
+  .hm-facts li { border-top:2px solid currentColor; padding-top:16px; }
+  .hm-facts .n { display:block; font-family:'Barlow',sans-serif; font-weight:800; font-size:clamp(40px,5vw,64px); line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+  .hm-facts .l { display:block; margin-top:10px; font-size:16px; line-height:1.45; opacity:.8; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   }
@@ -36,7 +38,6 @@
 </helmet>
 <header ref="{{ headerRef }}" style="view-transition-name:site-header;position:sticky;top:0;z-index:50;background:{{ headerBg }};backdrop-filter:blur(14px);border-bottom:1px solid {{ lineCol }};transition:box-shadow .3s ease,background .3s ease;font-family:'Source Serif 4',Georgia,serif;">
   <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;height:3px;pointer-events:none;"><div ref="{{ trackRef }}" style="height:100%;background:#C8201E;transform:scaleX(0);transform-origin:left center;will-change:transform;"></div></div>
-  <div aria-hidden="true" ref="{{ tractorRef }}" style="position:absolute;left:0;bottom:2px;width:26px;height:26px;pointer-events:none;opacity:0;will-change:transform,opacity;transition:opacity .25s ease;"><span class="hm-tractor" style="display:block;width:100%;height:100%;background:#C8201E;-webkit-mask:url(icons/tractor-variant.svg) center/contain no-repeat;mask:url(icons/tractor-variant.svg) center/contain no-repeat;"></span></div>
   <div style="max-width:1200px;margin:0 auto;padding:12px max(22px, env(safe-area-inset-right)) 12px max(22px, env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:16px;">
     <a href="./" style="display:inline-flex;align-items:center;text-decoration:none;">
       <img src="logo.svg" alt="Lohnunternehmen Helmut Heiligmann" style="height:46px;display:block;" />
@@ -85,7 +86,6 @@ class Component extends DCLogic {
       lineCol: this.props.line ?? '#E7E7E6',
       headerRef: (el) => { this._header = el; },
       trackRef: (el) => { this._track = el; },
-      tractorRef: (el) => { this._tractor = el; },
       deskNavRef: (el) => { this._deskNav = el; },
       burgerRef: (el) => { this._burger = el; },
       mobileMenuRef: (el) => { this._menu = el; },
@@ -94,6 +94,9 @@ class Component extends DCLogic {
     };
   }
   componentDidMount() {
+    // Beim Seitenwechsel immer oben anfangen (außer bei Sprungmarken wie #kontakt)
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (!location.hash) window.scrollTo(0, 0);
     this._reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const applyResponsive = () => {
       const mobile = window.innerWidth < 1080;
@@ -108,19 +111,6 @@ class Component extends DCLogic {
       if (this._track) {
         const max = document.documentElement.scrollHeight - window.innerHeight;
         this._track.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
-      }
-      if (this._tractor) {
-        // Kleiner Traktor fährt mit dem Fortschrittsbalken mit; über Logo und Menüknopf wird er ausgeblendet.
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
-        const w = this._header.clientWidth, x = p * w - 26;
-        const logo = this._header.querySelector('a img')?.getBoundingClientRect();
-        const burger = this._burger && this._burger.style.display !== 'none' ? this._burger.getBoundingClientRect() : null;
-        const hide = p <= 0 || (logo && x < logo.right + 6) || (burger && x + 26 > burger.left - 6);
-        this._tractor.style.transform = 'translateX(' + Math.max(0, x).toFixed(1) + 'px)';
-        this._tractor.style.opacity = hide ? '0' : '1';
-        const t = this._tractor.firstChild;
-        if (t && !this._reduced) { t.classList.add('is-driving'); clearTimeout(this._stopT); this._stopT = setTimeout(() => t.classList.remove('is-driving'), 160); }
       }
       this._header.style.background = this.props.bg ?? 'rgba(255,255,255,0.95)';
     };
@@ -147,13 +137,22 @@ class Component extends DCLogic {
         if (seen.has(img)) return; seen.add(img);
         const src = img.getAttribute('src') || '';
         if (!src || /\.svg$/.test(src) || src.includes('{{')) return;
-        if (img.closest('header, footer, .gal-lb, .gal-cell, .erd-foto, [data-no-reveal]') || img.style.animation) return;
+        if (img.hasAttribute('data-no-reveal') || img.closest('header, footer, .gal-lb, .gal-cell, .erd-foto, [data-no-reveal]') || img.style.animation) return;
         // Beobachtet wird der Rahmen: ein ganz abgedecktes Bild zählt für den Browser als unsichtbar.
         const box = img.parentElement; if (!box || box.__hmImg) return;
         img.classList.add(img.dataset.parallax ? 'hm-phc' : 'hm-ph');
         box.__hmImg = img; io.observe(box);
       });
       requestAnimationFrame(scan); setTimeout(scan, 800);
+      // Key Facts: Zahlen mit data-countup zählen hoch, sobald sie sichtbar werden
+      const cio = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return; cio.unobserve(e.target);
+        const el = e.target, to = +el.dataset.countup, from = +(el.dataset.from || 0), suf = el.dataset.suffix || '', t0 = performance.now(), dur = 1800;
+        const step = t => { const k = Math.min(1, (t - t0) / dur), q = 1 - Math.pow(1 - k, 4); el.textContent = Math.round(from + (to - from) * q) + suf; if (k < 1) requestAnimationFrame(step); };
+        requestAnimationFrame(step);
+      }), { threshold: .6 });
+      const scanCount = () => document.querySelectorAll('[data-countup]').forEach(el => { if (el.__hmc) return; el.__hmc = 1; el.textContent = (el.dataset.from || 0) + (el.dataset.suffix || ''); cio.observe(el); });
+      requestAnimationFrame(scanCount); setTimeout(scanCount, 800);
       this._photoIo = io;
     }
     this._cleanup = () => { window.removeEventListener('resize', applyResponsive); window.removeEventListener('scroll', onScroll); };

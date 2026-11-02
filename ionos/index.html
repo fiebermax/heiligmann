@@ -22,6 +22,8 @@
   @keyframes mach-in { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) { img { animation: none !important; } }
   ::selection { background: #C8201E; color: #fff; }
+  .hm-hero { grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .hm-hero { grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); } }
   .hz-scroll::-webkit-scrollbar { height: 6px; }
   .hz-scroll::-webkit-scrollbar-thumb { background: #C9C9C8; border-radius: 3px; }
   .hz-scroll::-webkit-scrollbar-track { background: transparent; }
@@ -32,7 +34,7 @@
 
   <dc-import name="SiteNav" style="position:sticky;top:0;z-index:60;" active="home" cta-color="{{ ctaColor }}" trust-color="{{ trustColor }}" hint-size="100%,72px"></dc-import>
 
-  <section id="top" style="max-width:1200px;margin:0 auto;padding:64px 22px 112px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:64px;align-items:center;">
+  <section id="top" class="hm-hero" style="max-width:1200px;margin:0 auto;padding:64px 22px 112px;display:grid;gap:56px;align-items:center;">
     <div>
       <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(42px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;color:#1C1C1C;margin:0 0 32px;">
         <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;">Starke Hilfe für</span></span>
@@ -54,10 +56,10 @@
       </div>
     </div>
     <div data-reveal style="position:relative;">
-      <div style="position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:#F3F3F2;">
+      <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#F3F3F2;">
         <img data-parallax="1" src="assets/web/g02.jpg" alt="Schlepper mit grünem Kippanhänger im Morgennebel" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
       </div>
-      <div data-drift="-40" style="position:absolute;bottom:-32px;left:-32px;width:170px;height:170px;will-change:transform;border-radius:4px;overflow:hidden;border:6px solid #FFFFFF;background:#F3F3F2;">
+      <div data-drift="-30" style="position:absolute;bottom:-28px;left:-28px;width:130px;height:130px;will-change:transform;border-radius:14px;overflow:hidden;border:6px solid #FFFFFF;background:#F3F3F2;">
         <img src="assets/web/g11.jpg" alt="Bagger beim Aushub für einen Pool im Garten" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
@@ -101,9 +103,9 @@
       </a>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
+        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:14px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
           <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
-            <img src="assets/review-ard.webp" alt="Neu gestaltete Einfahrt mit barrierefreiem Eingang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img data-no-reveal src="assets/review-ard.webp" alt="Neu gestaltete Einfahrt mit barrierefreiem Eingang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
             <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
@@ -111,9 +113,9 @@
             <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">A. & R. D.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Einfahrt & Eingangsbereich</span></figcaption>
           </div>
         </figure>
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
+        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:14px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
           <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
-            <img src="assets/review-ah.png" alt="Neu angelegte Kiesfläche und Gelände am Haus" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img data-no-reveal src="assets/review-ah.png" alt="Neu angelegte Kiesfläche und Gelände am Haus" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
             <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
@@ -121,9 +123,9 @@
             <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">A. H.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Google-Bewertung</span></figcaption>
           </div>
         </figure>
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
+        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:14px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
           <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
-            <img src="assets/review-wp.png" alt="Bagger belädt Anhänger am Neubau" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img data-no-reveal src="assets/review-wp.png" alt="Bagger belädt Anhänger am Neubau" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
             <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
@@ -147,8 +149,8 @@
     </section>
     <section id="erdarbeiten" style="max-width:1200px;margin:0 auto;padding:0 22px clamp(88px,11vw,144px);">
       <div style="display:flex;flex-wrap:wrap;gap:48px 72px;align-items:center;">
-        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:440px;min-width:0;position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:#F3F3F2;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(28,28,28,.18);">
-          <img data-parallax="1" src="assets/web/g18.jpg" alt="Bagger bei Gartenarbeiten" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
+        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:460px;min-width:0;position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#F3F3F2;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(28,28,28,.18);">
+          <img data-parallax="1" src="assets/web/g09.jpg" alt="Kompaktbagger und Schlepper mit Anhänger auf einer Kiesfläche" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
         </div>
         <div data-reveal style="flex:6 1 360px;min-width:0;">
           <span data-spin="1" style="display:inline-block;will-change:transform;transform-origin:30% 70%;"><span role="img" aria-label="Bagger" style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:14px;background:#C8201E;margin-bottom:24px;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:rotate(-6deg) scale(1.06);"><span style="display:block;width:42px;height:42px;background:#FFFFFF;-webkit-mask:url(icons/excavator.svg) center/contain no-repeat;mask:url(icons/excavator.svg) center/contain no-repeat;"></span></span></span>
@@ -180,7 +182,7 @@
             <a href="landwirtschaft.html" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#FFFFFF;border-bottom:2px solid #FFFFFF;padding-bottom:2px;" style-hover="color:#D9D8D7;">Ballenpressen und Silage-Transport</a>
           </div>
         </div>
-        <div data-reveal data-side="right" style="flex:5 1 300px;min-width:0;position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#363433;">
+        <div data-reveal data-side="right" style="flex:5 1 300px;min-width:0;position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#363433;">
           <img data-parallax="1" src="assets/web/g24.jpg" alt="Schlepper mit Strohballen bei Sonnenuntergang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
         </div>
       </div>
@@ -188,7 +190,7 @@
 
     <section id="herde" style="max-width:1200px;margin:0 auto;padding:clamp(88px,11vw,144px) 22px 0;">
       <div style="display:flex;flex-wrap:wrap;gap:48px 72px;align-items:center;">
-        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:440px;min-width:0;position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:#F3F3F2;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(28,28,28,.18);">
+        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:460px;min-width:0;position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#F3F3F2;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(28,28,28,.18);">
           <img data-parallax="1" src="assets/web/g05.jpg" alt="Angusrinder fressen aus der Hand" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
         </div>
         <div data-reveal style="flex:6 1 360px;min-width:0;">
@@ -217,7 +219,7 @@
         <sc-for list="{{ machines }}" as="m" hint-placeholder-count="4">
           <div role="row" style="border-bottom:1px solid #DCDCDB;">
             <sc-if value="{{ m.showImg }}" hint-placeholder-val="{{ false }}">
-              <img src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin-top:16px;border-radius:4px;" />
+              <img src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin-top:16px;border-radius:14px;" />
             </sc-if>
             <button type="button" onClick="{{ m.select }}" onMouseEnter="{{ m.select }}" onFocus="{{ m.select }}" aria-pressed="{{ m.pressed }}" style="display:grid;grid-template-columns:{{ machRowCols }};gap:6px 24px;width:100%;text-align:left;padding:20px 16px;background:{{ m.bg }};color:{{ m.fg }};border:0;cursor:pointer;font:inherit;align-items:baseline;transition:background .2s ease,color .2s ease;">
               <span role="cell" style="font-family:'Barlow';font-weight:800;font-size:clamp(20px,2vw,24px);line-height:1.15;">{{ m.title }}</span>
@@ -229,8 +231,8 @@
       </div>
       <sc-if value="{{ showPanel }}" hint-placeholder-val="{{ false }}">
         <figure style="margin:0;position:sticky;top:96px;">
-          <img key="{{ active.img }}" src="{{ active.img }}" alt="{{ active.alt }}" style="animation:mach-in .5s cubic-bezier(.16,1,.3,1);transition:opacity .3s;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#F3F3F2;border-radius:4px;" />
-          <figcaption style="padding-top:12px;font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">{{ active.title }}</figcaption>
+          <img key="{{ active.img }}" src="{{ active.img }}" alt="{{ active.alt }}" style="animation:mach-in .5s cubic-bezier(.16,1,.3,1);transition:opacity .3s;display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#F3F3F2;border-radius:14px;box-shadow:0 18px 40px rgba(28,28,28,.10);" />
+          <figcaption style="display:flex;align-items:center;gap:10px;padding-top:14px;font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;"><span style="width:18px;height:2px;background:#C8201E;"></span>{{ active.title }}</figcaption>
         </figure>
       </sc-if>
     </div>
@@ -249,7 +251,7 @@
           <a href="mailto:Lohnunternehmen.heiligmann@gmx.de" style="color:#1C1C1C;word-break:break-word;">Lohnunternehmen.heiligmann@gmx.de</a>
           <span style="color:#1C1C1C;">Oberfeldstraße 15, 89343 Freihalden</span>
         </div>
-        <div style="border-radius:4px;overflow:hidden;">
+        <div style="border-radius:14px;overflow:hidden;">
           <sc-if value="{{ mapOn }}" hint-placeholder-val="{{ false }}">
             <iframe title="Karte: Hof in Freihalden" src="https://maps.google.com/maps?q=Oberfeldstra%C3%9Fe%2015%2C%2089343%20Jettingen-Scheppach&z=14&output=embed" style="display:block;width:100%;height:260px;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </sc-if>
@@ -359,7 +361,7 @@ class Component extends DCLogic {
       heroStats: [
         { num: '35+', label: 'Jahre im Baugeschäft' },
         { num: '2011', label: 'eigener Hof in Freihalden' },
-        { num: 'Bio', label: 'Heu, Stroh und Silage' },
+        { num: '100 %', label: 'Bio-Qualität bei Heu, Stroh und Silage' },
       ],
       serviceList: this._tabs(erd).tabItems || [
         { href: erd, no: '01', title: 'Erd- & Baggerarbeiten', text: 'Aushub für Fundamente, Gräben und Einfahrten.' },
@@ -469,14 +471,20 @@ class Component extends DCLogic {
         el.style.transform = 'none';
       });
     });
-    // Zahlen in der Hero-Leiste hochzählen lassen (35+ und 2011)
-    document.querySelectorAll('[data-count]').forEach((el, i) => {
+    // Kennzahlen hochzählen, sobald sie sichtbar sind
+    const counters = Array.from(document.querySelectorAll('[data-count]'));
+    const countUp = (el, i) => {
       const m = /^(\d+)(.*)$/.exec(el.dataset.count || ''); if (!m) return;
-      const to = +m[1], from = to > 1000 ? to - 25 : 0, suffix = m[2], t0 = performance.now() + 500 + i * 150, dur = 1400;
+      const to = +m[1], from = to > 1000 ? to - 40 : 0, suffix = m[2], t0 = performance.now() + i * 180, dur = 2000;
       el.textContent = from + suffix;
-      const step = t => { const k = Math.max(0, Math.min(1, (t - t0) / dur)), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(from + (to - from) * e) + suffix; if (k < 1) requestAnimationFrame(step); };
+      const step = t => { const k = Math.max(0, Math.min(1, (t - t0) / dur)), e = 1 - Math.pow(1 - k, 4); el.textContent = Math.round(from + (to - from) * e) + suffix; if (k < 1) requestAnimationFrame(step); };
       requestAnimationFrame(step);
-    });
+    };
+    if ('IntersectionObserver' in window) {
+      counters.forEach(el => { const m = /^(\d+)(.*)$/.exec(el.dataset.count || ''); if (m) el.textContent = (+m[1] > 1000 ? +m[1] - 40 : 0) + m[2]; });
+      const cio = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { counters.forEach(countUp); cio.disconnect(); } }, { threshold: .6 });
+      if (counters[0]) cio.observe(counters[0].parentElement.parentElement);
+    }
     this._px = Array.from(document.querySelectorAll('[data-parallax]'));
     this._dr = Array.from(document.querySelectorAll('[data-drift]'));
     this._sl = Array.from(document.querySelectorAll('[data-slide]'));
