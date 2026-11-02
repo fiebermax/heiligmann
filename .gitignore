@@ -1,1 +1,7 @@
 vorschau/
+# Wird auf dem Server von der Galerie-Verwaltung erzeugt, nicht ins Repo
+ionos/data/galerie.json
+ionos/data/galerie.json.tmp
+ionos/uploads/galerie/*
+ionos/verwaltung/passwort.php
+!ionos/uploads/galerie/.gitkeep

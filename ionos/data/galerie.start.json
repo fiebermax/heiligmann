@@ -1,0 +1,200 @@
+{
+ "kategorien": [
+  {
+   "id": "erd",
+   "titel": "Erd- & Baggerarbeiten"
+  },
+  {
+   "id": "land",
+   "titel": "Landwirtschaft & Maschinen"
+  },
+  {
+   "id": "angus",
+   "titel": "Angus-Herde & Hof"
+  }
+ ],
+ "bilder": [
+  {
+   "id": "g10",
+   "bild": "assets/web/g10.jpg",
+   "vorschau": "assets/web/g10.jpg",
+   "alt": "Bagger belädt Anhänger an einem Neubau",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g11",
+   "bild": "assets/web/g11.jpg",
+   "vorschau": "assets/web/g11.jpg",
+   "alt": "Bagger beim Aushub für einen Pool im Garten",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g13",
+   "bild": "assets/web/g13.jpg",
+   "vorschau": "assets/web/g13.jpg",
+   "alt": "Erd- und Baggerarbeiten, Foto",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g17",
+   "bild": "assets/web/g17.jpg",
+   "vorschau": "assets/web/g17.jpg",
+   "alt": "Erd- und Baggerarbeiten, Foto",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g18",
+   "bild": "assets/web/g18.jpg",
+   "vorschau": "assets/web/g18.jpg",
+   "alt": "Bagger bei Gartenarbeiten",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g08",
+   "bild": "assets/web/g08.jpg",
+   "vorschau": "assets/web/g08.jpg",
+   "alt": "Erd- und Baggerarbeiten, Foto",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g09",
+   "bild": "assets/web/g09.jpg",
+   "vorschau": "assets/web/g09.jpg",
+   "alt": "Erd- und Baggerarbeiten, Foto",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g16",
+   "bild": "assets/web/g16.jpg",
+   "vorschau": "assets/web/g16.jpg",
+   "alt": "Erd- und Baggerarbeiten, Foto",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g25",
+   "bild": "assets/web/g25.jpg",
+   "vorschau": "assets/web/g25.jpg",
+   "alt": "Erd- und Baggerarbeiten, Foto",
+   "kategorie": "erd"
+  },
+  {
+   "id": "g02",
+   "bild": "assets/web/g02.jpg",
+   "vorschau": "assets/web/g02.jpg",
+   "alt": "Schlepper mit grünem Kippanhänger im Morgennebel",
+   "kategorie": "land"
+  },
+  {
+   "id": "g03",
+   "bild": "assets/web/g03.jpg",
+   "vorschau": "assets/web/g03.jpg",
+   "alt": "Ballenpresse auf dem Feld",
+   "kategorie": "land"
+  },
+  {
+   "id": "g21",
+   "bild": "assets/web/g21.jpg",
+   "vorschau": "assets/web/g21.jpg",
+   "alt": "Silageballen auf der Wiese",
+   "kategorie": "land"
+  },
+  {
+   "id": "g22",
+   "bild": "assets/web/g22.jpg",
+   "vorschau": "assets/web/g22.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g24",
+   "bild": "assets/web/g24.jpg",
+   "vorschau": "assets/web/g24.jpg",
+   "alt": "Schlepper mit Strohballen bei Sonnenuntergang",
+   "kategorie": "land"
+  },
+  {
+   "id": "g14",
+   "bild": "assets/web/g14.jpg",
+   "vorschau": "assets/web/g14.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g20",
+   "bild": "assets/web/g20.jpg",
+   "vorschau": "assets/web/g20.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g23",
+   "bild": "assets/web/g23.jpg",
+   "vorschau": "assets/web/g23.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g01",
+   "bild": "assets/web/g01.jpg",
+   "vorschau": "assets/web/g01.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g04",
+   "bild": "assets/web/g04.jpg",
+   "vorschau": "assets/web/g04.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g12",
+   "bild": "assets/web/g12.jpg",
+   "vorschau": "assets/web/g12.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g15",
+   "bild": "assets/web/g15.jpg",
+   "vorschau": "assets/web/g15.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g19",
+   "bild": "assets/web/g19.jpg",
+   "vorschau": "assets/web/g19.jpg",
+   "alt": "Landwirtschaft und Maschinen, Foto",
+   "kategorie": "land"
+  },
+  {
+   "id": "g05",
+   "bild": "assets/web/g05.jpg",
+   "vorschau": "assets/web/g05.jpg",
+   "alt": "Angusrinder fressen aus der Hand",
+   "kategorie": "angus"
+  },
+  {
+   "id": "g06",
+   "bild": "assets/web/g06.jpg",
+   "vorschau": "assets/web/g06.jpg",
+   "alt": "Angus-Herde auf der Weide",
+   "kategorie": "angus"
+  },
+  {
+   "id": "g07",
+   "bild": "assets/web/g07.jpg",
+   "vorschau": "assets/web/g07.jpg",
+   "alt": "Angusrind auf der Weide am Hang",
+   "kategorie": "angus"
+  },
+  {
+   "id": "angusweide",
+   "bild": "assets/angus-weide.jpg",
+   "vorschau": "assets/angus-weide.jpg",
+   "alt": "Angusrinder auf der Weide",
+   "kategorie": "angus"
+  }
+ ]
+}

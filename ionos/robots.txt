@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /verwaltung/
 
 Sitemap: https://lohnunternehmen-heiligmann.de/sitemap.xml

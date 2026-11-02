@@ -47,7 +47,7 @@
       <div data-reveal style="display:flex;flex-wrap:wrap;gap:20px 40px;border-top:1px solid #dcd8cd;padding-top:22px;">
         <sc-for list="{{ heroStats }}" as="st" hint-placeholder-count="3">
           <div>
-            <div style="font-family:'Barlow';font-weight:800;font-size:28px;color:#1a1e25;line-height:1;transition:color .2s,transform .3s cubic-bezier(.34,1.56,.64,1);transform-origin:left bottom;" style-hover="color:#2E7D32;transform:scale(1.12);">{{ st.num }}</div>
+            <div data-count="{{ st.num }}" style="font-family:'Barlow';font-weight:800;font-size:28px;color:#1a1e25;line-height:1;font-variant-numeric:tabular-nums;transition:color .2s,transform .3s cubic-bezier(.34,1.56,.64,1);transform-origin:left bottom;" style-hover="color:#2E7D32;transform:scale(1.12);">{{ st.num }}</div>
             <div style="color:#5f6872;font-size:15px;margin-top:6px;">{{ st.label }}</div>
           </div>
         </sc-for>
@@ -418,8 +418,10 @@ class Component extends DCLogic {
     }, this._dur);
   }
   _stopAuto() { this._autoOn = false; clearTimeout(this._autoT); this._resetProg(false); }
-  componentDidUpdate(_, prev) {
-    if ((prev.tab || 'erd') === (this.state.tab || 'erd')) return;
+  componentDidUpdate() {
+    const tab = this.state.tab || 'erd';
+    if ((this._lastTab || 'erd') === tab) return;
+    this._lastTab = tab;
     if (!this._reduced) {
       const rows = Array.from(this._panelEl?.querySelectorAll('[data-svc]') || []);
       rows.forEach((r, i) => { r.style.opacity = '1'; r.style.transform = 'none'; r.animate && r.animate([{ opacity: 0, transform: 'translateY(18px)' }, { opacity: 1, transform: 'none' }], { duration: 560, delay: i * 70, easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'backwards' }); });
@@ -466,6 +468,14 @@ class Component extends DCLogic {
         el.style.transition = 'transform 900ms ' + EXPO + ' ' + (120 + i * 80) + 'ms';
         el.style.transform = 'none';
       });
+    });
+    // Zahlen in der Hero-Leiste hochzählen lassen (35+ und 2011)
+    document.querySelectorAll('[data-count]').forEach((el, i) => {
+      const m = /^(\d+)(.*)$/.exec(el.dataset.count || ''); if (!m) return;
+      const to = +m[1], from = to > 1000 ? to - 25 : 0, suffix = m[2], t0 = performance.now() + 500 + i * 150, dur = 1400;
+      el.textContent = from + suffix;
+      const step = t => { const k = Math.max(0, Math.min(1, (t - t0) / dur)), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(from + (to - from) * e) + suffix; if (k < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
     });
     this._px = Array.from(document.querySelectorAll('[data-parallax]'));
     this._dr = Array.from(document.querySelectorAll('[data-drift]'));
