@@ -1,0 +1,2 @@
+# Keine Zeilenend-Umwandlung (sonst schlagen die Integritätsprüfungen der JS-Dateien unter Windows fehl)
+* -text

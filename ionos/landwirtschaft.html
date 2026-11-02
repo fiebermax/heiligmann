@@ -15,38 +15,34 @@
 <style>
   * { box-sizing: border-box; }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-  a:focus-visible, button:focus-visible { outline: 2px solid #2E7D32; outline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #C8201E; outline-offset: 3px; }
   body { margin: 0; }
-  a { color: #2E7D32; }
-  a:hover { color: #256b29; }
-  ::selection { background: #388E3C; color: #fff; }
-  .lw-ballen { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:48px 32px; }
-  .lw-buehne { position:relative; height:200px; display:flex; align-items:flex-end; justify-content:center; margin-bottom:26px; border-bottom:3px solid #d9d2bf; }
-  .lw-buehne::after { content:''; position:absolute; left:0; right:0; bottom:-12px; height:9px; background:repeating-linear-gradient(90deg,#c9b98e 0 2px,transparent 2px 9px); opacity:.7; }
-  .lw-ballen-form { position:relative; z-index:1; will-change:transform; }
-  .lw-ballen-form svg { display:block; width:100%; height:100%; }
-  .lw-rund, .lw-silage { width:170px; height:170px; }
-  .lw-quader { width:220px; height:138px; }
-  .lw-schatten { position:absolute; bottom:-6px; left:50%; width:150px; height:14px; margin-left:-75px; background:radial-gradient(closest-side,rgba(60,50,20,.28),transparent); }
-  .lw-ballen-item h3 { font-family:'Barlow'; font-weight:800; font-size:26px; line-height:1.15; color:#1a1e25; margin:0 0 8px; }
-  .lw-ballen-item p { color:#55606b; margin:0; font-size:17px; max-width:24em; }
+  a { color: #C8201E; }
+  a:hover { color: #A31A18; }
+  ::selection { background: #C8201E; color: #fff; }
+  .lw-ballen { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:44px 28px; }
+  .lw-foto { position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#E4E3E2; margin-bottom:22px; }
+  .lw-foto img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:transform .9s cubic-bezier(.16,1,.3,1); }
+  @media (hover:hover) { .lw-ballen-item:hover .lw-foto img { transform:scale(1.05); } }
+  .lw-ballen-item h3 { font-family:'Barlow'; font-weight:800; font-size:26px; line-height:1.15; color:#1C1C1C; margin:0 0 8px; }
+  .lw-ballen-item p { color:#5E5C5B; margin:0; font-size:17px; max-width:24em; }
 </style>
 </helmet>
-<div style="background:#F6F4EE;color:#55606b;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
+<div style="background:#FFFFFF;color:#5E5C5B;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
   <dc-import name="SiteNav" style="position:sticky;top:0;z-index:60;" active="lw" hint-size="100%,72px"></dc-import>
 
   <section style="max-width:1200px;margin:0 auto;padding:60px 22px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center;">
     <div>
-      <nav aria-label="Brotkrümel" style="display:flex;gap:8px;font-family:'Barlow';font-size:15px;color:#55606b;margin-bottom:20px;"><a href="./" style="color:#55606b;text-decoration:none;">Start</a><span aria-hidden="true">/</span><span aria-current="page">Landwirtschaftliche Leistungen</span></nav>
-      <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(38px,5.6vw,68px);line-height:.98;letter-spacing:-.025em;color:#1a1e25;margin:0 0 24px;">
+      <nav aria-label="Brotkrümel" style="display:flex;gap:8px;font-family:'Barlow';font-size:15px;color:#5E5C5B;margin-bottom:20px;"><a href="./" style="color:#5E5C5B;text-decoration:none;">Start</a><span aria-hidden="true">/</span><span aria-current="page">Landwirtschaftliche Leistungen</span></nav>
+      <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(38px,5.6vw,68px);line-height:.98;letter-spacing:-.025em;color:#1C1C1C;margin:0 0 24px;">
         <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;">Landwirtschaftliche</span></span>
-        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#2E7D32;">Leistungen</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#C8201E;">Leistungen</span></span>
       </h1>
-      <p data-reveal style="font-size:clamp(17px,2vw,20px);color:#55606b;margin:0 0 18px;max-width:34em;">Landwirtschaftliche Arbeiten gehören schon lange zu unserem Geschäft und bereiten uns stets große Freude. Wir bieten verschiedenste Leistungen wie Ballenpressen, Silage-Transport und vieles mehr an, dafür haben wir die passenden Landmaschinen.</p>
-      <p data-reveal style="color:#55606b;margin:0 0 32px;font-size:16px;max-width:34em;">Außerdem bewirtschaften wir eigene Felder und betreiben Stroh- und Heuhandel.</p>
+      <p data-reveal style="font-size:clamp(17px,2vw,20px);color:#5E5C5B;margin:0 0 18px;max-width:34em;">Landwirtschaftliche Arbeiten gehören schon lange zu unserem Geschäft und bereiten uns stets große Freude. Wir bieten verschiedenste Leistungen wie Ballenpressen, Silage-Transport und vieles mehr an, dafür haben wir die passenden Landmaschinen.</p>
+      <p data-reveal style="color:#5E5C5B;margin:0 0 32px;font-size:16px;max-width:34em;">Außerdem bewirtschaften wir eigene Felder und betreiben Stroh- und Heuhandel.</p>
       <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;">
-        <a href="./#kontakt" style="display:inline-flex;align-items:center;min-height:52px;background:#2E7D32;color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;padding:0 28px;border-radius:4px;text-decoration:none;">Anfrage senden</a>
-        <a href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:52px;border:1.5px solid #1a1e25;color:#1a1e25;font-family:'Barlow';font-weight:700;font-size:17px;padding:0 26px;border-radius:4px;text-decoration:none;">0162 3478127</a>
+        <a href="./#kontakt" style="display:inline-flex;align-items:center;min-height:52px;background:#C8201E;color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;padding:0 28px;border-radius:4px;text-decoration:none;">Anfrage senden</a>
+        <a href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:52px;border:1.5px solid #1C1C1C;color:#1C1C1C;font-family:'Barlow';font-weight:700;font-size:17px;padding:0 26px;border-radius:4px;text-decoration:none;">0162 3478127</a>
       </div>
     </div>
     <div data-reveal style="view-transition-name:hero-img;position:relative;width:100%;aspect-ratio:4/3;border-radius:4px;overflow:hidden;">
@@ -55,49 +51,38 @@
   </section>
 
   <section style="max-width:1200px;margin:0 auto;padding:56px 22px 88px;">
-    <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.8vw,44px);line-height:1.05;color:#1a1e25;margin:0 0 12px;letter-spacing:-.02em;">Unsere Leistungen im Überblick</h2>
-    <p data-reveal style="color:#55606b;margin:0 0 40px;max-width:620px;">Von der Feldarbeit bis zum fertigen Ballen, mit Freude und Leidenschaft.</p>
+    <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.8vw,44px);line-height:1.05;color:#1C1C1C;margin:0 0 12px;letter-spacing:-.02em;">Unsere Leistungen im Überblick</h2>
+    <p data-reveal style="color:#5E5C5B;margin:0 0 40px;max-width:620px;">Von der Feldarbeit bis zum fertigen Ballen, mit Freude und Leidenschaft.</p>
     <div class="lw-ballen">
       <article class="lw-ballen-item">
-        <div class="lw-buehne"><div class="lw-ballen-form lw-rund" data-ballen="rund"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><radialGradient id="bs" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#F0D98A"/><stop offset="1" stop-color="#CFA94A"/></radialGradient></defs>
-<circle cx="100" cy="100" r="96" fill="#B98F36"/><circle cx="100" cy="100" r="90" fill="url(#bs)"/>
-<g fill="none" stroke="#B48A33" stroke-linecap="round" opacity=".75"><circle cx="100" cy="100" r="76" stroke-width="2.4" stroke-dasharray="40 10 22 8"/><circle cx="100" cy="100" r="60" stroke-width="2.2" stroke-dasharray="30 9 18 7"/><circle cx="100" cy="100" r="44" stroke-width="2" stroke-dasharray="22 8 14 6"/><circle cx="100" cy="100" r="28" stroke-width="1.8" stroke-dasharray="14 6"/><circle cx="100" cy="100" r="13" stroke-width="1.6"/></g>
-<g stroke="#FFF1B8" stroke-width="1.6" stroke-linecap="round" opacity=".7"><path d="M60 50l14 6M128 40l10 9M150 110l9-4M70 150l-8 7M118 160l12 2M40 104l-9 2"/></g></svg></div><span class="lw-schatten"></span></div>
+        <div class="lw-foto"><img src="assets/web/g22.jpg" alt="Schlepper mit Ballenpresse im Stroh" loading="lazy" decoding="async"></div>
         <h3>Ballenpressen</h3>
         <p>Pressen von Stroh, Heu und Silage, zuverlässig und in guter Qualität.</p>
       </article>
       <article class="lw-ballen-item">
-        <div class="lw-buehne"><div class="lw-ballen-form lw-silage" data-ballen="silage"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><radialGradient id="bf" cx=".38" cy=".34" r=".75"><stop offset="0" stop-color="#4E7A4A"/><stop offset="1" stop-color="#1F3A22"/></radialGradient></defs>
-<circle cx="100" cy="100" r="95" fill="url(#bf)"/>
-<g fill="none" stroke="#6F9A66" stroke-width="3" opacity=".5"><path d="M18 74 C70 60 130 60 182 74"/><path d="M8 104 C70 90 130 90 192 104"/><path d="M18 134 C70 120 130 120 182 134"/></g>
-<path d="M44 46 C70 26 108 22 136 34" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".28"/>
-<circle cx="100" cy="100" r="95" fill="none" stroke="#14281A" stroke-width="3"/></svg></div><span class="lw-schatten"></span></div>
+        <div class="lw-foto"><img src="assets/web/g14.jpg" alt="Lkw beladen mit Silageballen" loading="lazy" decoding="async"></div>
         <h3>Silage-Transport</h3>
         <p>Transport von Silage und Erntegut mit unseren Landmaschinen.</p>
       </article>
       <article class="lw-ballen-item">
-        <div class="lw-buehne"><div class="lw-ballen-form lw-quader" data-ballen="quader"><svg viewBox="0 0 240 150" aria-hidden="true"><defs><linearGradient id="bq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0D98A"/><stop offset="1" stop-color="#CFA94A"/></linearGradient></defs>
-<rect x="4" y="4" width="232" height="142" rx="8" fill="#B98F36"/><rect x="9" y="9" width="222" height="132" rx="5" fill="url(#bq)"/>
-<g stroke="#B48A33" stroke-width="2" stroke-linecap="round" opacity=".6"><path d="M22 30h40M80 26h56M150 32h66M20 58h70M104 62h44M160 56h56M26 88h50M90 92h70M176 86h40M22 118h62M100 114h48M162 120h54"/></g>
-<g fill="#8A5E22"><rect x="68" y="4" width="6" height="142" rx="2"/><rect x="166" y="4" width="6" height="142" rx="2"/></g></svg></div><span class="lw-schatten"></span></div>
+        <div class="lw-foto"><img src="assets/web/g24.jpg" alt="Schlepper mit Strohballen bei Sonnenuntergang" loading="lazy" decoding="async"></div>
         <h3>Feldbewirtschaftung</h3>
         <p>Wir bewirtschaften eigene Felder und übernehmen verschiedenste Feldarbeiten.</p>
       </article>
     </div>
   </section>
 
-  <section style="background:#EDEAE2;">
+  <section style="background:#F1F1F0;">
     <div style="max-width:1200px;margin:0 auto;padding:72px 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;">
       <div data-reveal style="position:relative;width:100%;aspect-ratio:3/2;border-radius:4px;overflow:hidden;order:2;">
         <img src="assets/web/g21.jpg" alt="Silageballen auf der Wiese" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div data-reveal style="order:1;">
-        <span style="display:inline-block;font-family:'Barlow';font-weight:600;color:#2E7D32;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:12px;">Verkauf ab Hof</span>
-        <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(26px,3.4vw,38px);line-height:1.05;color:#1a1e25;margin:0 0 16px;letter-spacing:-.02em;">Ballen in 100% Bio-Qualität</h2>
-        <p style="color:#55606b;margin:0 0 20px;">Wir bieten Silageballen, Quaderstrohballen, gemulchte Quaderstrohballen sowie Quaderheuballen an, in bester 100% Bio-Qualität.</p>
+        <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(26px,3.4vw,38px);line-height:1.05;color:#1C1C1C;margin:0 0 16px;letter-spacing:-.02em;">Ballen in 100% Bio-Qualität</h2>
+        <p style="color:#5E5C5B;margin:0 0 20px;">Wir bieten Silageballen, Quaderstrohballen, gemulchte Quaderstrohballen sowie Quaderheuballen an, in bester 100% Bio-Qualität.</p>
         <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
           <sc-for list="{{ products }}" as="p" hint-placeholder-count="4">
-            <li style="display:flex;align-items:center;gap:12px;color:#1a1e25;font-size:16px;"><span style="width:10px;height:1.5px;background:#1a1e25;flex:none;"></span>{{ p }}</li>
+            <li style="display:flex;align-items:center;gap:12px;color:#1C1C1C;font-size:16px;"><span style="width:10px;height:1.5px;background:#1C1C1C;flex:none;"></span>{{ p }}</li>
           </sc-for>
         </ul>
       </div>
@@ -106,9 +91,9 @@
 
   <section>
     <div data-reveal style="max-width:1000px;margin:0 auto;padding:80px 22px;text-align:center;">
-      <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.8vw,42px);line-height:1.05;color:#1a1e25;margin:0 0 14px;letter-spacing:-.02em;">Auftrag oder Ballen anfragen</h2>
-      <p style="color:#55606b;margin:0 auto 30px;max-width:520px;">Melden Sie sich, wir finden gemeinsam die passende Lösung.</p>
-      <a href="./#kontakt" style="display:inline-flex;align-items:center;min-height:52px;background:#2E7D32;color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;padding:0 28px;border-radius:4px;text-decoration:none;">Jetzt anfragen</a>
+      <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.8vw,42px);line-height:1.05;color:#1C1C1C;margin:0 0 14px;letter-spacing:-.02em;">Auftrag oder Ballen anfragen</h2>
+      <p style="color:#5E5C5B;margin:0 auto 30px;max-width:520px;">Melden Sie sich, wir finden gemeinsam die passende Lösung.</p>
+      <a href="./#kontakt" style="display:inline-flex;align-items:center;min-height:52px;background:#C8201E;color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;padding:0 28px;border-radius:4px;text-decoration:none;">Jetzt anfragen</a>
     </div>
   </section>
 
@@ -118,33 +103,7 @@
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
   renderVals() { return { products: ['Silageballen', 'Quaderstrohballen', 'Gemulchte Quaderstrohballen', 'Quaderheuballen, 100% Bio-Qualität'] }; }
-  _rollen() {
-    // Ballen rollen beim Scrollen von links ins Bild (Drehung passend zur Strecke), der Quaderballen kippt rein.
-    const vh = window.innerHeight;
-    this._ballen.forEach((el, i) => {
-      const r = el.parentElement.getBoundingClientRect();
-      const k = Math.max(0, Math.min(1, (vh - r.top - i * 40) / (vh * .55)));
-      const e = 1 - Math.pow(1 - k, 3), dx = (1 - e) * -(el.parentElement.offsetLeft + el.offsetWidth + 40);
-      if (el.dataset.ballen === 'quader') {
-        const tilt = (1 - e) * -90;
-        el.style.transformOrigin = '100% 100%';
-        el.style.transform = 'translateX(' + dx.toFixed(1) + 'px) rotate(' + tilt.toFixed(1) + 'deg)';
-      } else {
-        const rad = el.offsetWidth / 2, deg = dx / rad * 57.3;
-        el.style.transform = 'translateX(' + dx.toFixed(1) + 'px) rotate(' + deg.toFixed(1) + 'deg)';
-      }
-      const sh = el.parentElement.querySelector('.lw-schatten');
-      if (sh) { sh.style.transform = 'translateX(' + dx.toFixed(1) + 'px)'; sh.style.opacity = (.3 + e * .7).toFixed(2); }
-    });
-  }
   componentDidMount() {
-    this._ballen = Array.from(document.querySelectorAll('[data-ballen]'));
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      let tick = false;
-      this._onRoll = () => { if (tick) return; tick = true; requestAnimationFrame(() => { tick = false; this._rollen(); }); };
-      window.addEventListener('scroll', this._onRoll, { passive: true }); window.addEventListener('resize', this._onRoll);
-      this._rollen();
-    }
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const EXPO = 'cubic-bezier(0.16, 1, 0.3, 1)';
     const lines = Array.from(document.querySelectorAll('[data-line]'));
@@ -157,7 +116,7 @@ class Component extends DCLogic {
     this._io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; this._io.unobserve(en.target); } }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     reveals.forEach(el => this._io.observe(el));
   }
-  componentWillUnmount() { if (this._io) this._io.disconnect(); window.removeEventListener('scroll', this._onRoll); window.removeEventListener('resize', this._onRoll); }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
 }
 </script>
 </body>

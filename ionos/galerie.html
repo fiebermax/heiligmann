@@ -16,38 +16,37 @@
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; }
-  a { color: #2E7D32; }
-  a:hover { color: #256b29; }
-  ::selection { background: #388E3C; color: #fff; }
+  a { color: #C8201E; }
+  a:hover { color: #A31A18; }
+  ::selection { background: #C8201E; color: #fff; }
   .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
-  .gal-cell { position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; border:1px solid #e6e8e4; background:#f3f4f6; transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease; }
+  .gal-cell { position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; border:1px solid #E6E6E5; background:#F3F3F3; transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease; }
   .gal-cell { padding:0; cursor:zoom-in; display:block; width:100%; }
   .gal-cell img { transition: transform .6s cubic-bezier(.16,1,.3,1), filter .4s ease; }
-  @media (hover:hover) { .gal-cell:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(26,30,37,.14); } .gal-cell:hover img { transform: scale(1.06); filter: saturate(1.1); } }
+  @media (hover:hover) { .gal-cell:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(28,28,28,.14); } .gal-cell:hover img { transform: scale(1.06); filter: saturate(1.1); } }
   .gal-cell.is-hidden { opacity:0; transform: translateY(28px) scale(.96); }
   .gal-cell.is-in { opacity:1; transform:none; transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
-  .gal-lb { position:fixed; inset:0; z-index:200; display:grid; place-items:center; padding:56px 16px; background:rgba(20,24,20,.92); }
+  .gal-lb { position:fixed; inset:0; z-index:200; display:grid; place-items:center; padding:56px 16px; background:rgba(22,22,22,.92); }
   .gal-lb button { font-family:'Barlow',sans-serif; font-weight:700; color:#fff; background:rgba(255,255,255,.12); border:0; border-radius:999px; cursor:pointer; min-width:48px; min-height:48px; font-size:22px; }
   .gal-lb button:hover { background:rgba(255,255,255,.24); }
 </style>
 </helmet>
-<div style="background:#F6F4EE;color:#55606b;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
+<div style="background:#FFFFFF;color:#5E5C5B;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
   <dc-import name="SiteNav" style="position:sticky;top:0;z-index:60;" active="galerie" hint-size="100%,72px"></dc-import>
 
   <section style="max-width:1200px;margin:0 auto;padding:60px 22px 30px;">
-    <span style="display:inline-block;font-family:'Barlow';font-weight:600;color:#2E7D32;letter-spacing:.16em;text-transform:uppercase;font-size:14px;margin-bottom:16px;">Einblicke</span>
-    <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(36px,5.5vw,60px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0 0 16px;">Galerie</h1>
-    <p style="font-size:clamp(17px,2vw,20px);color:#6b7480;margin:0;max-width:640px;">Ein Blick auf unsere Arbeit: Baustellen, Feldarbeit und unsere Herde. Tippen Sie auf ein Foto, um es groß anzusehen.</p>
+    <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(36px,5.5vw,60px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0 0 16px;">Galerie</h1>
+    <p style="font-size:clamp(17px,2vw,20px);color:#6E6B6A;margin:0;max-width:640px;">Ein Blick auf unsere Arbeit: Baustellen, Feldarbeit und unsere Herde. Tippen Sie auf ein Foto, um es groß anzusehen.</p>
   </section>
 
   <div style="max-width:1200px;margin:0 auto;padding:24px 22px 20px;min-height:60vh;">{{ gallery }}</div>
   {{ lightbox }}
 
-  <section style="margin-top:40px;background:#EDEAE2;border-top:1px solid #e7e9e5;">
+  <section style="margin-top:40px;background:#F1F1F0;border-top:1px solid #E7E7E6;">
     <div style="max-width:1000px;margin:0 auto;padding:64px 22px;text-align:center;">
-      <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3.4vw,34px);color:#1a1e25;margin:0 0 14px;letter-spacing:-.02em;">Gefällt Ihnen, was Sie sehen?</h2>
-      <p style="color:#6b7480;margin:0 auto 28px;max-width:500px;">Dann lassen Sie uns über Ihr Projekt sprechen.</p>
-      <a href="kontakt.html" style="display:inline-flex;align-items:center;gap:10px;background:#2E7D32;color:#fff;font-weight:700;font-size:17px;padding:17px 30px;border-radius:4px;text-decoration:none;">Kontakt aufnehmen</a>
+      <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3.4vw,34px);color:#1C1C1C;margin:0 0 14px;letter-spacing:-.02em;">Gefällt Ihnen, was Sie sehen?</h2>
+      <p style="color:#6E6B6A;margin:0 auto 28px;max-width:500px;">Dann lassen Sie uns über Ihr Projekt sprechen.</p>
+      <a href="kontakt.html" style="display:inline-flex;align-items:center;gap:10px;background:#C8201E;color:#fff;font-weight:700;font-size:17px;padding:17px 30px;border-radius:4px;text-decoration:none;">Kontakt aufnehmen</a>
     </div>
   </section>
 
@@ -99,7 +98,7 @@ class Component extends DCLogic {
           const sx = f.width / to.width, sy = f.height / to.height;
           img.animate([{ transform: `translate(${f.left - to.left}px,${f.top - to.top}px) scale(${sx},${sy})`, transformOrigin: '0 0', borderRadius: '4px' }, { transform: 'none', transformOrigin: '0 0', borderRadius: '4px' }], { duration: 420, easing: 'cubic-bezier(.16,1,.3,1)' });
         }
-        document.querySelector('.gal-lb').animate([{ backgroundColor: 'rgba(20,24,20,0)' }, { backgroundColor: 'rgba(20,24,20,.92)' }], { duration: 300 });
+        document.querySelector('.gal-lb').animate([{ backgroundColor: 'rgba(22,22,22,0)' }, { backgroundColor: 'rgba(22,22,22,.92)' }], { duration: 300 });
       };
       if (img.complete) run(); else img.addEventListener('load', run, { once: true });
       document.querySelector('.gal-lb [data-close]')?.focus();
@@ -109,13 +108,13 @@ class Component extends DCLogic {
   step(d) { const n = this.list().length; this.setState({ open: (this.state.open + d + n) % n }); }
   renderVals() {
     const h = React.createElement, d = this.state.data, all = this.list();
-    const H2 = { fontFamily: 'Barlow', fontWeight: 700, fontSize: 24, color: '#1a1e25', margin: 0 };
-    const gallery = !d ? h('p', { style: { color: '#6b7480' } }, 'Fotos werden geladen …') :
+    const H2 = { fontFamily: 'Barlow', fontWeight: 700, fontSize: 24, color: '#1C1C1C', margin: 0 };
+    const gallery = !d ? h('p', { style: { color: '#6E6B6A' } }, 'Fotos werden geladen …') :
       h('div', null, ...d.kategorien.map(k => {
         const items = all.map((b, i) => ({ b, i })).filter(x => x.b.kategorie === k.id);
         if (!items.length) return null;
         return h('section', { key: k.id, style: { marginBottom: 44 } },
-          h('div', { style: { display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 } }, h('h2', { style: H2 }, k.titel), h('span', { style: { flex: 1, height: 1, background: '#e6e8e4' } })),
+          h('div', { style: { display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 } }, h('h2', { style: H2 }, k.titel), h('span', { style: { flex: 1, height: 1, background: '#E6E6E5' } })),
           h('div', { className: 'gal-grid' }, ...items.map(({ b, i }) => h('button', { key: b.id, type: 'button', className: 'gal-cell', 'aria-label': 'Foto vergrößern: ' + b.alt, onClick: e => this.openAt(i, e.currentTarget) },
             h('img', { src: b.vorschau || b.bild, alt: b.alt, loading: 'lazy', decoding: 'async', style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' } })))));
       }));

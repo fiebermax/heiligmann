@@ -226,7 +226,7 @@ $maxUpload = ini_get('upload_max_filesize');
 <link rel="icon" href="../logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../fonts/site.css">
 <style>
-  :root { --gruen:#2E7D32; --dunkel:#1a1e25; --grau:#55606b; --linie:#e2e0d8; --bg:#F6F4EE; --rot:#B3261E; }
+  :root { --gruen:#C8201E; --dunkel:#1C1C1C; --grau:#5E5C5B; --linie:#E2E2E1; --bg:#F3F3F2; --rot:#B3261E; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--dunkel); font:17px/1.5 'Source Serif 4', Georgia, serif; }
   h1, h2, h3, button, label, .knopf { font-family:'Barlow', system-ui, sans-serif; }
@@ -240,19 +240,19 @@ $maxUpload = ini_get('upload_max_filesize');
   h2 small { font-weight:500; color:var(--grau); font-size:15px; }
   .karte { background:#fff; border:1px solid var(--linie); border-radius:8px; padding:20px; }
   label { display:block; font-weight:700; font-size:15px; margin:0 0 6px; }
-  input[type=text], input[type=password], select { width:100%; min-height:48px; font:inherit; padding:10px 12px; border:1.5px solid #c9c6bc; border-radius:6px; background:#fff; }
-  input[type=file] { font:inherit; width:100%; padding:14px; border:2px dashed #b9c4b4; border-radius:8px; background:#f4f8f2; }
+  input[type=text], input[type=password], select { width:100%; min-height:48px; font:inherit; padding:10px 12px; border:1.5px solid #C9C9C8; border-radius:6px; background:#fff; }
+  input[type=file] { font:inherit; width:100%; padding:14px; border:2px dashed #C1C0BF; border-radius:8px; background:#F7F7F7; }
   button, .knopf { min-height:48px; padding:0 20px; border-radius:6px; border:0; font-weight:700; font-size:16px; cursor:pointer; background:var(--gruen); color:#fff; display:inline-flex; align-items:center; justify-content:center; gap:6px; text-decoration:none; }
-  button.leise { background:#fff; color:var(--dunkel); border:1.5px solid #c9c6bc; }
+  button.leise { background:#fff; color:var(--dunkel); border:1.5px solid #C9C9C8; }
   button.weg { background:#fff; color:var(--rot); border:1.5px solid #e3b4b0; }
   button:hover { filter:brightness(.95); }
   .reihe { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); align-items:end; }
   .meldung { padding:14px 16px; border-radius:6px; margin:0 0 20px; font-family:'Barlow'; font-weight:600; }
-  .meldung.ok { background:#e5f2e3; color:#1e5a22; }
+  .meldung.ok { background:#EDEDEC; color:#1C1C1C; }
   .meldung.fehler { background:#fbe5e3; color:#8c1d16; }
   .raster { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); }
   .foto { background:#fff; border:1px solid var(--linie); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; }
-  .foto img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:#e6e2d8; }
+  .foto img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:#E4E3E2; }
   .foto form { margin:0; }
   .foto .inhalt { padding:12px; display:grid; gap:8px; }
   .foto .knoepfe { display:flex; gap:8px; padding:0 12px 12px; }
@@ -267,7 +267,7 @@ $maxUpload = ini_get('upload_max_filesize');
   <a href="../galerie.html" title="Zur Galerie"><img src="../logo.svg" alt="Lohnunternehmen Heiligmann"></a>
   <?php if ($istAngemeldet): ?>
   <div style="display:flex;gap:10px;padding:0;">
-    <a class="knopf" href="../galerie.html" target="_blank" rel="noopener" style="background:#fff;color:var(--dunkel);border:1.5px solid #c9c6bc;">Galerie ansehen ↗</a>
+    <a class="knopf" href="../galerie.html" target="_blank" rel="noopener" style="background:#fff;color:var(--dunkel);border:1.5px solid #C9C9C8;">Galerie ansehen ↗</a>
     <form method="post" style="margin:0"><input type="hidden" name="csrf" value="<?= h(csrf()) ?>"><button class="leise" name="aktion" value="logout">Abmelden</button></form>
   </div>
   <?php endif; ?>

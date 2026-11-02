@@ -15,119 +15,119 @@
 <style>
   * { box-sizing: border-box; }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #2E7D32; outline-offset: 3px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #C8201E; outline-offset: 3px; }
   body { margin: 0; }
-  a { color: #2E7D32; }
-  a:hover { color: #256b29; }
-  ::selection { background: #388E3C; color: #fff; }
+  a { color: #C8201E; }
+  a:hover { color: #A31A18; }
+  ::selection { background: #C8201E; color: #fff; }
 </style>
 </helmet>
-<div style="background:#F6F4EE;color:#55606b;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
+<div style="background:#FFFFFF;color:#5E5C5B;font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;overflow-x:clip;min-height:100vh;">
   <dc-import name="SiteNav" style="position:sticky;top:0;z-index:60;" active="kontakt" hint-size="100%,72px"></dc-import>
 
   <section style="max-width:1200px;margin:0 auto;padding:56px 22px 24px;">
-    <nav aria-label="Brotkrümel" style="display:flex;gap:8px;font-family:'Barlow';font-size:15px;color:#55606b;margin-bottom:20px;"><a href="./" style="color:#55606b;text-decoration:none;">Start</a><span aria-hidden="true">/</span><span aria-current="page">Kontakt</span></nav>
-    <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(36px,5.4vw,60px);line-height:1;letter-spacing:-.025em;color:#1a1e25;margin:0 0 16px;">
+    <nav aria-label="Brotkrümel" style="display:flex;gap:8px;font-family:'Barlow';font-size:15px;color:#5E5C5B;margin-bottom:20px;"><a href="./" style="color:#5E5C5B;text-decoration:none;">Start</a><span aria-hidden="true">/</span><span aria-current="page">Kontakt</span></nav>
+    <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(36px,5.4vw,60px);line-height:1;letter-spacing:-.025em;color:#1C1C1C;margin:0 0 16px;">
       <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;">Wir freuen uns auf</span></span>
-      <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#2E7D32;">Ihre Anfrage!</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#C8201E;">Ihre Anfrage!</span></span>
     </h1>
-    <p data-reveal style="font-size:clamp(17px,2vw,20px);color:#55606b;margin:0 0 24px;max-width:620px;">Drei kurze Schritte, wir rufen Sie zurück. Oder direkt anrufen:</p>
-    <a data-reveal href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:56px;padding:0 26px;border:1.5px solid #1a1e25;border-radius:4px;color:#1a1e25;font-family:'Barlow';font-weight:800;font-size:20px;text-decoration:none;font-variant-numeric:tabular-nums;transition:background .2s,color .2s;" style-hover="background:#1a1e25;color:#F6F4EE;">0162 3478127</a>
+    <p data-reveal style="font-size:clamp(17px,2vw,20px);color:#5E5C5B;margin:0 0 24px;max-width:620px;">Drei kurze Schritte, wir rufen Sie zurück. Oder direkt anrufen:</p>
+    <a data-reveal href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:56px;padding:0 26px;border:1.5px solid #1C1C1C;border-radius:4px;color:#1C1C1C;font-family:'Barlow';font-weight:800;font-size:20px;text-decoration:none;font-variant-numeric:tabular-nums;transition:background .2s,color .2s;" style-hover="background:#1C1C1C;color:#FFFFFF;">0162 3478127</a>
   </section>
 
   <section id="kontakt" style="max-width:1200px;margin:0 auto;padding:32px 22px 96px;">
     <div ref="{{ gridRef }}" style="display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start;">
-      <div data-reveal style="background:#ffffff;border:1px solid #e6e8e4;border-radius:6px;padding:clamp(24px,4vw,40px);">
+      <div data-reveal style="background:#ffffff;border:1px solid #E6E6E5;border-radius:6px;padding:clamp(24px,4vw,40px);">
         <div aria-hidden="true" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px;">
           <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
-            <div style="height:5px;border-radius:3px;background:#E6E2D8;overflow:hidden;"><div style="height:100%;background:#2E7D32;transform:scaleX({{ st.fill }});transform-origin:left;transition:transform .5s cubic-bezier(.22,.61,.36,1);"></div></div>
+            <div style="height:5px;border-radius:3px;background:#E4E3E2;overflow:hidden;"><div style="height:100%;background:#C8201E;transform:scaleX({{ st.fill }});transform-origin:left;transition:transform .5s cubic-bezier(.22,.61,.36,1);"></div></div>
           </sc-for>
         </div>
-        <p style="margin:0 0 22px;font-family:'Barlow';font-weight:600;font-size:15px;color:#55606b;">{{ stepLabel }}</p>
+        <p style="margin:0 0 22px;font-family:'Barlow';font-weight:600;font-size:15px;color:#5E5C5B;">{{ stepLabel }}</p>
 
         <div ref="{{ stageRef }}">
           <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
-            <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;color:#1a1e25;margin:0 0 20px;">Worum geht es?</h2>
+            <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;color:#1C1C1C;margin:0 0 20px;">Worum geht es?</h2>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
               <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6">
-                <button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="display:flex;align-items:center;gap:14px;min-height:76px;padding:14px 16px;text-align:left;background:{{ t.bg }};color:{{ t.fg }};border:1.5px solid {{ t.bd }};border-radius:6px;cursor:pointer;font-family:'Barlow';font-weight:700;font-size:17px;line-height:1.2;transition:transform .25s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s,box-shadow .25s;" style-hover="transform:translateY(-3px);border-color:#1a1e25;box-shadow:0 10px 22px rgba(26,30,37,.10);">
+                <button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="display:flex;align-items:center;gap:14px;min-height:76px;padding:14px 16px;text-align:left;background:{{ t.bg }};color:{{ t.fg }};border:1.5px solid {{ t.bd }};border-radius:6px;cursor:pointer;font-family:'Barlow';font-weight:700;font-size:17px;line-height:1.2;transition:transform .25s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s,box-shadow .25s;" style-hover="transform:translateY(-3px);border-color:#1C1C1C;box-shadow:0 10px 22px rgba(28,28,28,.10);">
                   <span style="flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:{{ t.iconBg }};"><span style="display:block;width:26px;height:26px;background:{{ t.iconFg }};-webkit-mask:url({{ t.icon }}) center/contain no-repeat;mask:url({{ t.icon }}) center/contain no-repeat;"></span></span>
                   <span>{{ t.label }}</span>
                 </button>
               </sc-for>
             </div>
-            <button type="button" onClick="{{ pickOther }}" aria-pressed="{{ otherOn }}" style="display:flex;align-items:center;justify-content:center;width:100%;min-height:68px;margin-top:12px;padding:0 20px;background:{{ otherBg }};color:{{ otherFg }};border:1.5px solid #1a1e25;border-radius:6px;cursor:pointer;font-family:'Barlow';font-weight:800;font-size:20px;transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .2s,box-shadow .25s;" style-hover="transform:translateY(-3px);box-shadow:0 10px 22px rgba(26,30,37,.14);">Sonstiges</button>
+            <button type="button" onClick="{{ pickOther }}" aria-pressed="{{ otherOn }}" style="display:flex;align-items:center;justify-content:center;width:100%;min-height:68px;margin-top:12px;padding:0 20px;background:{{ otherBg }};color:{{ otherFg }};border:1.5px solid #1C1C1C;border-radius:6px;cursor:pointer;font-family:'Barlow';font-weight:800;font-size:20px;transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .2s,box-shadow .25s;" style-hover="transform:translateY(-3px);box-shadow:0 10px 22px rgba(28,28,28,.14);">Sonstiges</button>
           </sc-if>
 
           <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
-            <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;color:#1a1e25;margin:0 0 20px;">Wann soll es losgehen?</h2>
+            <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;color:#1C1C1C;margin:0 0 20px;">Wann soll es losgehen?</h2>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px;">
               <sc-for list="{{ whens }}" as="w" hint-placeholder-count="4">
-                <button type="button" onClick="{{ w.pick }}" aria-pressed="{{ w.on }}" style="min-height:60px;padding:10px 14px;background:{{ w.bg }};color:{{ w.fg }};border:1.5px solid {{ w.bd }};border-radius:6px;cursor:pointer;font-family:'Barlow';font-weight:700;font-size:17px;transition:transform .25s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s;" style-hover="transform:translateY(-3px);border-color:#1a1e25;">{{ w.label }}</button>
+                <button type="button" onClick="{{ w.pick }}" aria-pressed="{{ w.on }}" style="min-height:60px;padding:10px 14px;background:{{ w.bg }};color:{{ w.fg }};border:1.5px solid {{ w.bd }};border-radius:6px;cursor:pointer;font-family:'Barlow';font-weight:700;font-size:17px;transition:transform .25s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s;" style-hover="transform:translateY(-3px);border-color:#1C1C1C;">{{ w.label }}</button>
               </sc-for>
             </div>
-            <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:15px;font-weight:600;color:#1a1e25;">Kurz beschreiben (optional)
-              <textarea ref="{{ msgRef }}" rows="3" placeholder="{{ msgPh }}" style="background:#f7f8f6;border:1px solid #d9ddd6;border-radius:6px;padding:15px 16px;color:#1a1e25;font-size:16px;font-family:inherit;outline:none;resize:vertical;" style-focus="border-color:#2E7D32;"></textarea>
+            <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:15px;font-weight:600;color:#1C1C1C;">Kurz beschreiben (optional)
+              <textarea ref="{{ msgRef }}" rows="3" placeholder="{{ msgPh }}" style="background:#F7F7F7;border:1px solid #DADADA;border-radius:6px;padding:15px 16px;color:#1C1C1C;font-size:16px;font-family:inherit;outline:none;resize:vertical;" style-focus="border-color:#C8201E;"></textarea>
             </label>
           </sc-if>
 
           <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
-            <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;color:#1a1e25;margin:0 0 8px;">Wie erreichen wir Sie?</h2>
+            <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;color:#1C1C1C;margin:0 0 8px;">Wie erreichen wir Sie?</h2>
             <p style="margin:0 0 20px;font-size:16px;">Nur die Telefonnummer ist Pflicht.</p>
             <form onSubmit="{{ submitForm }}" style="position:relative;display:flex;flex-direction:column;gap:16px;">
               <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><label>Bitte leer lassen<input ref="{{ hpRef }}" type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
-              <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:15px;font-weight:600;color:#1a1e25;">Telefon *
-                <input ref="{{ phoneRef }}" type="tel" required autocomplete="tel" inputmode="tel" placeholder="Damit wir Sie zurückrufen können" style="background:#f7f8f6;border:1px solid #d9ddd6;border-radius:6px;padding:16px;color:#1a1e25;font-size:18px;font-family:inherit;outline:none;" style-focus="border-color:#2E7D32;" />
+              <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:15px;font-weight:600;color:#1C1C1C;">Telefon *
+                <input ref="{{ phoneRef }}" type="tel" required autocomplete="tel" inputmode="tel" placeholder="Damit wir Sie zurückrufen können" style="background:#F7F7F7;border:1px solid #DADADA;border-radius:6px;padding:16px;color:#1C1C1C;font-size:18px;font-family:inherit;outline:none;" style-focus="border-color:#C8201E;" />
               </label>
-              <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:15px;font-weight:600;color:#1a1e25;">Name (optional)
-                <input ref="{{ nameRef }}" type="text" autocomplete="name" placeholder="Ihr Name" style="background:#f7f8f6;border:1px solid #d9ddd6;border-radius:6px;padding:16px;color:#1a1e25;font-size:16px;font-family:inherit;outline:none;" style-focus="border-color:#2E7D32;" />
+              <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:15px;font-weight:600;color:#1C1C1C;">Name (optional)
+                <input ref="{{ nameRef }}" type="text" autocomplete="name" placeholder="Ihr Name" style="background:#F7F7F7;border:1px solid #DADADA;border-radius:6px;padding:16px;color:#1C1C1C;font-size:16px;font-family:inherit;outline:none;" style-focus="border-color:#C8201E;" />
               </label>
-              <div style="background:#F6F4EE;border-radius:6px;padding:14px 16px;font-size:15px;color:#1a1e25;">{{ summary }}</div>
-              <button type="submit" style="min-height:60px;background:#2E7D32;color:#fff;font-family:'Barlow';font-weight:800;font-size:18px;border:none;border-radius:6px;cursor:pointer;transition:background .2s,transform .2s;" style-hover="background:#256b29;transform:translateY(-2px);">{{ sendLabel }}</button>
-              <p style="color:#55606b;font-size:14px;margin:0;text-align:center;">Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.</p>
-              <p style="color:#55606b;font-size:14px;margin:0;">Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Details in der <a href="datenschutz.html" style="color:#1a1e25;">Datenschutzerklärung</a>.</p>
+              <div style="background:#FFFFFF;border-radius:6px;padding:14px 16px;font-size:15px;color:#1C1C1C;">{{ summary }}</div>
+              <button type="submit" style="min-height:60px;background:#C8201E;color:#fff;font-family:'Barlow';font-weight:800;font-size:18px;border:none;border-radius:6px;cursor:pointer;transition:background .2s,transform .2s;" style-hover="background:#A31A18;transform:translateY(-2px);">{{ sendLabel }}</button>
+              <p style="color:#5E5C5B;font-size:14px;margin:0;text-align:center;">Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.</p>
+              <p style="color:#5E5C5B;font-size:14px;margin:0;">Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Details in der <a href="datenschutz.html" style="color:#1C1C1C;">Datenschutzerklärung</a>.</p>
             </form>
           </sc-if>
         </div>
 
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px;">
           <sc-if value="{{ showBack }}" hint-placeholder-val="{{ false }}">
-            <button type="button" onClick="{{ back }}" style="min-height:48px;padding:0 18px;background:transparent;border:1.5px solid #cfcabd;border-radius:6px;color:#1a1e25;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;" style-hover="border-color:#1a1e25;">Zurück</button>
+            <button type="button" onClick="{{ back }}" style="min-height:48px;padding:0 18px;background:transparent;border:1.5px solid #CFCECD;border-radius:6px;color:#1C1C1C;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;" style-hover="border-color:#1C1C1C;">Zurück</button>
           </sc-if>
           <span></span>
           <sc-if value="{{ showNext }}" hint-placeholder-val="{{ false }}">
-            <button type="button" onClick="{{ next }}" style="min-height:48px;padding:0 22px;background:#1a1e25;border:none;border-radius:6px;color:#F6F4EE;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;transition:transform .2s;" style-hover="transform:translateX(3px);">Weiter</button>
+            <button type="button" onClick="{{ next }}" style="min-height:48px;padding:0 22px;background:#1C1C1C;border:none;border-radius:6px;color:#FFFFFF;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;transition:transform .2s;" style-hover="transform:translateX(3px);">Weiter</button>
           </sc-if>
         </div>
       </div>
 
       <div data-reveal style="display:flex;flex-direction:column;gap:20px;">
-        <div style="background:#ffffff;border:1px solid #e6e8e4;border-radius:6px;padding:30px;">
-          <h3 style="font-family:'Barlow';font-weight:700;font-size:20px;color:#1a1e25;margin:0 0 20px;">Direkt erreichen</h3>
+        <div style="background:#ffffff;border:1px solid #E6E6E5;border-radius:6px;padding:30px;">
+          <h3 style="font-family:'Barlow';font-weight:700;font-size:20px;color:#1C1C1C;margin:0 0 20px;">Direkt erreichen</h3>
           <div style="display:flex;flex-direction:column;gap:18px;">
-            <a href="tel:+491623478127" style="color:#1a1e25;text-decoration:none;"><span style="display:block;font-size:14px;color:#55606b;">Mobil</span><span style="font-weight:600;">+49 162 3478127</span></a>
-            <a href="tel:082252304" style="color:#1a1e25;text-decoration:none;"><span style="display:block;font-size:14px;color:#55606b;">Festnetz</span><span style="font-weight:600;">08225 2304</span></a>
-            <a href="mailto:Lohnunternehmen.heiligmann@gmx.de" style="color:#1a1e25;text-decoration:none;word-break:break-word;"><span style="display:block;font-size:14px;color:#55606b;">E-Mail</span><span style="font-weight:600;font-size:15px;">Lohnunternehmen.heiligmann@gmx.de</span></a>
-            <div style="color:#1a1e25;"><span style="display:block;font-size:14px;color:#55606b;">Hof</span><span style="font-weight:600;">Oberfeldstraße 15, 89343 Freihalden</span></div>
+            <a href="tel:+491623478127" style="color:#1C1C1C;text-decoration:none;"><span style="display:block;font-size:14px;color:#5E5C5B;">Mobil</span><span style="font-weight:600;">+49 162 3478127</span></a>
+            <a href="tel:082252304" style="color:#1C1C1C;text-decoration:none;"><span style="display:block;font-size:14px;color:#5E5C5B;">Festnetz</span><span style="font-weight:600;">08225 2304</span></a>
+            <a href="mailto:Lohnunternehmen.heiligmann@gmx.de" style="color:#1C1C1C;text-decoration:none;word-break:break-word;"><span style="display:block;font-size:14px;color:#5E5C5B;">E-Mail</span><span style="font-weight:600;font-size:15px;">Lohnunternehmen.heiligmann@gmx.de</span></a>
+            <div style="color:#1C1C1C;"><span style="display:block;font-size:14px;color:#5E5C5B;">Hof</span><span style="font-weight:600;">Oberfeldstraße 15, 89343 Freihalden</span></div>
           </div>
         </div>
-        <div style="position:relative;border-radius:6px;overflow:hidden;border:1px solid #e6e8e4;">
+        <div style="position:relative;border-radius:6px;overflow:hidden;border:1px solid #E6E6E5;">
           <sc-if value="{{ mapOn }}" hint-placeholder-val="{{ false }}">
             <iframe title="Karte: Hof in Freihalden" src="https://maps.google.com/maps?q=Oberfeldstra%C3%9Fe%2015%2C%2089343%20Jettingen-Scheppach&z=14&output=embed" style="display:block;width:100%;height:280px;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </sc-if>
           <sc-if value="{{ mapOff }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;min-height:280px;padding:24px;background:repeating-linear-gradient(135deg,#E6E2D8 0 14px,#EDEAE2 14px 28px);color:#1a1e25;">
+            <div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;min-height:280px;padding:24px;background:repeating-linear-gradient(135deg,#E4E3E2 0 14px,#F1F1F0 14px 28px);color:#1C1C1C;">
               <span style="font-family:'Barlow';font-weight:800;font-size:19px;">Karte von Google Maps</span>
-              <span style="font-size:15px;line-height:1.5;max-width:30em;">Beim Laden der Karte werden Daten (u. a. Ihre IP-Adresse) an Google übertragen. Mehr in der <a href="datenschutz.html" style="color:#1a1e25;">Datenschutzerklärung</a>.</span>
+              <span style="font-size:15px;line-height:1.5;max-width:30em;">Beim Laden der Karte werden Daten (u. a. Ihre IP-Adresse) an Google übertragen. Mehr in der <a href="datenschutz.html" style="color:#1C1C1C;">Datenschutzerklärung</a>.</span>
               <span style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;">
-                <button type="button" onClick="{{ loadMap }}" style="min-height:46px;padding:0 20px;background:#1a1e25;color:#F6F4EE;border:0;border-radius:6px;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;">Karte laden</button>
-                <button type="button" onClick="{{ alwaysMap }}" style="padding:6px 0;background:none;border:0;color:#1a1e25;font-family:'Barlow';font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;">Externe Medien immer erlauben</button>
+                <button type="button" onClick="{{ loadMap }}" style="min-height:46px;padding:0 20px;background:#1C1C1C;color:#FFFFFF;border:0;border-radius:6px;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;">Karte laden</button>
+                <button type="button" onClick="{{ alwaysMap }}" style="padding:6px 0;background:none;border:0;color:#1C1C1C;font-family:'Barlow';font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;">Externe Medien immer erlauben</button>
               </span>
             </div>
           </sc-if>
-          <a href="https://maps.google.com/maps?q=Oberfeldstra%C3%9Fe%2015%2C%2089343%20Jettingen-Scheppach" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;background:#fff;border-top:1px solid #e6e8e4;text-decoration:none;">
-            <span style="display:flex;flex-direction:column;"><span style="font-family:'Barlow';font-weight:700;color:#1a1e25;font-size:15px;">Freihalden · Region Günzburg</span><span style="color:#55606b;font-size:14px;">Oberfeldstraße 15, 89343 Jettingen-Scheppach</span></span>
-            <span style="color:#2E7D32;font-weight:700;font-size:15px;white-space:nowrap;">Route</span>
+          <a href="https://maps.google.com/maps?q=Oberfeldstra%C3%9Fe%2015%2C%2089343%20Jettingen-Scheppach" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;background:#fff;border-top:1px solid #E6E6E5;text-decoration:none;">
+            <span style="display:flex;flex-direction:column;"><span style="font-family:'Barlow';font-weight:700;color:#1C1C1C;font-size:15px;">Freihalden · Region Günzburg</span><span style="color:#5E5C5B;font-size:14px;">Oberfeldstraße 15, 89343 Jettingen-Scheppach</span></span>
+            <span style="color:#C8201E;font-weight:700;font-size:15px;white-space:nowrap;">Route</span>
           </a>
         </div>
       </div>
@@ -137,47 +137,47 @@
 
   <section aria-labelledby="umkreis-h" style="max-width:1200px;margin:0 auto;padding:24px 22px 112px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px 72px;align-items:center;">
     <div data-reveal>
-      <h2 id="umkreis-h" style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0 0 18px;">Wir fahren in der Region Günzburg.</h2>
+      <h2 id="umkreis-h" style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0 0 18px;">Wir fahren in der Region Günzburg.</h2>
       <p style="margin:0 0 14px;max-width:30em;">Richtwerte Luftlinie vom Hof in Freihalden. Weiter weg? Rufen Sie an, wir sprechen über Anfahrt und Termin.</p>
-      <p style="margin:0 0 28px;font-family:'Barlow';font-size:15px;color:#55606b;">Hof: Oberfeldstraße 15, Freihalden</p>
-      <a href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:52px;padding:0 26px;background:#2E7D32;color:#fff;border-radius:999px;font-family:'Barlow';font-weight:700;font-size:17px;text-decoration:none;transition:transform .2s,background .2s;" style-hover="background:#256b29;transform:translateY(-2px);color:#fff;">0162 3478127</a>
+      <p style="margin:0 0 28px;font-family:'Barlow';font-size:15px;color:#5E5C5B;">Hof: Oberfeldstraße 15, Freihalden</p>
+      <a href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:52px;padding:0 26px;background:#C8201E;color:#fff;border-radius:999px;font-family:'Barlow';font-weight:700;font-size:17px;text-decoration:none;transition:transform .2s,background .2s;" style-hover="background:#A31A18;transform:translateY(-2px);color:#fff;">0162 3478127</a>
     </div>
-    <div ref="{{ radiusRef }}" style="border-top:1.5px solid #1a1e25;">
-      <div style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:18px 8px;border-bottom:1px solid #dcd8cd;">
+    <div ref="{{ radiusRef }}" style="border-top:1.5px solid #1C1C1C;">
+      <div style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:18px 8px;border-bottom:1px solid #DCDCDB;">
         <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Barlow';font-weight:700;font-size:13px;letter-spacing:.14em;color:#C8201E;"><span style="width:8px;height:8px;border-radius:50%;background:#C8201E;"></span>HOF</span>
-        <span style="font-family:'Barlow';font-weight:800;font-size:26px;color:#1a1e25;">Freihalden</span>
+        <span style="font-family:'Barlow';font-weight:800;font-size:26px;color:#1C1C1C;">Freihalden</span>
       </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">4<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Jettingen-Scheppach</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">4<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Jettingen-Scheppach</span></span>
         </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">8<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Burgau</span><span aria-hidden="true" style="color:#b8b3a6;">·</span><span>Zusmarshausen</span><span aria-hidden="true" style="color:#b8b3a6;">·</span><span>Dinkelscherben</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">8<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Burgau</span><span aria-hidden="true" style="color:#B5B4B3;">·</span><span>Zusmarshausen</span><span aria-hidden="true" style="color:#B5B4B3;">·</span><span>Dinkelscherben</span></span>
         </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">11<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Ziemetshausen</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">11<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Ziemetshausen</span></span>
         </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">13<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Thannhausen</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">13<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Thannhausen</span></span>
         </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">14<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Ichenhausen</span><span aria-hidden="true" style="color:#b8b3a6;">·</span><span>Offingen</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">14<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Ichenhausen</span><span aria-hidden="true" style="color:#B5B4B3;">·</span><span>Offingen</span></span>
         </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">19<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Günzburg</span><span aria-hidden="true" style="color:#b8b3a6;">·</span><span>Krumbach</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">19<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Günzburg</span><span aria-hidden="true" style="color:#B5B4B3;">·</span><span>Krumbach</span></span>
         </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">21<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Leipheim</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">21<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Leipheim</span></span>
         </div>
-        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #dcd8cd;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(46,125,50,.06);padding-left:16px;">
-          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1a1e25;font-variant-numeric:tabular-nums;">30<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#55606b;margin-left:6px;">KM</span></span>
-          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1a1e25;font-size:17px;"><span>Augsburg</span></span>
+        <div data-row="1" style="display:grid;grid-template-columns:110px minmax(0,1fr);align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid #DCDCDB;transition:background .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(200,32,30,.06);padding-left:16px;">
+          <span style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:#1C1C1C;font-variant-numeric:tabular-nums;">30<span style="font-size:13px;font-weight:700;letter-spacing:.14em;color:#5E5C5B;margin-left:6px;">KM</span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:4px 14px;color:#1C1C1C;font-size:17px;"><span>Augsburg</span></span>
         </div>
     </div>
   </section>
@@ -201,16 +201,16 @@ class Component extends DCLogic {
   state = { step: 1, topic: null, when: null, msg: '' };
   renderVals() {
     const { step, topic, when } = this.state;
-    const pill = on => ({ bg: on ? '#1F3A22' : '#ffffff', fg: on ? '#F4EFE4' : '#1a1e25', bd: on ? '#1F3A22' : '#dcd8cd' });
+    const pill = on => ({ bg: on ? '#262524' : '#ffffff', fg: on ? '#FFFFFF' : '#1C1C1C', bd: on ? '#262524' : '#DCDCDB' });
     const t = topic === 'other' ? OTHER : TOPICS[topic];
     return {
       steps: [1, 2, 3].map(n => ({ fill: n <= step ? 1 : 0 })),
       stepLabel: 'Schritt ' + step + ' von 3',
       isStep1: step === 1, isStep2: step === 2, isStep3: step === 3,
-      topics: TOPICS.map((x, i) => { const on = i === topic; return { label: x.label, icon: x.icon, on, ...pill(on), iconBg: on ? '#F4EFE4' : '#EEF3EC', iconFg: on ? '#1F3A22' : '#2E7D32', pick: () => this.go({ topic: i, step: 2 }) }; }),
+      topics: TOPICS.map((x, i) => { const on = i === topic; return { label: x.label, icon: x.icon, on, ...pill(on), iconBg: on ? '#FFFFFF' : '#F3F3F2', iconFg: on ? '#262524' : '#C8201E', pick: () => this.go({ topic: i, step: 2 }) }; }),
       whens: WHENS.map((w, i) => { const on = i === when; return { label: w, on, ...pill(on), pick: () => this.go({ when: i, msg: this._msg?.value || '', step: 3 }) }; }),
       pickOther: () => this.go({ topic: 'other', step: 2 }),
-      otherOn: topic === 'other', otherBg: topic === 'other' ? '#1F3A22' : '#1a1e25', otherFg: '#F6F4EE',
+      otherOn: topic === 'other', otherBg: topic === 'other' ? '#262524' : '#1C1C1C', otherFg: '#FFFFFF',
       msgPh: t ? t.ph : 'Was soll gemacht werden, und wo?',
       summary: (t ? t.label : '') + (when != null ? ' · ' + WHENS[when] : '') + (this.state.msg ? ' · „' + this.state.msg + '“' : ''),
       sendLabel: 'Rückruf anfordern',

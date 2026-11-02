@@ -16,171 +16,171 @@
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; }
-  a { color: #2E7D32; text-decoration: none; }
-  a:hover { color: #1f5c22; }
+  a { color: #C8201E; text-decoration: none; }
+  a:hover { color: #A31A18; }
   [id] { scroll-margin-top: 84px; }
   @keyframes mach-in { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) { img { animation: none !important; } }
-  ::selection { background: #2E7D32; color: #fff; }
+  ::selection { background: #C8201E; color: #fff; }
   .hz-scroll::-webkit-scrollbar { height: 6px; }
-  .hz-scroll::-webkit-scrollbar-thumb { background: #c7ccc3; border-radius: 3px; }
+  .hz-scroll::-webkit-scrollbar-thumb { background: #C9C9C8; border-radius: 3px; }
   .hz-scroll::-webkit-scrollbar-track { background: transparent; }
 </style>
 </helmet>
 
-<div style="background:#F6F4EE;color:#55606b;font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.6;overflow-x:clip;">
+<div style="background:#FFFFFF;color:#5E5C5B;font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.6;overflow-x:clip;">
 
   <dc-import name="SiteNav" style="position:sticky;top:0;z-index:60;" active="home" cta-color="{{ ctaColor }}" trust-color="{{ trustColor }}" hint-size="100%,72px"></dc-import>
 
   <section id="top" style="max-width:1200px;margin:0 auto;padding:64px 22px 112px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:64px;align-items:center;">
     <div>
-      <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(42px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;color:#1a1e25;margin:0 0 32px;">
+      <h1 style="font-family:'Barlow';font-weight:800;font-size:clamp(42px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;color:#1C1C1C;margin:0 0 32px;">
         <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;">Starke Hilfe für</span></span>
-        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#2E7D32;">Haus, Hof</span></span>
-        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#2E7D32;">und Garten.</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#C8201E;">Haus, Hof</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em;"><span data-line="1" style="display:block;color:#C8201E;">und Garten.</span></span>
       </h1>
-      <p data-reveal style="font-size:clamp(18px,2vw,20px);color:#55606b;margin:0 0 36px;max-width:34em;">Familienbetrieb aus Freihalden bei Jettingen-Scheppach. Wir übernehmen Erd-, Bagger- und Pflasterarbeiten, größere Gartenprojekte und Transporte, mit eigenen Maschinen und über 35 Jahren Erfahrung im Baugeschäft.</p>
+      <p data-reveal style="font-size:clamp(18px,2vw,20px);color:#5E5C5B;margin:0 0 36px;max-width:34em;">Familienbetrieb aus Freihalden bei Jettingen-Scheppach. Wir übernehmen Erd-, Bagger- und Pflasterarbeiten, größere Gartenprojekte und Transporte, mit eigenen Maschinen und über 35 Jahren Erfahrung im Baugeschäft.</p>
       <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px;">
         <a href="#kontakt" style="display:inline-flex;align-items:center;background:{{ ctaColor }};color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;padding:17px 28px;border-radius:4px;">Anfrage senden</a>
-        <a href="tel:+491623478127" style="display:inline-flex;align-items:center;border:1.5px solid #1a1e25;color:#1a1e25;font-family:'Barlow';font-weight:700;font-size:17px;padding:16px 26px;border-radius:4px;">0162 3478127</a>
+        <a href="tel:+491623478127" style="display:inline-flex;align-items:center;border:1.5px solid #1C1C1C;color:#1C1C1C;font-family:'Barlow';font-weight:700;font-size:17px;padding:16px 26px;border-radius:4px;">0162 3478127</a>
       </div>
-      <div data-reveal style="display:flex;flex-wrap:wrap;gap:20px 40px;border-top:1px solid #dcd8cd;padding-top:22px;">
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:20px 40px;border-top:1px solid #DCDCDB;padding-top:22px;">
         <sc-for list="{{ heroStats }}" as="st" hint-placeholder-count="3">
           <div>
-            <div data-count="{{ st.num }}" style="font-family:'Barlow';font-weight:800;font-size:28px;color:#1a1e25;line-height:1;font-variant-numeric:tabular-nums;transition:color .2s,transform .3s cubic-bezier(.34,1.56,.64,1);transform-origin:left bottom;" style-hover="color:#2E7D32;transform:scale(1.12);">{{ st.num }}</div>
-            <div style="color:#5f6872;font-size:15px;margin-top:6px;">{{ st.label }}</div>
+            <div data-count="{{ st.num }}" style="font-family:'Barlow';font-weight:800;font-size:28px;color:#1C1C1C;line-height:1;font-variant-numeric:tabular-nums;transition:color .2s,transform .3s cubic-bezier(.34,1.56,.64,1);transform-origin:left bottom;" style-hover="color:#C8201E;transform:scale(1.12);">{{ st.num }}</div>
+            <div style="color:#625F5E;font-size:15px;margin-top:6px;">{{ st.label }}</div>
           </div>
         </sc-for>
       </div>
     </div>
     <div data-reveal style="position:relative;">
-      <div style="position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:#eef1ec;">
+      <div style="position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:#F3F3F2;">
         <img data-parallax="1" src="assets/web/g02.jpg" alt="Schlepper mit grünem Kippanhänger im Morgennebel" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
       </div>
-      <div data-drift="-40" style="position:absolute;bottom:-32px;left:-32px;width:170px;height:170px;will-change:transform;border-radius:4px;overflow:hidden;border:6px solid #F6F4EE;background:#eef1ec;">
+      <div data-drift="-40" style="position:absolute;bottom:-32px;left:-32px;width:170px;height:170px;will-change:transform;border-radius:4px;overflow:hidden;border:6px solid #FFFFFF;background:#F3F3F2;">
         <img src="assets/web/g11.jpg" alt="Bagger beim Aushub für einen Pool im Garten" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
   </section>
 
-  <div style="max-width:1200px;margin:0 auto;padding:0 22px 24px;"><div style="height:2px;background:#2E7D32;"></div></div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 22px 24px;"><div style="height:2px;background:#C8201E;"></div></div>
   <section id="leistungen" style="max-width:1200px;margin:0 auto;padding:40px 22px 128px;">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px 64px;align-items:end;margin-bottom:56px;">
-      <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0;"><span data-slide="1" style="display:inline-block;will-change:transform;">Was wir für Sie machen</span></h2>
-      <p data-reveal style="color:#55606b;margin:0;max-width:30em;">{{ tabIntro }}</p>
+      <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0;"><span data-slide="1" style="display:inline-block;will-change:transform;">Was wir für Sie machen</span></h2>
+      <p data-reveal style="color:#5E5C5B;margin:0;max-width:30em;">{{ tabIntro }}</p>
     </div>
     <div ref="{{ tabsRef }}" onMouseEnter="{{ pauseAuto }}" onMouseLeave="{{ resumeAuto }}" role="tablist" aria-label="Leistungsbereiche" data-reveal style="display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 20px;margin:0 -2px;">
       <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
-        <button type="button" role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="position:relative;overflow:hidden;flex:none;scroll-snap-align:start;min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;" style-hover="border-color:#1a1e25;transform:translateY(-2px);"><span style="position:relative;z-index:1;">{{ t.label }}</span><span data-tabprog="1" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:3px;background:#5FB35F;transform:scaleX(0);transform-origin:left center;"></span></button>
+        <button type="button" role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="position:relative;overflow:hidden;flex:none;scroll-snap-align:start;min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;" style-hover="border-color:#1C1C1C;transform:translateY(-2px);"><span style="position:relative;z-index:1;">{{ t.label }}</span><span data-tabprog="1" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:3px;background:#E32523;transform:scaleX(0);transform-origin:left center;"></span></button>
       </sc-for>
     </div>
     <div ref="{{ panelRef }}" role="tabpanel" onMouseEnter="{{ pauseAuto }}" onMouseLeave="{{ resumeAuto }}">
     <sc-for list="{{ serviceList }}" as="s" hint-placeholder-count="4">
-      <a href="{{ s.href }}" data-svc="1" data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px 64px;align-items:baseline;padding:32px 0;border-top:1px solid #dcd8cd;color:#1a1e25;transition:color .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1),background .25s ease;" style-hover="color:#2E7D32;padding-left:18px;background:linear-gradient(90deg,rgba(46,125,50,.07),transparent 70%);">
+      <a href="{{ s.href }}" data-svc="1" data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px 64px;align-items:baseline;padding:32px 0;border-top:1px solid #DCDCDB;color:#1C1C1C;transition:color .25s ease,padding-left .35s cubic-bezier(.22,.61,.36,1),background .25s ease;" style-hover="color:#C8201E;padding-left:18px;background:linear-gradient(90deg,rgba(200,32,30,.07),transparent 70%);">
         <div style="display:flex;align-items:baseline;gap:20px;">
           <span style="font-family:'Barlow';font-weight:700;font-size:15px;color:#C8201E;min-width:24px;">{{ s.no }}</span>
           <h3 style="font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,36px);line-height:1.1;letter-spacing:-.005em;color:inherit;margin:0;">{{ s.title }}</h3>
         </div>
-        <p style="font-family:'Barlow',sans-serif;font-weight:400;font-size:18px;line-height:1.6;color:#55606b;margin:0;max-width:32em;">{{ s.text }}</p>
+        <p style="font-family:'Barlow',sans-serif;font-weight:400;font-size:18px;line-height:1.6;color:#5E5C5B;margin:0;max-width:32em;">{{ s.text }}</p>
       </a>
     </sc-for>
     </div>
-    <div style="border-top:1px solid #dcd8cd;padding-top:28px;">
-      <a href="{{ tabLink.href }}" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1a1e25;border-bottom:2px solid #2E7D32;padding-bottom:3px;transition:color .2s;" style-hover="color:#2E7D32;">{{ tabLink.label }}</a>
+    <div style="border-top:1px solid #DCDCDB;padding-top:28px;">
+      <a href="{{ tabLink.href }}" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;border-bottom:2px solid #C8201E;padding-bottom:3px;transition:color .2s;" style-hover="color:#C8201E;">{{ tabLink.label }}</a>
     </div>
   </section>
 
 
   <section id="stimmen" aria-labelledby="stimmen-h" style="max-width:1200px;margin:0 auto;padding:0 22px 128px;">
     <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:40px;">
-      <h2 id="stimmen-h" data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0;"><span data-slide="1" style="display:inline-block;will-change:transform;">Was unsere Kunden sagen</span></h2>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Lohnunternehmen+Helmut+Heiligmann+Freihalden" target="_blank" rel="noopener" data-reveal aria-label="5,0 von 5 Sternen auf Google, alle Bewertungen ansehen" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-family:'Barlow';color:#1a1e25;text-decoration:none;padding:10px 16px;border:1.5px solid #dcd8cd;border-radius:4px;transition:border-color .2s,transform .2s;" style-hover="border-color:#1a1e25;transform:translateY(-2px);">
+      <h2 id="stimmen-h" data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0;"><span data-slide="1" style="display:inline-block;will-change:transform;">Was unsere Kunden sagen</span></h2>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Lohnunternehmen+Helmut+Heiligmann+Freihalden" target="_blank" rel="noopener" data-reveal aria-label="5,0 von 5 Sternen auf Google, alle Bewertungen ansehen" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-family:'Barlow';color:#1C1C1C;text-decoration:none;padding:10px 16px;border:1.5px solid #DCDCDB;border-radius:4px;transition:border-color .2s,transform .2s;" style-hover="border-color:#1C1C1C;transform:translateY(-2px);">
         <span style="font-weight:800;font-size:36px;line-height:1;">5,0</span>
-        <span aria-hidden="true" style="color:#E3A21A;font-size:32px;line-height:1;letter-spacing:3px;">★★★★★</span>
-        <span style="font-size:16px;font-weight:700;border-bottom:2px solid #2E7D32;padding-bottom:2px;">Alle Bewertungen auf Google</span>
+        <span aria-hidden="true" style="color:#C8201E;font-size:32px;line-height:1;letter-spacing:3px;">★★★★★</span>
+        <span style="font-size:16px;font-weight:700;border-bottom:2px solid #C8201E;padding-bottom:2px;">Alle Bewertungen auf Google</span>
       </a>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #e6e8e4;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(26,30,37,.10);">
-          <div style="position:relative;aspect-ratio:3/2;background:#E6E2D8;">
+        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
+          <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
             <img src="assets/review-ard.webp" alt="Neu gestaltete Einfahrt mit barrierefreiem Eingang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
-            <span role="img" aria-label="5 von 5 Sternen" style="color:#E3A21A;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
-            <blockquote style="margin:0;color:#1a1e25;font-size:17px;line-height:1.6;flex:1;">Wir haben unsere Einfahrt und den Eingangsbereich neu machen lassen ! Alles zu unserer vollsten Zufriedenheit- in unser Haus kommt man jetzt barrierefrei, die zuvor bestehenden Ebenen sind Geschichte- und alles in Ultra- Geschwindigkeit gepflastert bzw &quot; geebnet&quot; Ein super nettes Team- mit genialen Ideen , die den Alltag leichter machen. Eine Firma ,die wir zu 100% empfehlen können!!!  Danke nochmal aufs Herzlichste!!</blockquote>
-            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1a1e25;">A. & R. D.<span style="display:block;font-weight:500;font-size:14px;color:#55606b;margin-top:2px;">Einfahrt & Eingangsbereich</span></figcaption>
+            <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
+            <blockquote style="margin:0;color:#1C1C1C;font-size:17px;line-height:1.6;flex:1;">Wir haben unsere Einfahrt und den Eingangsbereich neu machen lassen ! Alles zu unserer vollsten Zufriedenheit- in unser Haus kommt man jetzt barrierefrei, die zuvor bestehenden Ebenen sind Geschichte- und alles in Ultra- Geschwindigkeit gepflastert bzw &quot; geebnet&quot; Ein super nettes Team- mit genialen Ideen , die den Alltag leichter machen. Eine Firma ,die wir zu 100% empfehlen können!!!  Danke nochmal aufs Herzlichste!!</blockquote>
+            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">A. & R. D.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Einfahrt & Eingangsbereich</span></figcaption>
           </div>
         </figure>
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #e6e8e4;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(26,30,37,.10);">
-          <div style="position:relative;aspect-ratio:3/2;background:#E6E2D8;">
+        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
+          <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
             <img src="assets/review-ah.png" alt="Neu angelegte Kiesfläche und Gelände am Haus" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
-            <span role="img" aria-label="5 von 5 Sternen" style="color:#E3A21A;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
-            <blockquote style="margin:0;color:#1a1e25;font-size:17px;line-height:1.6;flex:1;">Schnelle und saubere Arbeit.  Immer Kontakt bei irgendwelchen Veränderungen.  Gute Zusammenarbeit.  Fähre Preise.  Gerne wieder👍</blockquote>
-            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1a1e25;">A. H.<span style="display:block;font-weight:500;font-size:14px;color:#55606b;margin-top:2px;">Google-Bewertung</span></figcaption>
+            <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
+            <blockquote style="margin:0;color:#1C1C1C;font-size:17px;line-height:1.6;flex:1;">Schnelle und saubere Arbeit.  Immer Kontakt bei irgendwelchen Veränderungen.  Gute Zusammenarbeit.  Fähre Preise.  Gerne wieder👍</blockquote>
+            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">A. H.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Google-Bewertung</span></figcaption>
           </div>
         </figure>
-        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #e6e8e4;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(26,30,37,.10);">
-          <div style="position:relative;aspect-ratio:3/2;background:#E6E2D8;">
+        <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
+          <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
             <img src="assets/review-wp.png" alt="Bagger belädt Anhänger am Neubau" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div style="display:flex;flex-direction:column;gap:16px;padding:24px 24px 26px;flex:1;">
-            <span role="img" aria-label="5 von 5 Sternen" style="color:#E3A21A;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
-            <blockquote style="margin:0;color:#1a1e25;font-size:17px;line-height:1.6;flex:1;">Die Firma Helmut Heiligmann hat unseren Gartenumbau übernommen. Im abfallenden Gelände waren mit dem Bagger, Winkelsteine in mehreren Terrassen zu setzen. Alle Arbeiten wurden absolut genau, sauber und zügig ausgeführt. Eine ausgezeichnete und vor allem zuverlässige Firma, die ich guten Gewissens weiterempfehlen kann.</blockquote>
-            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1a1e25;">W. P.<span style="display:block;font-weight:500;font-size:14px;color:#55606b;margin-top:2px;">Gartenumbau am Hang</span></figcaption>
+            <span role="img" aria-label="5 von 5 Sternen" style="color:#C8201E;font-size:24px;line-height:1;letter-spacing:3px;">★★★★★</span>
+            <blockquote style="margin:0;color:#1C1C1C;font-size:17px;line-height:1.6;flex:1;">Die Firma Helmut Heiligmann hat unseren Gartenumbau übernommen. Im abfallenden Gelände waren mit dem Bagger, Winkelsteine in mehreren Terrassen zu setzen. Alle Arbeiten wurden absolut genau, sauber und zügig ausgeführt. Eine ausgezeichnete und vor allem zuverlässige Firma, die ich guten Gewissens weiterempfehlen kann.</blockquote>
+            <figcaption style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">W. P.<span style="display:block;font-weight:500;font-size:14px;color:#5E5C5B;margin-top:2px;">Gartenumbau am Hang</span></figcaption>
           </div>
         </figure>
     </div>
-    <p style="margin:20px 0 0;font-family:'Barlow';font-size:14px;color:#55606b;">Bewertungen von Google, im Originalwortlaut und in Originalschreibweise übernommen.</p>
+    <p style="margin:20px 0 0;font-family:'Barlow';font-size:14px;color:#5E5C5B;">Bewertungen von Google, im Originalwortlaut und in Originalschreibweise übernommen.</p>
   </section>
 
 
 
   <sc-if value="{{ showLandwirtschaft }}" hint-placeholder-val="{{ true }}">
-    <div style="max-width:1200px;margin:0 auto;padding:0 22px 72px;"><div style="height:2px;background:#2E7D32;"></div></div>
+    <div style="max-width:1200px;margin:0 auto;padding:0 22px 72px;"><div style="height:2px;background:#C8201E;"></div></div>
     <section id="bereiche" style="max-width:1200px;margin:0 auto;padding:0 22px 72px;">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px 64px;align-items:end;">
-        <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0;"><span data-slide="1" style="display:inline-block;will-change:transform;">Unsere Bereiche</span></h2>
-        <p data-reveal style="color:#55606b;margin:0;max-width:30em;">Erdarbeiten, Landwirtschaft und Angusrinder, alles aus einem Familienbetrieb in Freihalden.</p>
+        <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0;"><span data-slide="1" style="display:inline-block;will-change:transform;">Unsere Bereiche</span></h2>
+        <p data-reveal style="color:#5E5C5B;margin:0;max-width:30em;">Erdarbeiten, Landwirtschaft und Angusrinder, alles aus einem Familienbetrieb in Freihalden.</p>
       </div>
     </section>
     <section id="erdarbeiten" style="max-width:1200px;margin:0 auto;padding:0 22px clamp(88px,11vw,144px);">
       <div style="display:flex;flex-wrap:wrap;gap:48px 72px;align-items:center;">
-        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:440px;min-width:0;position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:#eef1ec;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(26,30,37,.18);">
+        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:440px;min-width:0;position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:#F3F3F2;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(28,28,28,.18);">
           <img data-parallax="1" src="assets/web/g18.jpg" alt="Bagger bei Gartenarbeiten" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
         </div>
         <div data-reveal style="flex:6 1 360px;min-width:0;">
-          <span data-spin="1" style="display:inline-block;will-change:transform;transform-origin:30% 70%;"><span role="img" aria-label="Bagger" style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:14px;background:#2E7D32;margin-bottom:24px;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:rotate(-6deg) scale(1.06);"><span style="display:block;width:42px;height:42px;background:#F6F4EE;-webkit-mask:url(icons/excavator.svg) center/contain no-repeat;mask:url(icons/excavator.svg) center/contain no-repeat;"></span></span></span>
-          <h3 style="font-family:'Barlow';font-weight:800;font-size:clamp(30px,4vw,46px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0 0 24px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Erd- &amp; Baggerarbeiten</span></h3>
+          <span data-spin="1" style="display:inline-block;will-change:transform;transform-origin:30% 70%;"><span role="img" aria-label="Bagger" style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:14px;background:#C8201E;margin-bottom:24px;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:rotate(-6deg) scale(1.06);"><span style="display:block;width:42px;height:42px;background:#FFFFFF;-webkit-mask:url(icons/excavator.svg) center/contain no-repeat;mask:url(icons/excavator.svg) center/contain no-repeat;"></span></span></span>
+          <h3 style="font-family:'Barlow';font-weight:800;font-size:clamp(30px,4vw,46px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0 0 24px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Erd- &amp; Baggerarbeiten</span></h3>
           <p style="margin:0 0 18px;max-width:32em;">Nach mehr als 35 Jahren im Baugeschäft kennen wir uns bestens auf diesem Gebiet aus. Mit viel Erfahrung, ordentlicher Arbeit und Schnelligkeit möchten wir alle Beteiligten zufriedenstellen.</p>
           <p style="margin:0 0 32px;max-width:32em;">Unsere Leistungen umfassen Erd-, Pflaster-, Bagger- und Gartenarbeiten.</p>
-          <a href="erdarbeiten.html" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1a1e25;border-bottom:2px solid #2E7D32;padding-bottom:3px;transition:color .2s;" style-hover="color:#2E7D32;">Zu den Erdarbeiten</a>
+          <a href="erdarbeiten.html" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;border-bottom:2px solid #C8201E;padding-bottom:3px;transition:color .2s;" style-hover="color:#C8201E;">Zu den Erdarbeiten</a>
         </div>
       </div>
     </section>
 
-    <section id="hofladen" style="background:#1F3A22;color:#F4EFE4;">
+    <section id="hofladen" style="background:#262524;color:#FFFFFF;">
       <div style="max-width:1200px;margin:0 auto;padding:clamp(88px,11vw,144px) 22px;display:flex;flex-wrap:wrap;gap:56px 80px;align-items:center;">
         <div style="flex:6 1 400px;min-width:0;">
-          <span data-spin="1" style="display:inline-block;will-change:transform;transform-origin:30% 70%;"><span role="img" aria-label="Traktor" style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:14px;background:#F4EFE4;margin-bottom:24px;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:rotate(-6deg) scale(1.06);"><span style="display:block;width:42px;height:42px;background:#1F3A22;-webkit-mask:url(icons/tractor-variant.svg) center/contain no-repeat;mask:url(icons/tractor-variant.svg) center/contain no-repeat;"></span></span></span>
-          <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(40px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;margin:0 0 20px;color:#F4EFE4;"><span data-slide="1" style="display:inline-block;will-change:transform;">Ballen ab Hof</span></h2>
-          <p style="margin:0 0 40px;max-width:30em;color:#d9d3c4;">Von unseren eigenen Feldern, in Bio-Qualität. Abholen in Freihalden, Oberfeldstraße 15.</p>
+          <span data-spin="1" style="display:inline-block;will-change:transform;transform-origin:30% 70%;"><span role="img" aria-label="Traktor" style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:14px;background:#FFFFFF;margin-bottom:24px;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:rotate(-6deg) scale(1.06);"><span style="display:block;width:42px;height:42px;background:#262524;-webkit-mask:url(icons/tractor-variant.svg) center/contain no-repeat;mask:url(icons/tractor-variant.svg) center/contain no-repeat;"></span></span></span>
+          <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(40px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;margin:0 0 20px;color:#FFFFFF;"><span data-slide="1" style="display:inline-block;will-change:transform;">Ballen ab Hof</span></h2>
+          <p style="margin:0 0 40px;max-width:30em;color:#D9D8D7;">Von unseren eigenen Feldern, in Bio-Qualität. Abholen in Freihalden, Oberfeldstraße 15.</p>
           <div style="display:flex;flex-direction:column;">
             <sc-for list="{{ ballen }}" as="b" hint-placeholder-count="4">
               <div style="display:flex;align-items:baseline;gap:16px;padding:14px 0;">
-                <span style="font-family:'Barlow';font-weight:700;font-size:clamp(20px,2.2vw,26px);color:#F4EFE4;">{{ b.name }}</span>
-                <span aria-hidden="true" style="flex:1;border-bottom:2px dotted rgba(244,239,228,.4);transform:translateY(-6px);min-width:24px;"></span>
-                <span style="font-family:'Barlow';font-weight:700;font-size:15px;color:#F4EFE4;">Bio</span>
+                <span style="font-family:'Barlow';font-weight:700;font-size:clamp(20px,2.2vw,26px);color:#FFFFFF;">{{ b.name }}</span>
+                <span aria-hidden="true" style="flex:1;border-bottom:2px dotted rgba(255,255,255,.4);transform:translateY(-6px);min-width:24px;"></span>
+                <span style="font-family:'Barlow';font-weight:700;font-size:15px;color:#FFFFFF;">Bio</span>
               </div>
             </sc-for>
           </div>
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:40px;">
-            <a href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:56px;padding:0 28px;background:#F4EFE4;color:#1F3A22;font-family:'Barlow';font-weight:800;font-size:18px;border-radius:4px;font-variant-numeric:tabular-nums;" style-hover="background:#fff8ea;color:#1F3A22;">Ballen bestellen: 0162 3478127</a>
-            <a href="landwirtschaft.html" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#F4EFE4;border-bottom:2px solid #F4EFE4;padding-bottom:2px;" style-hover="color:#d9d3c4;">Ballenpressen und Silage-Transport</a>
+            <a href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:56px;padding:0 28px;background:#FFFFFF;color:#262524;font-family:'Barlow';font-weight:800;font-size:18px;border-radius:4px;font-variant-numeric:tabular-nums;" style-hover="background:#FFFFFF;color:#262524;">Ballen bestellen: 0162 3478127</a>
+            <a href="landwirtschaft.html" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#FFFFFF;border-bottom:2px solid #FFFFFF;padding-bottom:2px;" style-hover="color:#D9D8D7;">Ballenpressen und Silage-Transport</a>
           </div>
         </div>
-        <div data-reveal data-side="right" style="flex:5 1 300px;min-width:0;position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#2a4a2d;">
+        <div data-reveal data-side="right" style="flex:5 1 300px;min-width:0;position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#363433;">
           <img data-parallax="1" src="assets/web/g24.jpg" alt="Schlepper mit Strohballen bei Sonnenuntergang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
         </div>
       </div>
@@ -188,15 +188,15 @@
 
     <section id="herde" style="max-width:1200px;margin:0 auto;padding:clamp(88px,11vw,144px) 22px 0;">
       <div style="display:flex;flex-wrap:wrap;gap:48px 72px;align-items:center;">
-        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:440px;min-width:0;position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:#eef1ec;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(26,30,37,.18);">
+        <div data-reveal data-side="left" style="flex:4 1 260px;max-width:440px;min-width:0;position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:#F3F3F2;transition:box-shadow .4s ease;" style-hover="box-shadow:0 22px 44px rgba(28,28,28,.18);">
           <img data-parallax="1" src="assets/web/g05.jpg" alt="Angusrinder fressen aus der Hand" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:-8% 0;width:100%;height:116%;will-change:transform;">
         </div>
         <div data-reveal style="flex:6 1 360px;min-width:0;">
-          <span data-spin="1" style="display:inline-block;will-change:transform;transform-origin:30% 70%;"><span role="img" aria-label="Rind" style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:14px;background:#2E7D32;margin-bottom:24px;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:rotate(-6deg) scale(1.06);"><span style="display:block;width:42px;height:42px;background:#F6F4EE;-webkit-mask:url(icons/cow.svg) center/contain no-repeat;mask:url(icons/cow.svg) center/contain no-repeat;"></span></span></span>
-          <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0 0 24px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Unsere Angus-Herde</span></h2>
+          <span data-spin="1" style="display:inline-block;will-change:transform;transform-origin:30% 70%;"><span role="img" aria-label="Rind" style="display:inline-grid;place-items:center;width:72px;height:72px;border-radius:14px;background:#C8201E;margin-bottom:24px;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:rotate(-6deg) scale(1.06);"><span style="display:block;width:42px;height:42px;background:#FFFFFF;-webkit-mask:url(icons/cow.svg) center/contain no-repeat;mask:url(icons/cow.svg) center/contain no-repeat;"></span></span></span>
+          <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0 0 24px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Unsere Angus-Herde</span></h2>
           <p style="margin:0 0 18px;max-width:32em;">In Freihalden leben unsere Angusrinder die meiste Zeit des Jahres im Freien auf der Weide. Die Kälber wachsen bei ihrer Mutter in der Herde auf.</p>
           <p style="margin:0 0 32px;max-width:32em;">Gefüttert werden sie mit Gras sowie eigenem Heu und Grassilage in Bio-Qualität.</p>
-          <a href="angusrinder.html" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1a1e25;border-bottom:2px solid #2E7D32;padding-bottom:3px;">Zur Herde</a>
+          <a href="angusrinder.html" style="font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;border-bottom:2px solid #C8201E;padding-bottom:3px;">Zur Herde</a>
         </div>
       </div>
     </section>
@@ -204,18 +204,18 @@
 
 <div style="height:clamp(88px,11vw,144px);"></div>
 
-  <div style="max-width:1200px;margin:0 auto;padding:0 22px 72px;"><div style="height:2px;background:#2E7D32;"></div></div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 22px 72px;"><div style="height:2px;background:#C8201E;"></div></div>
   <section id="maschinen" style="max-width:1200px;margin:0 auto;padding:0 22px 128px;">
-    <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0 0 36px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Unsere Maschinen</span></h2>
+    <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0 0 36px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Unsere Maschinen</span></h2>
     <div style="display:grid;grid-template-columns:{{ machWrapCols }};gap:48px;align-items:start;">
-      <div role="table" aria-label="Maschinen" style="border-top:2px solid #1a1e25;min-width:0;">
-        <div role="row" style="display:{{ machHeadDisplay }};grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1fr);gap:24px;padding:12px 16px;border-bottom:1px solid #cfcabd;font-family:'Barlow';font-weight:700;font-size:15px;color:#1a1e25;">
+      <div role="table" aria-label="Maschinen" style="border-top:2px solid #1C1C1C;min-width:0;">
+        <div role="row" style="display:{{ machHeadDisplay }};grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1fr);gap:24px;padding:12px 16px;border-bottom:1px solid #CFCECD;font-family:'Barlow';font-weight:700;font-size:15px;color:#1C1C1C;">
           <span role="columnheader">Gerät</span>
           <span role="columnheader">Wofür</span>
           <span role="columnheader">Einsatz</span>
         </div>
         <sc-for list="{{ machines }}" as="m" hint-placeholder-count="4">
-          <div role="row" style="border-bottom:1px solid #dcd8cd;">
+          <div role="row" style="border-bottom:1px solid #DCDCDB;">
             <sc-if value="{{ m.showImg }}" hint-placeholder-val="{{ false }}">
               <img src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin-top:16px;border-radius:4px;" />
             </sc-if>
@@ -227,55 +227,55 @@
           </div>
         </sc-for>
       </div>
-      <sc-if value="{{ showPanel }}" hint-placeholder-val="{{ true }}">
+      <sc-if value="{{ showPanel }}" hint-placeholder-val="{{ false }}">
         <figure style="margin:0;position:sticky;top:96px;">
-          <img key="{{ active.img }}" src="{{ active.img }}" alt="{{ active.alt }}" style="animation:mach-in .5s cubic-bezier(.16,1,.3,1);transition:opacity .3s;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#eef1ec;border-radius:4px;" />
-          <figcaption style="padding-top:12px;font-family:'Barlow';font-weight:700;font-size:16px;color:#1a1e25;">{{ active.title }}</figcaption>
+          <img key="{{ active.img }}" src="{{ active.img }}" alt="{{ active.alt }}" style="animation:mach-in .5s cubic-bezier(.16,1,.3,1);transition:opacity .3s;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#F3F3F2;border-radius:4px;" />
+          <figcaption style="padding-top:12px;font-family:'Barlow';font-weight:700;font-size:16px;color:#1C1C1C;">{{ active.title }}</figcaption>
         </figure>
       </sc-if>
     </div>
   </section>
 
-  <section id="kontakt" style="background:#EDEAE2;">
+  <section id="kontakt" style="background:#F1F1F0;">
     <div style="max-width:1200px;margin:0 auto;padding:112px 22px 0;">
-      <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1a1e25;margin:0 0 16px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Was steht an?</span></h2>
+      <h2 style="font-family:'Barlow';font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.02em;color:#1C1C1C;margin:0 0 16px;"><span data-slide="1" style="display:inline-block;will-change:transform;">Was steht an?</span></h2>
       <p style="margin:0 0 clamp(20px,3vw,32px);max-width:30em;">Rufen Sie an oder schreiben Sie kurz, worum es geht. Wir melden uns mit einem Angebot.</p>
-      <a data-slide="1" href="tel:+491623478127" style="will-change:transform;display:inline-block;font-family:'Barlow';font-weight:800;font-size:clamp(40px,9.4vw,124px);line-height:.95;letter-spacing:-.035em;color:#1a1e25;font-variant-numeric:tabular-nums;" style-hover="color:#2E7D32;">0162 3478127</a>
+      <a data-slide="1" href="tel:+491623478127" style="will-change:transform;display:inline-block;font-family:'Barlow';font-weight:800;font-size:clamp(40px,9.4vw,124px);line-height:.95;letter-spacing:-.035em;color:#1C1C1C;font-variant-numeric:tabular-nums;" style-hover="color:#C8201E;">0162 3478127</a>
     </div>
     <div ref="{{ contactGridRef }}" style="max-width:1200px;margin:0 auto;padding:56px 22px 112px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
-      <div data-reveal style="border-top:1px solid #cfcabd;padding-top:32px;">
+      <div data-reveal style="border-top:1px solid #CFCECD;padding-top:32px;">
         <div style="display:flex;flex-direction:column;gap:8px;font-size:17px;margin-bottom:36px;">
-          <a href="tel:082252304" style="color:#1a1e25;">Festnetz 08225 2304</a>
-          <a href="mailto:Lohnunternehmen.heiligmann@gmx.de" style="color:#1a1e25;word-break:break-word;">Lohnunternehmen.heiligmann@gmx.de</a>
-          <span style="color:#1a1e25;">Oberfeldstraße 15, 89343 Freihalden</span>
+          <a href="tel:082252304" style="color:#1C1C1C;">Festnetz 08225 2304</a>
+          <a href="mailto:Lohnunternehmen.heiligmann@gmx.de" style="color:#1C1C1C;word-break:break-word;">Lohnunternehmen.heiligmann@gmx.de</a>
+          <span style="color:#1C1C1C;">Oberfeldstraße 15, 89343 Freihalden</span>
         </div>
         <div style="border-radius:4px;overflow:hidden;">
           <sc-if value="{{ mapOn }}" hint-placeholder-val="{{ false }}">
             <iframe title="Karte: Hof in Freihalden" src="https://maps.google.com/maps?q=Oberfeldstra%C3%9Fe%2015%2C%2089343%20Jettingen-Scheppach&z=14&output=embed" style="display:block;width:100%;height:260px;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </sc-if>
           <sc-if value="{{ mapOff }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;min-height:260px;padding:24px;background:repeating-linear-gradient(135deg,#E6E2D8 0 14px,#EDEAE2 14px 28px);color:#1a1e25;">
+            <div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;min-height:260px;padding:24px;background:repeating-linear-gradient(135deg,#E4E3E2 0 14px,#F1F1F0 14px 28px);color:#1C1C1C;">
               <span style="font-family:'Barlow';font-weight:800;font-size:19px;">Karte von Google Maps</span>
-              <span style="font-size:15px;line-height:1.5;max-width:30em;">Beim Laden der Karte werden Daten (u. a. Ihre IP-Adresse) an Google übertragen. Mehr in der <a href="datenschutz.html" style="color:#1a1e25;">Datenschutzerklärung</a>.</span>
+              <span style="font-size:15px;line-height:1.5;max-width:30em;">Beim Laden der Karte werden Daten (u. a. Ihre IP-Adresse) an Google übertragen. Mehr in der <a href="datenschutz.html" style="color:#1C1C1C;">Datenschutzerklärung</a>.</span>
               <span style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;">
-                <button type="button" onClick="{{ loadMap }}" style="min-height:46px;padding:0 20px;background:#1a1e25;color:#F6F4EE;border:0;border-radius:6px;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;">Karte laden</button>
-                <button type="button" onClick="{{ alwaysMap }}" style="padding:6px 0;background:none;border:0;color:#1a1e25;font-family:'Barlow';font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;">Externe Medien immer erlauben</button>
+                <button type="button" onClick="{{ loadMap }}" style="min-height:46px;padding:0 20px;background:#1C1C1C;color:#FFFFFF;border:0;border-radius:6px;font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;">Karte laden</button>
+                <button type="button" onClick="{{ alwaysMap }}" style="padding:6px 0;background:none;border:0;color:#1C1C1C;font-family:'Barlow';font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;">Externe Medien immer erlauben</button>
               </span>
             </div>
           </sc-if>
         </div>
       </div>
 
-      <form data-reveal onSubmit="{{ submitForm }}" style="position:relative;display:flex;flex-direction:column;gap:18px;border-top:1px solid #cfcabd;padding-top:32px;">
+      <form data-reveal onSubmit="{{ submitForm }}" style="position:relative;display:flex;flex-direction:column;gap:18px;border-top:1px solid #CFCECD;padding-top:32px;">
         <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><label>Bitte leer lassen<input ref="{{ hpRef }}" type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
-        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1a1e25;">Name (optional)
-          <input ref="{{ nameRef }}" type="text" placeholder="Ihr Name" style="background:#fff;border:1px solid #cfcabd;border-radius:4px;padding:15px 16px;color:#1a1e25;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;" style-focus="border-color:#2E7D32;" />
+        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1C1C1C;">Name (optional)
+          <input ref="{{ nameRef }}" type="text" placeholder="Ihr Name" style="background:#fff;border:1px solid #CFCECD;border-radius:4px;padding:15px 16px;color:#1C1C1C;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;" style-focus="border-color:#C8201E;" />
         </label>
-        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1a1e25;">Telefon (Pflichtfeld)
-          <input ref="{{ phoneRef }}" type="tel" required placeholder="Damit wir Sie zurückrufen können" style="background:#fff;border:1px solid #cfcabd;border-radius:4px;padding:15px 16px;color:#1a1e25;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;" style-focus="border-color:#2E7D32;" />
+        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1C1C1C;">Telefon (Pflichtfeld)
+          <input ref="{{ phoneRef }}" type="tel" required placeholder="Damit wir Sie zurückrufen können" style="background:#fff;border:1px solid #CFCECD;border-radius:4px;padding:15px 16px;color:#1C1C1C;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;" style-focus="border-color:#C8201E;" />
         </label>
-        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1a1e25;">Worum geht es?
-          <select ref="{{ topicRef }}" style="background:#fff;border:1px solid #cfcabd;border-radius:4px;padding:15px 16px;color:#1a1e25;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;" style-focus="border-color:#2E7D32;">
+        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1C1C1C;">Worum geht es?
+          <select ref="{{ topicRef }}" style="background:#fff;border:1px solid #CFCECD;border-radius:4px;padding:15px 16px;color:#1C1C1C;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;" style-focus="border-color:#C8201E;">
             <option>Erd- & Baggerarbeiten</option>
             <option>Pflasterarbeiten (Einfahrt/Wege)</option>
             <option>Garten- & Landschaftsarbeiten</option>
@@ -285,12 +285,12 @@
             <option>Sonstiges</option>
           </select>
         </label>
-        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1a1e25;">Nachricht
-          <textarea ref="{{ msgRef }}" rows="5" placeholder="Was soll gemacht werden, und wo?" style="background:#fff;border:1px solid #cfcabd;border-radius:4px;padding:15px 16px;color:#1a1e25;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;resize:vertical;" style-focus="border-color:#2E7D32;"></textarea>
+        <label style="display:flex;flex-direction:column;gap:8px;font-family:'Barlow';font-size:14px;font-weight:600;color:#1C1C1C;">Nachricht
+          <textarea ref="{{ msgRef }}" rows="5" placeholder="Was soll gemacht werden, und wo?" style="background:#fff;border:1px solid #CFCECD;border-radius:4px;padding:15px 16px;color:#1C1C1C;font-size:16px;font-family:'Source Serif 4',Georgia,serif;outline:none;resize:vertical;" style-focus="border-color:#C8201E;"></textarea>
         </label>
         <button type="submit" style="margin-top:6px;background:{{ ctaColor }};color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;padding:17px;border:none;border-radius:4px;cursor:pointer;">Anfrage senden</button>
-        <p style="color:#55606b;font-size:14px;margin:0;">Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.</p>
-        <p style="color:#55606b;font-size:14px;margin:0;">Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Details in der <a href="datenschutz.html" style="color:#1a1e25;">Datenschutzerklärung</a>.</p>
+        <p style="color:#5E5C5B;font-size:14px;margin:0;">Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.</p>
+        <p style="color:#5E5C5B;font-size:14px;margin:0;">Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Details in der <a href="datenschutz.html" style="color:#1C1C1C;">Datenschutzerklärung</a>.</p>
       </form>
     </div>
   </section>
@@ -299,14 +299,14 @@
 
   <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
     <div style="height:76px;"></div>
-    <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#F6F4EE;border-top:2px solid #E32523;">
-      <a href="tel:+491623478127" style="display:flex;align-items:center;justify-content:center;min-height:52px;background:#2E7D32;color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;border-radius:4px;">Anrufen</a>
-      <a href="#kontakt" style="display:flex;align-items:center;justify-content:center;min-height:52px;border:1.5px solid #1a1e25;color:#1a1e25;font-family:'Barlow';font-weight:700;font-size:17px;border-radius:4px;">Anfrage</a>
+    <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#FFFFFF;border-top:2px solid #E32523;">
+      <a href="tel:+491623478127" style="display:flex;align-items:center;justify-content:center;min-height:52px;background:#C8201E;color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;border-radius:4px;">Anrufen</a>
+      <a href="#kontakt" style="display:flex;align-items:center;justify-content:center;min-height:52px;border:1.5px solid #1C1C1C;color:#1C1C1C;font-family:'Barlow';font-weight:700;font-size:17px;border-radius:4px;">Anfrage</a>
     </div>
   </sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;ctaColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2E7D32&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Farben&quot;,&quot;options&quot;:[&quot;#2E7D32&quot;,&quot;#388E3C&quot;,&quot;#1a1e25&quot;,&quot;#B3261E&quot;]},&quot;trustColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2E7D32&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Farben&quot;,&quot;options&quot;:[&quot;#2E7D32&quot;,&quot;#388E3C&quot;,&quot;#558B2F&quot;,&quot;#00796B&quot;]},&quot;showLandwirtschaft&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Abschnitte&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;ctaColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C8201E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Farben&quot;,&quot;options&quot;:[&quot;#C8201E&quot;,&quot;#C8201E&quot;,&quot;#1C1C1C&quot;,&quot;#B3261E&quot;]},&quot;trustColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C8201E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Farben&quot;,&quot;options&quot;:[&quot;#C8201E&quot;,&quot;#C8201E&quot;,&quot;#C8201E&quot;,&quot;#C8201E&quot;]},&quot;showLandwirtschaft&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Abschnitte&quot;}}">
 class Component extends DCLogic {
   state = { isMobile: false, machMobile: false, active: 0 };
   renderVals() {
@@ -319,11 +319,11 @@ class Component extends DCLogic {
       { title: 'Ballenpresse & Landmaschinen', wofuer: 'Ballenpressen, Silage-Transport und Feldarbeit.', einsatz: 'Feld und Wiese', img: 'assets/web/g22.jpg', alt: 'Schlepper mit Ballenpresse auf dem Stoppelfeld' },
     ].map((m, i) => {
       const on = !mm && i === this.state.active;
-      return { ...m, showImg: mm, pressed: on ? 'true' : 'false', bg: on ? '#1F3A22' : 'transparent', fg: on ? '#F4EFE4' : '#1a1e25', select: () => { this._machHover = Date.now(); if (!mm && this.state.active !== i) this.setState({ active: i }); } };
+      return { ...m, showImg: mm, pressed: on ? 'true' : 'false', bg: on ? '#262524' : 'transparent', fg: on ? '#FFFFFF' : '#1C1C1C', select: () => { this._machHover = Date.now(); if (!mm && this.state.active !== i) this.setState({ active: i }); } };
     });
     return {
-      ctaColor: this.props.ctaColor ?? '#2E7D32',
-      trustColor: this.props.trustColor ?? '#2E7D32',
+      ctaColor: this.props.ctaColor ?? '#C8201E',
+      trustColor: this.props.trustColor ?? '#C8201E',
       showLandwirtschaft: this.props.showLandwirtschaft ?? true,
       isMobile: this.state.isMobile,
       mapOn: !!this.state.mapOn, mapOff: !this.state.mapOn,
@@ -394,7 +394,7 @@ class Component extends DCLogic {
     ];
     const cur = T.find(t => t.key === (this.state.tab || 'erd'));
     return {
-      tabs: T.map(t => { const on = t === cur; return { label: t.label, on, bg: on ? '#1a1e25' : 'transparent', fg: on ? '#F6F4EE' : '#1a1e25', bd: on ? '#1a1e25' : '#cfcabd', pick: () => { this._userPicked = true; this._stopAuto(); this.setState({ tab: t.key }); } }; }),
+      tabs: T.map(t => { const on = t === cur; return { label: t.label, on, bg: on ? '#1C1C1C' : 'transparent', fg: on ? '#FFFFFF' : '#1C1C1C', bd: on ? '#1C1C1C' : '#CFCECD', pick: () => { this._userPicked = true; this._stopAuto(); this.setState({ tab: t.key }); } }; }),
       tabIntro: cur.intro, tabLink: cur.link,
       tabItems: cur.items ? cur.items.map((it, i) => ({ ...it, href: cur.link.href, no: String(i + 1).padStart(2, '0') })) : null,
     };
