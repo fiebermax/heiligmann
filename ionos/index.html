@@ -22,6 +22,19 @@
   @keyframes mach-in { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) { img { animation: none !important; } }
   ::selection { background: #C8201E; color: #fff; }
+  @media (max-width: 700px) {
+    .hm-swipe { display:flex !important; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px !important; margin:0 -22px; padding:0 22px 8px; scrollbar-width:none; }
+    .hm-swipe::-webkit-scrollbar { display:none; }
+    .hm-swipe > * { flex:0 0 84%; scroll-snap-align:center; }
+    .hm-swipe blockquote { font-size:16px !important; }
+  }
+  @media (max-width: 1099px) {
+    img.mach-thumb { aspect-ratio:21/9 !important; max-height:220px; }
+  }
+  @media (max-width: 899px) {
+    .hm-hero > div:last-child > div:first-child { aspect-ratio:16/10 !important; }
+    #erdarbeiten [data-side], #herde [data-side], #hofladen [data-side] { aspect-ratio:16/10 !important; max-width:none !important; flex-basis:100% !important; }
+  }
   .hm-hero { grid-template-columns: 1fr; }
   @media (min-width: 900px) { .hm-hero { grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); } }
   .hz-scroll::-webkit-scrollbar { height: 6px; }
@@ -102,7 +115,7 @@
         <span style="font-size:16px;font-weight:700;border-bottom:2px solid #C8201E;padding-bottom:2px;">Alle Bewertungen auf Google</span>
       </a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+    <div class="hm-swipe" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
         <figure data-reveal style="margin:0;display:flex;flex-direction:column;background:#ffffff;border:1px solid #E6E6E5;border-radius:14px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,28,28,.10);">
           <div style="position:relative;aspect-ratio:3/2;background:#E4E3E2;">
             <img data-no-reveal src="assets/review-ard.webp" alt="Neu gestaltete Einfahrt mit barrierefreiem Eingang" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
@@ -219,7 +232,7 @@
         <sc-for list="{{ machines }}" as="m" hint-placeholder-count="4">
           <div role="row" style="border-bottom:1px solid #DCDCDB;">
             <sc-if value="{{ m.showImg }}" hint-placeholder-val="{{ false }}">
-              <img src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin-top:16px;border-radius:14px;" />
+              <img class="mach-thumb" src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin-top:16px;border-radius:14px;" />
             </sc-if>
             <button type="button" onClick="{{ m.select }}" onMouseEnter="{{ m.select }}" onFocus="{{ m.select }}" aria-pressed="{{ m.pressed }}" style="display:grid;grid-template-columns:{{ machRowCols }};gap:6px 24px;width:100%;text-align:left;padding:20px 16px;background:{{ m.bg }};color:{{ m.fg }};border:0;cursor:pointer;font:inherit;align-items:baseline;transition:background .2s ease,color .2s ease;">
               <span role="cell" style="font-family:'Barlow';font-weight:800;font-size:clamp(20px,2vw,24px);line-height:1.15;">{{ m.title }}</span>
