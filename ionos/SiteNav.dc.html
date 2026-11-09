@@ -31,12 +31,37 @@
   .hm-facts li { border-top:2px solid currentColor; padding-top:16px; }
   .hm-facts .n { display:block; font-family:'Barlow',sans-serif; font-weight:800; font-size:clamp(40px,5vw,64px); line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
   .hm-facts .l { display:block; margin-top:10px; font-size:16px; line-height:1.45; opacity:.8; }
+  /* Handy-Menü */
+  .hm-burger { width:46px; height:46px; border:0; border-radius:14px; background:#F1F1F0; cursor:pointer; position:relative; padding:0; -webkit-tap-highlight-color:transparent; transition:background .2s ease; }
+  .hm-burger:active { background:#E6E6E5; }
+  .hm-burger span { position:absolute; left:13px; right:13px; height:2px; border-radius:2px; background:#1C1C1C; transition:transform .35s cubic-bezier(.76,0,.24,1), top .35s cubic-bezier(.76,0,.24,1); }
+  .hm-burger span:first-child { top:18px; } .hm-burger span:last-child { top:26px; }
+  .hm-burger.offen span:first-child { top:22px; transform:rotate(45deg); }
+  .hm-burger.offen span:last-child { top:22px; transform:rotate(-45deg); }
+  .hm-mmenu { position:fixed; left:0; right:0; top:var(--hm-kopf,71px); bottom:0; z-index:80; background:#FFFFFF; display:flex; flex-direction:column; justify-content:space-between; padding:18px 20px calc(22px + env(safe-area-inset-bottom)); overflow-y:auto; visibility:hidden; opacity:0; transform:translateY(-8px); transition:opacity .3s ease, transform .4s cubic-bezier(.16,1,.3,1), visibility 0s linear .4s; }
+  .hm-mmenu.offen { visibility:visible; opacity:1; transform:none; transition:opacity .3s ease, transform .4s cubic-bezier(.16,1,.3,1), visibility 0s; }
+  .hm-mlink { display:flex; align-items:baseline; gap:14px; padding:13px 2px; border-bottom:1px solid #EDEDEC; font-family:'Barlow',sans-serif; font-weight:800; font-size:clamp(26px,7.4vw,32px); letter-spacing:-.02em; line-height:1.1; text-decoration:none; opacity:0; transform:translateY(14px); transition:opacity .35s ease, transform .5s cubic-bezier(.16,1,.3,1); }
+  .hm-mlink .nr { font-size:13px; font-weight:700; letter-spacing:0; color:#C8201E; min-width:20px; }
+  .hm-mmenu.offen .hm-mlink { opacity:1; transform:none; }
+  .hm-mmenu.offen .hm-mlink:nth-child(2) { transition-delay:.04s; } .hm-mmenu.offen .hm-mlink:nth-child(3) { transition-delay:.08s; }
+  .hm-mmenu.offen .hm-mlink:nth-child(4) { transition-delay:.12s; } .hm-mmenu.offen .hm-mlink:nth-child(5) { transition-delay:.16s; }
+  .hm-mmenu.offen .hm-mlink:nth-child(6) { transition-delay:.2s; }
+  .hm-mfuss { margin-top:28px; }
+  .hm-mtel { display:flex; align-items:center; gap:14px; min-height:62px; padding:0 20px; border-radius:18px; background:#C8201E; color:#FFFFFF !important; font-family:'Barlow',sans-serif; font-weight:700; font-size:18px; text-decoration:none; box-shadow:0 8px 20px rgba(200,32,30,.28); }
+  .hm-mtel svg { width:22px; height:22px; flex:none; }
+  .hm-mtel span { display:flex; flex-direction:column; line-height:1.1; }
+  .hm-mtel small { font-weight:600; font-size:13px; opacity:.85; }
+  .hm-madr { margin:16px 2px 0; font-family:'Barlow',sans-serif; font-size:14px; line-height:1.6; color:#5E5C5B; }
+  .hm-madr a { color:#1C1C1C; }
+  html.hm-menu-offen, html.hm-menu-offen body { overflow:hidden; }
+  html.hm-menu-offen .hm-dock { display:none !important; }
+  @media (prefers-reduced-motion: reduce) { .hm-mmenu, .hm-mlink, .hm-burger span { transition:none !important; } }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   }
 </style>
 </helmet>
-<header ref="{{ headerRef }}" style="view-transition-name:site-header;position:sticky;top:0;z-index:50;background:{{ headerBg }};backdrop-filter:blur(14px);border-bottom:1px solid {{ lineCol }};transition:box-shadow .3s ease,background .3s ease;font-family:'Source Serif 4',Georgia,serif;">
+<header ref="{{ headerRef }}" style="view-transition-name:site-header;position:sticky;top:0;z-index:50;background:{{ headerBg }};border-bottom:1px solid {{ lineCol }};transition:box-shadow .3s ease,background .3s ease;font-family:'Source Serif 4',Georgia,serif;">
   <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;height:3px;pointer-events:none;"><div ref="{{ trackRef }}" style="height:100%;background:#C8201E;transform:scaleX(0);transform-origin:left center;will-change:transform;"></div></div>
   <div style="max-width:1200px;margin:0 auto;padding:12px max(22px, env(safe-area-inset-right)) 12px max(22px, env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:16px;">
     <a href="./" style="display:inline-flex;align-items:center;text-decoration:none;">
@@ -50,14 +75,19 @@
       <a href="tel:+491623478127" style="display:inline-flex;align-items:center;min-height:44px;color:#1C1C1C;font-family:'Barlow',sans-serif;font-weight:800;font-size:16px;text-decoration:none;" style-hover="color:#C8201E;"><span style="border-bottom:2px solid #E32523;padding-bottom:2px;">0162 3478127</span></a>
     </nav>
 
-    <button onClick="{{ toggleNav }}" aria-label="Menü" style="display:none;background:transparent;border:1px solid #D6D6D5;color:#1C1C1C;width:46px;height:46px;border-radius:4px;font-size:22px;cursor:pointer;" ref="{{ burgerRef }}">☰</button>
+    <button class="hm-burger" onClick="{{ toggleNav }}" aria-label="Menü öffnen" aria-expanded="false" style="display:none;" ref="{{ burgerRef }}"><span></span><span></span></button>
   </div>
 
-  <div ref="{{ mobileMenuRef }}" style="display:none;flex-direction:column;padding:8px 18px 20px;border-top:1px solid {{ lineCol }};background:{{ menuBg }};">
-    <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
-      <a href="{{ l.href }}" onClick="{{ closeNav }}" style="display:block;min-height:48px;color:{{ l.mcol }};font-weight:600;padding:15px 6px;border-bottom:1px solid #EDEDEC;text-decoration:none;">{{ l.label }}</a>
-    </sc-for>
-    <a href="tel:+491623478127" style="margin-top:14px;text-align:center;background:{{ ctaColor }};color:#fff;font-weight:700;padding:15px;border-radius:4px;text-decoration:none;">Jetzt anrufen: 0162 3478127</a>
+  <div class="hm-mmenu" ref="{{ mobileMenuRef }}" aria-hidden="true">
+    <nav class="hm-mlinks" aria-label="Hauptmenü">
+      <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
+        <a class="hm-mlink" href="{{ l.href }}" onClick="{{ closeNav }}" aria-current="{{ l.cur }}" style="color:{{ l.mcol }};"><span class="nr">{{ l.no }}</span>{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <div class="hm-mfuss">
+      <a class="hm-mtel" href="tel:+491623478127"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Jetzt anrufen<small>0162 3478127</small></span></a>
+      <p class="hm-madr">Oberfeldstraße 15 · 89343 Freihalden<br><a href="mailto:Lohnunternehmen.heiligmann@gmx.de">Lohnunternehmen.heiligmann@gmx.de</a></p>
+    </div>
   </div>
 </header>
 </x-dc>
@@ -74,9 +104,9 @@ class Component extends DCLogic {
       { label: 'Galerie', href: 'galerie.html', key: 'galerie' },
       { label: 'Kontakt', href: 'kontakt.html', key: 'kontakt' },
     ];
-    const links = defs.map(d => {
+    const links = defs.map((d, i) => {
       const on = d.key === active;
-      return { ...d, col: on ? accent : '#4E4C4B', mcol: on ? accent : '#1C1C1C', wt: on ? 700 : 500 };
+      return { ...d, no: String(i + 1).padStart(2, '0'), cur: on ? 'page' : 'false', col: on ? accent : '#4E4C4B', mcol: on ? accent : '#1C1C1C', wt: on ? 700 : 500 };
     });
     return {
       links,
@@ -89,8 +119,8 @@ class Component extends DCLogic {
       deskNavRef: (el) => { this._deskNav = el; },
       burgerRef: (el) => { this._burger = el; },
       mobileMenuRef: (el) => { this._menu = el; },
-      toggleNav: () => { if (this._menu) this._menu.style.display = this._menu.style.display === 'flex' ? 'none' : 'flex'; },
-      closeNav: () => { if (this._menu) this._menu.style.display = 'none'; },
+      toggleNav: () => this._setMenu(!(this._menu && this._menu.classList.contains('offen'))),
+      closeNav: () => this._setMenu(false),
     };
   }
   componentDidMount() {
@@ -102,7 +132,8 @@ class Component extends DCLogic {
       const mobile = window.innerWidth < 1080;
       if (this._deskNav) this._deskNav.style.display = mobile ? 'none' : 'flex';
       if (this._burger) this._burger.style.display = mobile ? 'block' : 'none';
-      if (!mobile && this._menu) this._menu.style.display = 'none';
+      if (!mobile) this._setMenu(false);
+      if (this._header) document.documentElement.style.setProperty('--hm-kopf', this._header.offsetHeight + 'px');
     };
     applyResponsive();
     window.addEventListener('resize', applyResponsive);
@@ -156,6 +187,16 @@ class Component extends DCLogic {
       this._photoIo = io;
     }
     this._cleanup = () => { window.removeEventListener('resize', applyResponsive); window.removeEventListener('scroll', onScroll); };
+  }
+  _setMenu(auf) {
+    if (!this._menu || !this._burger) return;
+    if (auf && this._header) document.documentElement.style.setProperty('--hm-kopf', this._header.getBoundingClientRect().bottom + 'px');
+    this._menu.classList.toggle('offen', auf); this._burger.classList.toggle('offen', auf);
+    this._menu.setAttribute('aria-hidden', auf ? 'false' : 'true');
+    this._burger.setAttribute('aria-expanded', auf ? 'true' : 'false');
+    this._burger.setAttribute('aria-label', auf ? 'Menü schließen' : 'Menü öffnen');
+    document.documentElement.classList.toggle('hm-menu-offen', auf);
+    if (!this._escAn) { this._escAn = true; document.addEventListener('keydown', e => { if (e.key === 'Escape') this._setMenu(false); }); }
   }
   componentWillUnmount() { if (this._cleanup) this._cleanup(); if (this._photoIo) this._photoIo.disconnect(); }
 }
