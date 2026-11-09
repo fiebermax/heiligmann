@@ -79,6 +79,26 @@
     [role="tab"] .t-kurz { display:inline; }
     [role="tab"] [data-tabprog] { left:14px !important; right:14px !important; bottom:5px !important; height:2px !important; border-radius:2px; }
   }
+  .st-mehr { display:none; }
+  @media (max-width: 700px) {
+    /* Kundenstimmen am Handy: Wisch-Reihe mit drei gleichen, kompakten Karten */
+    .st-inner { padding:56px 0 48px !important; }
+    .st-kopf { padding:0 20px; margin-bottom:22px !important; gap:14px !important; }
+    .st-kopf h2 { font-size:30px !important; }
+    .st-google { padding:8px 14px !important; }
+    .st-note { font-size:28px !important; }
+    .st-reihe { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 20px 14px; scroll-padding:0 20px; scrollbar-width:none; }
+    .st-reihe::-webkit-scrollbar { display:none; }
+    .st-klein { display:contents !important; }
+    .st-reihe > figure, .st-klein > figure { flex:0 0 84%; scroll-snap-align:start; margin:0 !important; display:flex !important; flex-direction:column; align-items:stretch !important; gap:0 !important; padding:0 !important; border-radius:16px !important; overflow:hidden; background:#FFFFFF; box-shadow:0 8px 22px rgba(28,28,28,.08) !important; }
+    .st-gross-bild, .st-karte-bild { position:relative !important; aspect-ratio:16/9 !important; min-height:0 !important; border-radius:0 !important; flex:none; }
+    .st-gross-text, .st-karte-text { padding:16px 18px 18px !important; display:flex; flex-direction:column; flex:1; }
+    .st-gross blockquote, .st-karte blockquote { font-family:'Source Serif 4',Georgia,serif !important; font-weight:400 !important; font-size:15.5px !important; line-height:1.55 !important; margin:10px 0 12px !important; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:5; overflow:hidden; flex:1; }
+    .st-sterne { font-size:17px !important; }
+    .st-mehr { display:inline-block; margin:6px 20px 0; font-family:'Barlow'; font-weight:700; font-size:15px; color:#1C1C1C; text-decoration:none; border-bottom:2px solid #C8201E; padding-bottom:2px; }
+    .st-hinweis { padding:0 20px; font-size:12px !important; }
+    .st { margin-bottom:72px !important; }
+  }
   .hm-claim { display:flex; align-items:center; gap:14px; font-family:'Barlow'; font-weight:700; font-size:clamp(20px,2.2vw,26px); color:#1C1C1C; margin:0 0 28px; }
   .hm-claim span { width:32px; height:3px; background:#C8201E; flex:none; }
   @media (max-width: 700px) {
@@ -187,6 +207,7 @@
           <span><span class="st-sterne" aria-hidden="true">★★★★★</span><span class="st-link">Alle Bewertungen auf Google</span></span>
         </a>
       </div>
+      <div class="st-reihe">
       <figure class="st-gross" data-reveal>
         <div class="st-gross-bild"><img data-no-reveal src="assets/review-wp.png" alt="Bagger belädt Anhänger am Neubau" loading="lazy" decoding="async"></div>
         <div class="st-gross-text">
@@ -205,6 +226,8 @@
           <div class="st-karte-text"><span class="st-sterne" role="img" aria-label="5 von 5 Sternen">★★★★★</span><blockquote>Schnelle und saubere Arbeit.  Immer Kontakt bei irgendwelchen Veränderungen.  Gute Zusammenarbeit.  Fähre Preise.  Gerne wieder👍</blockquote><figcaption><strong>A. H.</strong><span>Google-Bewertung</span></figcaption></div>
         </figure>
       </div>
+      </div>
+      <a class="st-mehr" href="https://www.google.com/maps/search/?api=1&amp;query=Lohnunternehmen+Helmut+Heiligmann+Freihalden" target="_blank" rel="noopener">Alle Bewertungen auf Google lesen</a>
       <p class="st-hinweis">Bewertungen von Google, im Originalwortlaut und in Originalschreibweise übernommen.</p>
     </div>
   </section>
