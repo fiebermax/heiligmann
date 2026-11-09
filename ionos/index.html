@@ -66,6 +66,8 @@
     .st-karte { grid-template-columns:1fr; }
     .st-karte-bild { aspect-ratio:16/9; }
   }
+  [role="tablist"] { scrollbar-width:none; -ms-overflow-style:none; }
+  [role="tablist"]::-webkit-scrollbar { display:none; }
   .hm-claim { display:flex; align-items:center; gap:14px; font-family:'Barlow'; font-weight:700; font-size:clamp(20px,2.2vw,26px); color:#1C1C1C; margin:0 0 28px; }
   .hm-claim span { width:32px; height:3px; background:#C8201E; flex:none; }
   @media (max-width: 700px) {
