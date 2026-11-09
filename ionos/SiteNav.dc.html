@@ -193,7 +193,7 @@ class Component extends DCLogic {
           const max = el.scrollWidth - el.clientWidth; if (max < 4) return;
           if (el.__hand && Date.now() - el.__hand < 1500) return; // gerade selbst gewischt
           const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
-          const p = Math.max(0, Math.min(1, (vh * 0.8 - r.top) / (vh * 0.55)));
+          const p = Math.max(0, Math.min(1, (vh * 0.3 - r.top) / (vh * 0.5))); // erst ab oberem Drittel losfahren
           el.scrollLeft = p * max;
         });
       };
