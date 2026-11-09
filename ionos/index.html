@@ -87,7 +87,7 @@
     .st-kopf h2 { font-size:30px !important; }
     .st-google { padding:8px 14px !important; }
     .st-note { font-size:28px !important; }
-    .st-reihe { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 20px 14px; scroll-padding:0 20px; scrollbar-width:none; }
+    .st-reihe { display:flex; gap:12px; overflow-x:auto; padding:4px 20px 14px; scrollbar-width:none; }
     .st-reihe::-webkit-scrollbar { display:none; }
     .st-klein { display:contents !important; }
     .st-reihe > figure, .st-klein > figure { flex:0 0 84%; scroll-snap-align:start; margin:0 !important; display:flex !important; flex-direction:column; align-items:stretch !important; gap:0 !important; padding:0 !important; border-radius:16px !important; overflow:hidden; background:#FFFFFF; box-shadow:0 8px 22px rgba(28,28,28,.08) !important; }
@@ -207,7 +207,7 @@
           <span><span class="st-sterne" aria-hidden="true">★★★★★</span><span class="st-link">Alle Bewertungen auf Google</span></span>
         </a>
       </div>
-      <div class="st-reihe">
+      <div class="st-reihe" data-autoscroll>
       <figure class="st-gross" data-reveal>
         <div class="st-gross-bild"><img data-no-reveal src="assets/review-wp.png" alt="Bagger belädt Anhänger am Neubau" loading="lazy" decoding="async"></div>
         <div class="st-gross-text">

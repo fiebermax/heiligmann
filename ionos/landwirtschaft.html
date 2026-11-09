@@ -43,9 +43,9 @@
   .lw-facts-wrap { max-width:1200px; margin:0 auto; padding:clamp(64px,9vw,104px) 22px; color:#1C1C1C; }
   .lw-facts-wrap .hm-facts li { border-top-color:#C8201E; }
   @media (max-width:700px) {
-    .lw-ballen { display:flex !important; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px !important; margin:0 -22px; padding:0 22px 8px; scrollbar-width:none; }
+    .lw-ballen { display:flex !important; overflow-x:auto; gap:14px !important; margin:0 -22px; padding:0 22px 8px; scrollbar-width:none; }
     .lw-ballen::-webkit-scrollbar { display:none; }
-    .lw-ballen-item { flex:0 0 80%; scroll-snap-align:center; }
+    .lw-ballen-item { flex:0 0 80%; }
     .lw-foto { aspect-ratio:4/3 !important; margin-bottom:16px !important; }
   }
   .lw-ballen { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:44px 24px; }
@@ -82,7 +82,7 @@
   <section style="max-width:1200px;margin:0 auto;padding:56px 22px 88px;">
     <h2 data-reveal style="font-family:'Barlow';font-weight:800;font-size:clamp(28px,3.8vw,44px);line-height:1.05;color:#1C1C1C;margin:0 0 12px;letter-spacing:-.02em;">Unsere Leistungen im Überblick</h2>
     <p data-reveal style="color:#5E5C5B;margin:0 0 40px;max-width:620px;">Von der Feldarbeit bis zum fertigen Ballen, mit Freude und Leidenschaft.</p>
-    <div class="lw-ballen">
+    <div class="lw-ballen" data-autoscroll>
       <article class="lw-ballen-item">
         <div class="lw-foto"><img src="assets/web/g03.jpg" alt="Schlepper mit Quaderballenpresse auf dem Feld" loading="lazy" decoding="async"></div>
         <h3>Ballenpressen</h3>

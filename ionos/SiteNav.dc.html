@@ -184,6 +184,25 @@ class Component extends DCLogic {
       }), { threshold: .6 });
       const scanCount = () => document.querySelectorAll('[data-countup]').forEach(el => { if (el.__hmc) return; el.__hmc = 1; el.textContent = (el.dataset.from || 0) + (el.dataset.suffix || ''); cio.observe(el); });
       requestAnimationFrame(scanCount); setTimeout(scanCount, 800);
+      // Wisch-Reihen (data-autoscroll): beim Runterscrollen automatisch nach rechts mitlaufen.
+      // Greift nur, wenn die Reihe breiter ist als der Bildschirm (also am Handy).
+      const reihen = () => Array.from(document.querySelectorAll('[data-autoscroll]'));
+      const mitlaufen = () => {
+        const vh = window.innerHeight;
+        reihen().forEach(el => {
+          const max = el.scrollWidth - el.clientWidth; if (max < 4) return;
+          if (el.__hand && Date.now() - el.__hand < 1500) return; // gerade selbst gewischt
+          const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
+          const p = Math.max(0, Math.min(1, (vh * 0.8 - r.top) / (vh * 0.55)));
+          el.scrollLeft = p * max;
+        });
+      };
+      const merke = e => { const el = e.target.closest && e.target.closest('[data-autoscroll]'); if (el) el.__hand = Date.now(); };
+      document.addEventListener('touchstart', merke, { passive: true });
+      document.addEventListener('touchmove', merke, { passive: true });
+      let rt = false;
+      window.addEventListener('scroll', () => { if (rt) return; rt = true; requestAnimationFrame(() => { rt = false; mitlaufen(); }); }, { passive: true });
+      setTimeout(mitlaufen, 900);
       this._photoIo = io;
     }
     this._cleanup = () => { window.removeEventListener('resize', applyResponsive); window.removeEventListener('scroll', onScroll); };
