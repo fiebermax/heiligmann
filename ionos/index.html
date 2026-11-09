@@ -72,7 +72,7 @@
   .hm-claim span { width:32px; height:3px; background:#C8201E; flex:none; }
   @media (max-width: 700px) {
     /* Handy: Schrift oben im hellen Nebel, Traktor frei in der Mitte, Schnellzugriff unten auf der Wiese */
-    .hm-hero { position:relative; max-width:none !important; min-height:calc(86svh - 72px); padding:26px 20px 22px !important; display:flex !important; flex-direction:column; overflow:hidden; gap:0 !important; }
+    .hm-hero { position:relative; max-width:none !important; min-height:calc(88svh - 72px); padding:26px 20px 22px !important; display:flex !important; flex-direction:column; overflow:hidden; gap:0 !important; }
     .hm-hero > div:last-child { position:absolute !important; inset:0; z-index:0; opacity:1 !important; transform:none !important; clip-path:none !important; }
     .hm-hero > div:last-child > div:first-child { position:absolute !important; inset:0; aspect-ratio:auto !important; border-radius:0 !important; }
     .hm-hero > div:last-child > div:first-child img { inset:0 !important; height:100% !important; transform:none !important; object-position:30% 100%; }
@@ -360,13 +360,6 @@
 
   <dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
 
-  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-    <div style="height:76px;"></div>
-    <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#FFFFFF;border-top:2px solid #E32523;">
-      <a href="tel:+491623478127" style="display:flex;align-items:center;justify-content:center;min-height:52px;background:#C8201E;color:#fff;font-family:'Barlow';font-weight:700;font-size:17px;border-radius:4px;">Anrufen</a>
-      <a href="#kontakt" style="display:flex;align-items:center;justify-content:center;min-height:52px;border:1.5px solid #1C1C1C;color:#1C1C1C;font-family:'Barlow';font-weight:700;font-size:17px;border-radius:4px;">Anfrage</a>
-    </div>
-  </sc-if>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;ctaColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C8201E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Farben&quot;,&quot;options&quot;:[&quot;#C8201E&quot;,&quot;#C8201E&quot;,&quot;#1C1C1C&quot;,&quot;#B3261E&quot;]},&quot;trustColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C8201E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Farben&quot;,&quot;options&quot;:[&quot;#C8201E&quot;,&quot;#C8201E&quot;,&quot;#C8201E&quot;,&quot;#C8201E&quot;]},&quot;showLandwirtschaft&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Abschnitte&quot;}}">
