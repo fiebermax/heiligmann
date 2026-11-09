@@ -81,8 +81,9 @@
     .hm-hero h1 { font-size:36px !important; margin-bottom:14px !important; }
     .hm-hero p[data-reveal]:not(.hm-claim) { display:none; }
     .hm-hero > div:first-child > div:last-child { display:none !important; }
-    .hm-hero > div:first-child > div[data-reveal] { flex-wrap:nowrap !important; gap:10px !important; margin-bottom:0 !important; }
-    .hm-hero > div:first-child > div[data-reveal] a { flex:1; justify-content:center; padding:15px 10px !important; font-size:16px !important; white-space:nowrap; }
+    /* Knöpfe am Handy ausblenden: die Anrufleiste unten deckt das schon ab */
+    .hm-hero > div:first-child > div[data-reveal] { display:none !important; }
+    .hm-hero .hm-claim { margin-bottom:8px !important; }
     .hm-hero a[href^="tel:"] { border-color:#FFFFFF !important; color:#FFFFFF !important; }
     .hm-hero [data-count], .hm-hero [data-count] + div { color:#FFFFFF !important; }
     .hm-hero [data-count] + div { opacity:.8; }
