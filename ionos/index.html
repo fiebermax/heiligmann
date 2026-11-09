@@ -68,6 +68,17 @@
   }
   [role="tablist"] { scrollbar-width:none; -ms-overflow-style:none; }
   [role="tablist"]::-webkit-scrollbar { display:none; }
+  .t-kurz { display:none; }
+  @media (max-width: 700px) {
+    /* Reiter am Handy als Umschalter: drei gleich breite Felder, kurze Namen */
+    [role="tablist"] { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px !important; padding:4px !important; margin:0 0 8px !important; background:#F1F1F0; border-radius:14px; overflow:visible !important; }
+    [role="tab"] { min-height:44px !important; padding:0 4px !important; border:0 !important; border-radius:10px !important; background:transparent !important; color:#5E5C5B !important; font-size:14.5px !important; transform:none !important; }
+    [role="tab"][aria-selected="true"] { background:#FFFFFF !important; color:#1C1C1C !important; box-shadow:0 2px 8px rgba(28,28,28,.12); }
+    [role="tab"]:focus-visible { outline:2px solid #C8201E; outline-offset:-2px; }
+    [role="tab"] .t-lang { display:none; }
+    [role="tab"] .t-kurz { display:inline; }
+    [role="tab"] [data-tabprog] { left:14px !important; right:14px !important; bottom:5px !important; height:2px !important; border-radius:2px; }
+  }
   .hm-claim { display:flex; align-items:center; gap:14px; font-family:'Barlow'; font-weight:700; font-size:clamp(20px,2.2vw,26px); color:#1C1C1C; margin:0 0 28px; }
   .hm-claim span { width:32px; height:3px; background:#C8201E; flex:none; }
   @media (max-width: 700px) {
@@ -147,7 +158,7 @@
     </div>
     <div ref="{{ tabsRef }}" onMouseEnter="{{ pauseAuto }}" onMouseLeave="{{ resumeAuto }}" role="tablist" aria-label="Leistungsbereiche" data-reveal style="display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 20px;margin:0 -2px;">
       <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
-        <button type="button" role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="position:relative;overflow:hidden;flex:none;scroll-snap-align:start;min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;" style-hover="border-color:#1C1C1C;transform:translateY(-2px);"><span style="position:relative;z-index:1;">{{ t.label }}</span><span data-tabprog="1" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:3px;background:#E32523;transform:scaleX(0);transform-origin:left center;"></span></button>
+        <button type="button" role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="position:relative;overflow:hidden;flex:none;scroll-snap-align:start;min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font-family:'Barlow';font-weight:700;font-size:16px;cursor:pointer;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;" style-hover="border-color:#1C1C1C;transform:translateY(-2px);"><span class="t-lang" style="position:relative;z-index:1;">{{ t.label }}</span><span class="t-kurz" style="position:relative;z-index:1;">{{ t.short }}</span><span data-tabprog="1" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:3px;background:#E32523;transform:scaleX(0);transform-origin:left center;"></span></button>
       </sc-for>
     </div>
     <div ref="{{ panelRef }}" role="tabpanel" onMouseEnter="{{ pauseAuto }}" onMouseLeave="{{ resumeAuto }}">
@@ -434,8 +445,8 @@ class Component extends DCLogic {
   _tabs(erd) {
     const lw = 'landwirtschaft.html', an = 'angusrinder.html';
     const T = [
-      { key: 'erd', label: 'Erd- & Baggerarbeiten', intro: 'Vom Fundament bis zum gepflegten Garten erledigen wir mit den passenden Maschinen, was für die eigene Hand zu groß ist.', link: { href: erd, label: 'Alle Erdarbeiten ansehen' }, items: null },
-      { key: 'lw', label: 'Landwirtschaftliche Arbeiten', intro: 'Ballenpressen, Silage-Transport und vieles mehr, mit den passenden Landmaschinen. Dazu eigene Felder und Stroh- und Heuhandel.', link: { href: lw, label: 'Zu den landwirtschaftlichen Leistungen' }, items: [
+      { key: 'erd', label: 'Erd- & Baggerarbeiten', short: 'Erdarbeiten', intro: 'Vom Fundament bis zum gepflegten Garten erledigen wir mit den passenden Maschinen, was für die eigene Hand zu groß ist.', link: { href: erd, label: 'Alle Erdarbeiten ansehen' }, items: null },
+      { key: 'lw', label: 'Landwirtschaftliche Arbeiten', short: 'Landwirtschaft', intro: 'Ballenpressen, Silage-Transport und vieles mehr, mit den passenden Landmaschinen. Dazu eigene Felder und Stroh- und Heuhandel.', link: { href: lw, label: 'Zu den landwirtschaftlichen Leistungen' }, items: [
         { title: 'Ballenpressen', text: 'Pressen von Stroh, Heu und Silage, zuverlässig und in guter Qualität.' },
         { title: 'Silage-Transport', text: 'Transport von Silage und Erntegut mit unseren Landmaschinen.' },
         { title: 'Feldbewirtschaftung', text: 'Wir bewirtschaften eigene Felder und übernehmen verschiedenste Feldarbeiten.' },
@@ -450,7 +461,7 @@ class Component extends DCLogic {
     ];
     const cur = T.find(t => t.key === (this.state.tab || 'erd'));
     return {
-      tabs: T.map(t => { const on = t === cur; return { label: t.label, on, bg: on ? '#1C1C1C' : 'transparent', fg: on ? '#FFFFFF' : '#1C1C1C', bd: on ? '#1C1C1C' : '#CFCECD', pick: () => { this._userPicked = true; this._stopAuto(); this.setState({ tab: t.key }); } }; }),
+      tabs: T.map(t => { const on = t === cur; return { label: t.label, short: t.short || t.label, on, bg: on ? '#1C1C1C' : 'transparent', fg: on ? '#FFFFFF' : '#1C1C1C', bd: on ? '#1C1C1C' : '#CFCECD', pick: () => { this._userPicked = true; this._stopAuto(); this.setState({ tab: t.key }); } }; }),
       tabIntro: cur.intro, tabLink: cur.link,
       tabItems: cur.items ? cur.items.map((it, i) => ({ ...it, href: cur.link.href, no: String(i + 1).padStart(2, '0') })) : null,
     };
